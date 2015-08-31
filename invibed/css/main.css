@@ -80,11 +80,12 @@ h6{
 
 p{
     font-size: 1em;
-    line-height: 1.6em;
+    line-height: 1.618em;
     font-weight:300;
+    margin:1em 0 0 ;
 }
 
-p + p, p + figure, figure + p{
+p + figure{
     margin:1em 0 0;
 }
 
@@ -136,6 +137,11 @@ aside{
 footer section{
     padding:.5em 1em 1em;
     height:9em;
+}
+
+input[type="text"]{
+        height:3.5em;
+    padding:.5em;
 }
 
 /* ------------------------------------------------------------- all pages */
@@ -270,8 +276,9 @@ footer section{
 }
 
 .search{
-    margin:.75em;
+    margin:0 .75em;
     float:left;
+
 }
 
 .login{
@@ -286,8 +293,7 @@ footer section{
 .email-input{
     float:left;
     width:70%;
-    height:3.5em;
-    padding:.5em;
+
 }
 
 .email-submit{
@@ -308,7 +314,7 @@ footer section{
 
 .featured-article{
     background-color: #fff;
-    padding:1.6em 1.6em 1.81em;
+    padding:1.58em 1.6em 1em;
 }
 
 .chevron{
@@ -425,7 +431,7 @@ footer section{
 
 #featured{
     width:100%;
-    height:550px;
+    height:500px;
     overflow: hidden;
     background:url(../img/motivation.jpg) no-repeat top center scroll;
     -webkit-background-size:cover;
