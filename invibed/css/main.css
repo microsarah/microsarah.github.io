@@ -166,16 +166,18 @@ input[type=search] {
     border:none;
     padding: 9px 10px 9px 32px;
     width: 20px;
-        -webkit-transition: all .5s;
+    z-index: 2;
+    background-color: #fff;
+    -webkit-transition: all .5s;
     -moz-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
 input[type=search]:focus {
     width: 200px;
     border: 1px solid #e3e3e3;
-/*    background-color: #fff;
-    border-color: #66CC75;*/
+    background-color: #fff;
 }
 
 /* ------------------------------------------------------------- all pages */
@@ -308,6 +310,7 @@ input[type=search]:focus {
     width:250px;
     top:0;
     left:6em;
+    z-index: 1;
 }
 
 .nav-links{
@@ -344,7 +347,7 @@ input[type=search]:focus {
 }
 
 .access{
-    width:25%;
+    width: 320px;
     position: absolute;
     right:0;
 }
@@ -403,6 +406,7 @@ input[type=search]:focus {
     background-color: #fff;
     padding:1.58em 1.6em 1em;
     height:23%;
+    position: relative;
 }
 
 .chevron{
@@ -414,6 +418,15 @@ input[type=search]:focus {
     margin-left:-15%;
     padding-left:20%;
     cursor: auto;
+}
+
+.featured-article:hover:before {
+    content: "<";
+    position: absolute;
+    left: .75em;
+    top: 35%;
+    font-size: 2em;
+    font-weight: 300;
 }
 
 /*.featured-article:hover .chevron{
@@ -516,6 +529,39 @@ input[type=search]:focus {
 }
 
 
+/*
+.cards-img{
+    width:100%;
+    height:0;
+    padding-bottom: 40%;
+    overflow: hidden;
+}
+
+.cards-header{
+    padding: 1em;
+    position: absolute;
+    bottom:0;
+    width:100%;
+    color: #fff;
+    background-color:rgba(0,0,0,.3);
+    display:none;
+}
+
+.aside-title{
+        margin:0 auto 1.2em;
+}
+
+.aside-cards{
+    margin:-1px 0 0;
+    border:1px solid #e3e3e3;
+    position: relative;
+}
+
+.aside-cards:hover .cards-header {
+    display: block;
+}*/
+
+
 /* ------------------------------------------------------------- index ids */
 
 
@@ -582,8 +628,7 @@ input[type=search]:focus {
 
 
 @media screen and (max-width: 1360px){
-    .cards, .access {
-        width:33.33%;
+    .cards{
     }
 
     .cards{
@@ -694,10 +739,6 @@ input[type=search]:focus {
 }
 
 @media screen and (max-width:845px){
-    .access{
-        width:35%;
-/*        position: static;*/
-    }
     .featured-article{
         width:100%;
         float:none;
@@ -714,13 +755,13 @@ input[type=search]:focus {
 
 @media screen and (max-width:808px){
     .access{
-        position: static;
+/*        position: static;
         width:50%;
-        left:0;
+        left:0;*/
     }
-    .login, .search{
+/*    .login, .search{
         float: left;
-    }
+    }*/
 
 }
 
