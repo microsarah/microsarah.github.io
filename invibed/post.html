@@ -21,7 +21,7 @@
             <nav>
                 <ul class="topnav">
                 <li class="nav-links"><a href="#">Explore</a>
-                    <ul class="subnav">
+                    <ul class="subnav clearfix">
                         <li class="categories"><a href="#"><h4><span class="fa fa-newspaper-o"></span>News</h4></a></li>
                         <li class="categories"><a href="#"><h4><span class="fa fa-trophy"></span>Motivation</h4></a></li>
                         <li class="categories"><a href="#"><h4><span class="fa fa-briefcase"></span>Career</h4></a></li>
@@ -33,19 +33,21 @@
                         <li class="categories"><a href="#"><h4><span class="fa fa-video-camera"></span>Videos</h4></a></li>
                     </ul>
                 </li>
-                <li class="nav-links"><a href="explore.html">Learn</a></li>
-                <li class="nav-links"><a href="explore.html">Ask</a></li>
-                <li class="nav-links"><a href="explore.html">Shop</a></li>
+                <div class="nav-abs">
+                    <li class="nav-links"><a href="explore.html">Learn</a></li>
+                    <li class="nav-links"><a href="explore.html">Ask</a></li>
+                    <li class="nav-links"><a href="explore.html">Shop</a></li>
+                </div>
             </ul>
             </nav>
             <div class="access clearfix">
-                <div class="search">
-                    <form id="newsearch" method="get" action="#">
-                        <input type="text" class="search-input" placeholder="search">
-                    </form>
-                </div>
                 <div class="login">
                     <img src="img/avatar.jpeg" alt="You" title="You">
+                </div>
+                <div class="search">
+                    <form method="get" action="#">
+                        <input type="search">
+                    </form>
                 </div>
             </div>
         </header>
@@ -193,7 +195,7 @@
 
         <h2 class="tagline">Know More. Spend Less. Live Better</h2>
 
-        <section class="clearfix wrap" id="cards-main">
+  <section class="clearfix wrap" id="cards-main">
             <a href="#">
                 <article class="cards">
                     <div class="cards-img" id="card1"></div>
@@ -270,19 +272,22 @@
 
         <footer class="site-footer wrap clearfix">
             <section class="footer-sec-lg">
-                <h5>Stay in the Know</h5>
-                <h6>Sign up to receive occassional news.</h6>
-                 <form class="email-signup clearfix" action="#">
+
+                <h5><span>Stay in the Know</span></h5>
+                <div class="email-signup">
+                    <h6>Sign up to receive occassional news.</h6>
+                    <form class="clearfix" action="#">
                         <input type="text" class="email-input" placeholder="email">
                         <input type="submit" class="email-submit button" value="Count Me In">
-                </form>
+                    </form>
+                </div>
             </section>
             <section class="footer-sec-sm">
-                <h5>Take us on the Go</h5>
+                <h5><span>Take us on the Go</h5>
                 <a class="button" id="get-app" href="#">Get The App</a>
             </section>
             <section class="footer-sec-sm">
-                <h5>Connect With Us</h5>
+                <h5><span>Connect With Us</h5>
                 <div class="social-invibed">
                     <a href="http://twitter.com/invibed" target="blank"><span class="fa fa-twitter social-links"></span></a>
                     <a href="http://www.facebook.com/invibed" target="blank"><span class="fa fa-facebook social-links"></span></a>
