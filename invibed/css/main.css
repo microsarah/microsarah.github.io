@@ -211,6 +211,7 @@ input[type=search]:focus {
     width:90%;
     max-width:1300px;
     margin:auto;
+    height: 100%;
 }
 
 .col2, .col4{
@@ -394,9 +395,14 @@ input[type=search]:focus {
 
 /* ------------------------------------------------ featured */
 
+.latest-articles{
+    height:100%;
+}
+
 .featured-article{
     background-color: #fff;
     padding:1.58em 1.6em 1em;
+    height:23%;
 }
 
 .chevron{
@@ -598,13 +604,12 @@ input[type=search]:focus {
 }
 
 @media screen and (max-width: 1208px){
-    .subnav{
-        width:500px;
-        height:0;
+    nav{
+        width:320px;
     }
-
-    .nav-links:hover > .subnav {
-        height:130px;
+    .subnav{
+        width:1035px;
+        height:0;
     }
 }
 
@@ -615,6 +620,15 @@ input[type=search]:focus {
 
     .site-header{
 /*        padding:1.75em 2%;*/
+    }
+
+    .subnav{
+        width:500px;
+        height:0;
+    }
+
+    .nav-links:hover > .subnav {
+        height:130px;
     }
 
     .cards{
@@ -630,13 +644,13 @@ input[type=search]:focus {
     }
 
     .featured-article{
-        width: 50%;
-        float:left;
+        width:60%;
+        margin:auto;
     }
 
     .featured-article:hover{
-        width:50%;
-        margin-left:0;
+        width:60%;
+        margin-left:auto;
         padding-left:1.6em;
     }
 
@@ -669,6 +683,7 @@ input[type=search]:focus {
         float: none;
         width: 100%;
         margin: auto;
+        padding:0 0 2em;
     }
 
     #cards-main{
@@ -698,9 +713,6 @@ input[type=search]:focus {
 }
 
 @media screen and (max-width:808px){
-    nav{
-        width:320px;
-    }
     .access{
         position: static;
         width:50%;
