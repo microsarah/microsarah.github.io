@@ -657,10 +657,6 @@ input[type=search]:focus {
         left:0;
     }
 
-    .cards{
-        width:50%;
-    }
-
     .footer-sec-lg{
         width:100%;
         float: none;
@@ -683,9 +679,10 @@ input[type=search]:focus {
     }
 
     #latest-wrap{
-        width: 100%;
+        width: 90%;
         position: relative;
         top:0;
+        margin:auto;
     }
 
     #the-latest{
@@ -707,6 +704,15 @@ input[type=search]:focus {
     }
 }
 
+@media screen and (max-width: 1000px){
+        .cards{
+        width:50%;
+    }
+
+    #latest-wrap{
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 625px){
     nav{
@@ -738,6 +744,11 @@ input[type=search]:focus {
 
     .cards{
         width:100%;
+    }
+
+    .landscape{
+        height:auto;
+        width: 100%;
     }
 
     .cards-header{
