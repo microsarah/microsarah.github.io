@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
+        <title>invibed</title>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>invibed</title>
-        <meta name="description" content="">
+        <meta name="description" content="Know More. Spend Less. Live Better.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="robots" content="noodp,noydir">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="alternate" type="application/rss+xml" title="Invibed » Feed" href="http://invibed.com/feed/">
+        <link rel="alternate" type="application/rss+xml" title="Invibed » Comments Feed" href="http://invibed.com/comments/feed/">
+        <link rel="canonical" href="http://invibed.com/">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -45,7 +49,7 @@
                     <img src="img/avatar.jpeg" alt="You" title="You">
                 </div>
                 <div class="search">
-                    <form method="get" action="#">
+                    <form id="search" method="get" action="#">
                         <input type="search">
                     </form>
                 </div>
@@ -57,11 +61,11 @@
             <article class="article">
                 <header>
                     <h1 class="article-title">Rich Babies of Instagram Will Make You Feel Really Poor</h1>
-                    <div class="article-tags">
-                        <h4 class="article-category"><span class="fa fa-newspaper-o"></span>News</h4>
-                        <h3 class="author">By <span class="author-name">Joe Bliss</span></h3>
-                        <h3 class="date">May 20, 2015</h3>
-                    </div>
+                    <ul class="article-tags">
+                        <li class="categories"><a href="#"><h4><span class="fa fa-newspaper-o"></span>News</h4></a></li>
+                        <li><h3 class="author">By <span class="author-name">Joe Bliss</span></h3></li>
+                        <li><h3 class="date">May 20, 2015</h3></li>
+                    </ul>
                 </header>
                 <figure id="article-hero">
                     <img src="img/motivation.jpg">
@@ -156,37 +160,113 @@
                 </footer>
             </article>
             
-            <aside>
-            <h5 class="aside-title">Take us on the Go</h5>
+            <aside class="clearfix">
+            <h5><span>The Latest</span></h5>
                 <a href="#">
                     <article class="aside-cards">
-                        <div class="cards-img" id="card1"></div>
-                        <header class="cards-header">
+                        <div class="aside-cards-img"><img class="landscape" src="img/style.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-diamond"></span>Style</h4>
                             <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                         </header>
                     </article>
                 </a>
                 <a href="#">
                     <article class="aside-cards">
-                        <div class="cards-img" id="card1"></div>
-                        <header class="cards-header">
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/career.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-briefcase"></span>Career</h4>
+                            <h3>How Failure Helped This Millennial Get into Y Combinator And Sell One Million...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/style.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-diamond"></span>Style</h4>
                             <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                         </header>
                     </article>
                 </a>
                 <a href="#">
                     <article class="aside-cards">
-                        <div class="cards-img" id="card1"></div>
-                        <header class="cards-header">
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/career.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-briefcase"></span>Career</h4>
+                            <h3>How Failure Helped This Millennial Get into Y Combinator And Sell One Million...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/style.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-diamond"></span>Style</h4>
                             <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                         </header>
                     </article>
                 </a>
                 <a href="#">
                     <article class="aside-cards">
-                        <div class="cards-img" id="card1"></div>
-                        <header class="cards-header">
-                            <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/career.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-briefcase"></span>Career</h4>
+                            <h3>How Failure Helped This Millennial Get into Y Combinator And Sell One Million...</h3>
+                        </header>
+                    </article>
+                </a>
+                <a href="#">
+                    <article class="aside-cards">
+                        <div class="aside-cards-img"><img class="landscape" src="img/outvibed.jpg"></div>
+                        <header class="aside-cards-header">
+                            <h4><span class="fa fa-exclamation-triangle"></span>Outvibed</h4>
+                            <h3>Beauty Queen Turned Entrepreneur Spills On Overcoming Adversity...</h3>
                         </header>
                     </article>
                 </a>
@@ -194,12 +274,21 @@
         </div>
 
         <h2 class="tagline">Know More. Spend Less. Live Better</h2>
-
-  <section class="clearfix wrap" id="cards-main">
+        <h5><span>More in this Category</span></h5>
+        <section class="clearfix wrap" id="cards-same-category">
             <a href="#">
                 <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
+                    <div class="cards-img"><img class="landscape" src="img/motivation.jpg"></div>
+                    <header class="aside-cards-header">
+                        <h4><span class="fa fa-usd"></span>Finance 101</h4>
+                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
+                    </header>
+                </article>
+            </a>
+            <a href="#">
+                <article class="cards">
+                    <div class="cards-img"><img class="portrait" src="img/outvibed.jpg"></div>
+                    <header class="aside-cards-header">
                         <h4><span class="fa fa-diamond"></span>Style</h4>
                         <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                     </header>
@@ -207,8 +296,8 @@
             </a>
             <a href="#">
                 <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
+                    <div class="cards-img"><img class="portrait" src="img/career.jpg"></div>
+                    <header class="aside-cards-header">
                         <h4><span class="fa fa-diamond"></span>Style</h4>
                         <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                     </header>
@@ -216,53 +305,8 @@
             </a>
             <a href="#">
                 <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
-                        <h4><span class="fa fa-diamond"></span>Style</h4>
-                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
-                    </header>
-                </article>
-            </a>
-            <a href="#">
-                <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
-                        <h4><span class="fa fa-diamond"></span>Style</h4>
-                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
-                    </header>
-                </article>
-            </a>
-            <a href="#">
-                <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
-                        <h4><span class="fa fa-diamond"></span>Style</h4>
-                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
-                    </header>
-                </article>
-            </a>
-            <a href="#">
-                <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
-                        <h4><span class="fa fa-diamond"></span>Style</h4>
-                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
-                    </header>
-                </article>
-            </a>
-            <a href="#">
-                <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
-                        <h4><span class="fa fa-diamond"></span>Style</h4>
-                        <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
-                    </header>
-                </article>
-            </a>
-            <a href="#">
-                <article class="cards">
-                    <div class="cards-img" id="card1"></div>
-                    <header class="cards-header">
+                    <div class="cards-img"><img class="landscape" src="img/finance.jpg"></div>
+                    <header class="aside-cards-header">
                         <h4><span class="fa fa-diamond"></span>Style</h4>
                         <h3>Rich Babies of Instagram Will Make You Feel Really Poor</h3>
                     </header>
@@ -278,7 +322,7 @@
                     <h6>Sign up to receive occassional news.</h6>
                     <form class="clearfix" action="#">
                         <input type="text" class="email-input" placeholder="email">
-                        <input type="submit" class="email-submit button" value="Count Me In">
+                        <a class="email-submit button">Count Me In</a>
                     </form>
                 </div>
             </section>
@@ -289,10 +333,10 @@
             <section class="footer-sec-sm">
                 <h5><span>Connect With Us</h5>
                 <div class="social-invibed">
-                    <a href="http://twitter.com/invibed" target="blank"><span class="fa fa-twitter social-links"></span></a>
                     <a href="http://www.facebook.com/invibed" target="blank"><span class="fa fa-facebook social-links"></span></a>
-                    <a href="mailto:"><span class="fa fa-envelope-o social-links"></span></a>
-                    <a href="#"><span class="fa fa-rss social-links" target="blank"></span></a>
+                    <a href="https://instagram.com/outvibed/" target="blank"><span class="fa fa-instagram social-links"></span></a>
+                    <a href="http://twitter.com/invibed" target="blank"><span class="fa fa-twitter social-links"></span></a>
+                    <a href="http://invibed.com/feed/" target="blank"><span class="fa fa-rss social-links" target="blank"></span></a>
                 </div>
             </section>
         </footer>
