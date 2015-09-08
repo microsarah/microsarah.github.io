@@ -160,7 +160,7 @@ input[type=search] {
     border:none;
     padding: 9px 10px 9px 32px;
     width: 20px;
-    z-index: 2;
+    z-index: 0;
     background-color: #fff;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
@@ -172,9 +172,10 @@ input[type=search]:focus {
     width: 200px;
     border: 1px solid #e3e3e3;
     background-color: #fff;
+    z-index: 2;
 }
 
-/* ------------------------------------------------------------- all pages classes */
+/* ------------------------------------------------------------- all-pages classes */
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -209,45 +210,16 @@ input[type=search]:focus {
     height:100%;
 }
 
-.button{
-    padding:1em;
-    background-color: #06d49e;
-    color:#fff;
+.tagline{
     text-align: center;
-    text-transform: uppercase;
-    font-style:italic;
-    font-weight: 300;
-    letter-spacing: inherit;
-    font-size:.75em;
-    cursor: pointer;
-}
-
-.footer-sec-lg{
-    border-bottom: 1px solid #e3e3e3;
-    border-right: 1px solid #e3e3e3;
-    float:left;
-    width:50%;
-}
-
-.footer-sec-sm{
-    border-bottom: 1px solid #e3e3e3;
-    border-right: 1px solid #e3e3e3;
-    float:left;
-    width:25%;
-}
-
-.social-links{
-    font-size: 1.4em;
-    padding:.5em;
-    margin:0;
-}
-
-.social-links:hover{
-    color:#06d49e;
+    font-weight:500;
+    color:#06d49e; 
+    font-style: italic;
+    padding:2em;
 }
 
 
-/* ------------------------------------------------ header */
+/* ------------------------------------------------ all pages header */
 
 .site-header{
     padding:1.75em 0 .5em;
@@ -256,25 +228,6 @@ input[type=search]:focus {
 
 .logo{  
     float:left;
-}
-
-.access{
-    width: 320px;
-    position: absolute;
-    right:0;
-    top:1.75em;
-}
-
-.search{
-    margin: 0 5% 0 0;
-    float: right;
-}
-
-.login{
-    margin:0 3% 0 0;
-    width:30px;
-    height:30px;
-    float:right;
 }
 
 .topnav{
@@ -322,6 +275,12 @@ input[type=search]:focus {
     height:60px;
 }
 
+.category-title{
+    font-size:1.6em;
+    text-align: center;
+    margin:.5em 0 1em;
+}
+
 .categories {
     list-style: none;
     float:left;
@@ -340,21 +299,69 @@ input[type=search]:focus {
     color:#fff;
 }
 
-.tagline{
-    text-align: center;
-    font-weight:500;
-    color:#06d49e; 
-    font-style: italic;
-    padding:2em;
+.access{
+    width: 320px;
+    position: absolute;
+    right:0;
+    top:1.75em;
+}
+
+.search{
+    margin: 0 5% 0 0;
+    float: right;
+}
+
+.login{
+    margin:0 3% 0 0;
+    width:30px;
+    height:30px;
+    float:right;
 }
 
 
-/* ------------------------------------------------ footer */
+/* ------------------------------------------------ all pages footer */
 
 .site-footer{
     margin:4em auto;
         border-top: 1px solid #e3e3e3;
     border-left: 1px solid #e3e3e3;
+}
+
+.button{
+    padding:1em;
+    background-color: #06d49e;
+    color:#fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-style:italic;
+    font-weight: 300;
+    letter-spacing: inherit;
+    font-size:.75em;
+    cursor: pointer;
+}
+
+.footer-sec-lg{
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    float:left;
+    width:50%;
+}
+
+.footer-sec-sm{
+    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    float:left;
+    width:25%;
+}
+
+.social-links{
+    font-size: 1.4em;
+    padding:.5em;
+    margin:0;
+}
+
+.social-links:hover{
+    color:#06d49e;
 }
 
 .email-signup{
@@ -415,13 +422,11 @@ input[type=search]:focus {
     top: 35%;
     font-size: 2em;
     font-weight: 300;
-    z-index: 2;
 }
 
 .featured-title{
     font-size:1em;
 }
-
 
 
 /* ------------------------------------------------ cards */
@@ -480,6 +485,15 @@ input[type=search]:focus {
     margin:0 0 1em;
 }
 
+.author{
+    font-size: 1em;
+}
+
+.date{
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
 .article-main{
     padding:0 .25em 0 0;
 }
@@ -493,15 +507,6 @@ input[type=search]:focus {
 .article-img-lg{
     width:100%;
     padding:.5em 0 .25em;
-}
-
-.author{
-    font-size: 1em;
-}
-
-.date{
-    font-size: 1em;
-    text-transform: uppercase;
 }
 
 .article-social{
@@ -522,7 +527,7 @@ input[type=search]:focus {
 .about-author p{
     font-size:1em;
     font-style: italic;
-    line-height: 1.8em;
+    line-height: 1.9em;
 }
 
 .comments{
@@ -532,13 +537,13 @@ input[type=search]:focus {
 
 /* ------------------------------------------------ aside */
 
-.aside-title{
-        margin:0 auto 1.2em;
-}
-
 .aside-wrap{
     border-top: 1px solid #e3e3e3;
     border-left: 1px solid #e3e3e3;
+}
+
+.aside-title{
+        margin:0 auto 1.2em;
 }
 
 .aside-cards{
@@ -561,12 +566,6 @@ input[type=search]:focus {
     line-height: 1.2em;
 }
 
-#cards-same-category{
-    height:436px;
-    overflow: hidden;
-    border-top: 1px solid #e3e3e3;
-    border-left: 1px solid #e3e3e3;
-}
 
 /* ------------------------------------------------------------- all pages ids */
 
@@ -619,7 +618,16 @@ input[type=search]:focus {
     border-left: 1px solid #e3e3e3;
 }
 
+/* ------------------------------------------------------------- page ids */
 
+/* ------------------------------------------------ same category cards */
+
+#cards-same-category{
+    height:436px;
+    overflow: hidden;
+    border-top: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+}
 
 
 /* ------------------------------------------------------------- media queries */
@@ -947,6 +955,12 @@ input[type=search]:focus {
     .nav-links:hover > .subnav {
         height:200px;
     }
+
+    .author-img{
+        float: none;
+        display: block;
+        margin:0 auto 1%;
+    }
 }
 
 @media screen and (max-width:420px){
@@ -978,5 +992,7 @@ input[type=search]:focus {
     .nav-links:hover > .subnav {
         height:200px;
     }
+
+
 }
 
