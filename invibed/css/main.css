@@ -276,8 +276,8 @@ input[type=search]:focus {
 }
 
 .nav-abs{
-    position: 250px;
-    width:auto;
+    position: absolute;
+    width:250px;
     top:0;
     left:6em;
 }
