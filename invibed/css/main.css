@@ -48,7 +48,6 @@ nav{
     float: left;
     margin:0 0 0 1.5em;
     position: relative;
-    z-index: 1;
 }
 
 h2{
@@ -170,14 +169,15 @@ input[type=search] {
     -moz-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
-    z-index: 0;
+    position: absolute;
+    right: 0;
 }
 
 input[type=search]:focus {
     width: 200px;
     border: 1px solid #e3e3e3;
     background-color: #fff;
-    z-index: 200;
+    right:10px;
 }
 
 /* ------------------------------------------------------------- all-pages classes */
@@ -316,11 +316,11 @@ input[type=search]:focus {
 }
 
 .access{
-    width: 320px;
+    width: 94px;
     position: absolute;
     right:0;
     top:1.75em;
-    z-index: 0;
+/*    z-index: 0;*/
 }
 
 .search{
@@ -649,6 +649,7 @@ input[type=search]:focus {
 #search{
     padding:0 0 .75em .75em;
     background-color: #fff;
+    position: relative;
 }
 
 #get-app{
@@ -872,13 +873,21 @@ input[type=search]:focus {
 
     .aside-cards{
         position: static;
-        width:50%;
+        width:33.33%;
         float: left;
-        height: 302px;
+        height: 427px;
+        padding:0 0 1.5em;
     }
 
     .aside-cards-img{
-        height:170px;
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .aside-landscape{
+        height: 100%;
+        width: auto;
     }
 
     .aside-cards-header{
@@ -887,12 +896,21 @@ input[type=search]:focus {
         -moz-transition: none;
         -o-transition: none;
         transition: none;
+        padding: 1.5em;
+    }
+
+    .aside-cards-header h4{
+        padding: 0;
     }
 
     .aside-cards-header h3{
         color: #323132;;
         opacity: 1;
         height:auto;
+        margin: .75em 0 0;
+        padding:0;
+        font-size: 1.1em;
+        line-height: 1.4em;
     }
 
     .aside-cards:hover > .aside-cards-header h3{
@@ -913,10 +931,10 @@ input[type=search]:focus {
         width: 100%;
     }
 
-    #cards-same-category{
+/*    #cards-same-category{
         height:auto;
         overflow: auto;
-    }
+    }*/
 }
 @media screen and (max-width: 937px){
     .cards{
