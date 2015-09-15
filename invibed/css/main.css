@@ -38,6 +38,7 @@ html {
     font-size: 1em;
     line-height: 1.4;
     letter-spacing: .04em; 
+    overflow-x:hidden;
 }
 
 body{
@@ -48,7 +49,6 @@ nav{
     float: left;
     margin:0 0 0 1.5em;
     position: relative;
-    z-index: 1;
 }
 
 h2{
@@ -170,14 +170,15 @@ input[type=search] {
     -moz-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
-    z-index: 0;
+    position: absolute;
+    right: 0;
 }
 
 input[type=search]:focus {
     width: 200px;
     border: 1px solid #e3e3e3;
     background-color: #fff;
-    z-index: 200;
+    right:10px;
 }
 
 /* ------------------------------------------------------------- all-pages classes */
@@ -316,11 +317,11 @@ input[type=search]:focus {
 }
 
 .access{
-    width: 320px;
+    width: 94px;
     position: absolute;
     right:0;
     top:1.75em;
-    z-index: 0;
+/*    z-index: 0;*/
 }
 
 .search{
@@ -492,12 +493,12 @@ input[type=search]:focus {
     overflow:hidden;
 }
 
-.portrait{
+.cards-portrait{
     width:100%;
     height: auto;
 }
 
-.landscape{
+.cards-landscape{
     width: auto;
     height:100%;
 }
@@ -604,6 +605,7 @@ input[type=search]:focus {
     overflow:hidden;
 }
 
+
 .aside-cards-header{
     padding: 0 0.5em 0 0;
     position: absolute;
@@ -649,6 +651,7 @@ input[type=search]:focus {
 #search{
     padding:0 0 .75em .75em;
     background-color: #fff;
+    position: relative;
 }
 
 #get-app{
@@ -698,7 +701,7 @@ input[type=search]:focus {
 
 /* ------------------------------------------------ same category cards */
 
-#cards-same-category{
+#same-category{
     height:auto;
     overflow: hidden;
     border-top: 1px solid #e3e3e3;
@@ -731,11 +734,11 @@ input[type=search]:focus {
         width: 33.33%;
     }
 
-    #cards-same-category{
+    #same-category{
         height:427px;
     }
 
-    #cards-same-category .cards{
+    #same-category .cards{
         height: 100%;
     }
 }
@@ -872,13 +875,21 @@ input[type=search]:focus {
 
     .aside-cards{
         position: static;
-        width:50%;
+        width:33.33%;
         float: left;
-        height: 302px;
+        height: 427px;
+        padding:0 0 1.5em;
     }
 
     .aside-cards-img{
-        height:170px;
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .aside-landscape{
+        width: auto;
+        height: 100%; 
     }
 
     .aside-cards-header{
@@ -887,12 +898,21 @@ input[type=search]:focus {
         -moz-transition: none;
         -o-transition: none;
         transition: none;
+        padding: 1.5em;
+    }
+
+    .aside-cards-header h4{
+        padding: 0;
     }
 
     .aside-cards-header h3{
         color: #323132;;
         opacity: 1;
         height:auto;
+        margin: .75em 0 0;
+        padding:0;
+        font-size: 1.1em;
+        line-height: 1.4em;
     }
 
     .aside-cards:hover > .aside-cards-header h3{
@@ -912,15 +932,20 @@ input[type=search]:focus {
     #latest-wrap{
         width: 100%;
     }
-
-    #cards-same-category{
-        height:auto;
-        overflow: auto;
-    }
 }
+
 @media screen and (max-width: 937px){
     .cards{
         width:50%;
+    }
+
+    .aside-cards{
+        width:50%;
+    }
+
+    #same-category{
+        height:auto;
+        overflow: auto;
     }
 }
 
@@ -966,11 +991,7 @@ input[type=search]:focus {
         height: auto;
     }
 
-    .aside-cards-img{
-        height:240px;
-    }
-
-    .landscape{
+    .cards-landscape, .aside-landscape{
         height:auto;
         width: 100%;
     }
@@ -994,7 +1015,7 @@ input[type=search]:focus {
         padding: .5em .0 1em;
     }
 
-    .landscape{
+    .cards-landscape{
         height:100%;
         width: auto;
     }
@@ -1021,12 +1042,8 @@ input[type=search]:focus {
         width:95%;
     }
 
-    .cards-img{
+    .cards-img, .aside-cards-img{
         height: 320px;
-    }
-
-    .aside-cards-img{
-        height:220px;
     }
 
     #cards-main{
@@ -1094,7 +1111,7 @@ input[type=search]:focus {
     }
 }
 
-@media screen and (max-width:370px){
+@media screen and (max-width:376px){
 
     nav{
         margin:0;
@@ -1117,6 +1134,7 @@ input[type=search]:focus {
 
     .nav-abs{
         left:5em;
+        width:200px;
     }
 
     .nav-links:hover > .subnav {
@@ -1140,6 +1158,10 @@ input[type=search]:focus {
         margin:auto;
         text-align: left;
         padding:0 0 1em;
+    }
+
+    .social-links{
+        padding:.5em .25em;
     }
 }
 
