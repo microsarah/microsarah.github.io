@@ -42,8 +42,6 @@ li a:hover{
 }
 
 figure img{
-	display: block;
-	margin:auto;
 	cursor:pointer;
 }
 
@@ -53,6 +51,12 @@ figcaption{
 	font-size: 13px;
 	color:#333;
 	margin:10px 0 0;
+}
+
+img{
+	width: 100%;
+	display: block;
+	margin:auto;
 }
 
 input[type="text"]{
@@ -93,6 +97,28 @@ input[type="text"]:focus{
 
 section{
 	height:97vh;
+}
+
+section:last-of-type{
+	height:100vh;
+}
+
+section figure{
+	width:40%;
+	min-width: 350px;
+	max-width:500px;
+	margin:0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-52%);
+	-moz-transform: translateY(-52%);
+	-o-transform: translateY(-52%);
+  	transform: translateY(-52%);
+  	
+}
+
+section figure img{
+	cursor:default;
 
 }
 
@@ -139,9 +165,7 @@ footer a:hover{
 	height:18px;
 }
 
-.menu img{
-	width: 100%;
-}
+
 
 .grid{
 	width:4px;
@@ -169,39 +193,9 @@ footer a:hover{
 
 /* -------------------------------------- PAGE CLASSES */
 
-.allgifs{
-	margin:0.5em;
-	padding:1em;
-	width:13em;
-	height:14em;
-	display:block;
-	float:left;
-	text-align:center; 
-	line-height:14em; 
-}
-
-.allgifs_img{
-	margin:0 auto;
-	position: relative;
-    vertical-align:middle;
-	width:100%;
-}
-
-.gifs{
-	width:40%;
-	max-width: 500px;
-	margin:0 auto;
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-60%);
-	-moz-transform: translateY(-60%);
-	-o-transform: translateY(-60%);
-  	transform: translateY(-60%);
-}
-
-.gifs img{
-	width:100%;
-	cursor:default;
+.tall{
+	width:auto;
+	max-height:550px;
 }
 
 
@@ -274,16 +268,14 @@ footer a:hover{
 }
 
 #google img {
-	display: block;
-	margin:0em auto;
-    width:100%;
     max-width:270px;
 }
 
-#search{
+#search-wrap{
 	width:100%;
 	height:36px;
 	margin:1.75em auto .5em;
+	position: relative;
 }
 
 #searchbtn{
@@ -322,7 +314,7 @@ footer a:hover{
     top: 47px;
     left: 1px;
 	z-index: 3;
-	width:570px;
+	width:100%;
 	font-size:1em;
 	font-weight:600;
 	line-height:0.8em;
@@ -350,14 +342,7 @@ footer a:hover{
     color:inherit;
 }
 
-/* -------------------------------------- PAGE IDs*/
-#gifs_wrap{
-    margin:3em auto;
-	width:85%;
-	
-}
-
-/* -------------------------------------- ALL GIFS - FB */
+/* -------------------------------------- FB */
 
 #fbsearch{
 	background:#cfe6d4;
@@ -379,7 +364,7 @@ footer a:hover{
 	background:#bed9da;
 }
 
-/* -------------------------------------- ALL GIFS - GOOGLE */
+/* -------------------------------------- GOOGLE */
 
 #gchatfight{
 	background:#c6cae3;
@@ -401,7 +386,7 @@ footer a:hover{
 	background:#b18bb3;
 }
 
-/* -------------------------------------- ALL GIFS - INSTAGRAM */
+/* -------------------------------------- INSTAGRAM */
 
 #untaggingme{
 	background:#fee7d0;
@@ -415,7 +400,7 @@ footer a:hover{
 	background:#d2dcec;
 }
 
-/* -------------------------------------- ALL GIFS - IOS */
+/* -------------------------------------- IOS */
 
 #autocorrect{
 	background:#c9bdc8;
@@ -429,7 +414,9 @@ footer a:hover{
 	background:#ffcca6;
 }
 
-/* -------------------------------------- ALL GIFS - LINKEDIN */
+
+
+/* -------------------------------------- LINKEDIN */
 
 #connectedonlinkedin{
 	background:#faffce;
@@ -444,7 +431,7 @@ footer a:hover{
 }
 
 
-/* -------------------------------------- ALL GIFS - TWITTER */
+/* -------------------------------------- TWITTER */
 
 #followsme{
 	background:#dcecf7;
@@ -456,6 +443,34 @@ footer a:hover{
 
 #disappearingtweets{
 	background:#e4d9e1;
+}
+
+/* -------------------------------------- ALL page */
+.gifs-col{
+	width:25%;
+	float:left;
+	padding: 0 10px;
+}
+
+
+#gifs-wrap{
+	width:80%;
+	margin:100px auto;
+}
+
+#gifs-wrap figure{
+	margin:20px 0;
+	padding:30px 0;
+}
+
+#gifs-wrap figure img{
+	width:90%;
+}
+
+/* -------------------------------------- 404 page */
+
+#error{
+	background:#1E97FF;
 }
 
 @media screen and (max-width:570px){

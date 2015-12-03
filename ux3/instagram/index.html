@@ -1,93 +1,88 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>instagram</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta name="author" content="Sarah K Hallacher"/>
-		<meta name="description" content="user experience of a heartbreak"/>
-		<meta name="keywords"  content="ux,user experience,heartbreak"/>
-		<meta name="Resource-type" content="Document"/>
-		<link rel="stylesheet" type="text/css" href="../_css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="../_css/style.css"/>
-    	<link rel="icon" href="../_imgs/ico/ux3.ico">
+		<meta name="author" content="Sarah K Hallacher">
+		<meta name="description" content="User Experience of a Heartbreak is a series of animations documenting the ways in which our use of technology might change during a breakup, and how couples can remain digitally intertwined after separating.">
+		<meta name="keywords" content="user experience of a heartbreak">
+		<title>Instagram</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    	<link rel="icon" href="../imgs/ico/ig.ico">
+    	<!--[if lt IE 9]>
+			<script src="http://html5shiv-printshiv.googlecode.com/svn/trunk/html5shiv-printshiv.js"></script>
+		<![endif]-->
 	</head>
-	
 	<body>
 		<header>
-		<nav class="clearfix">
-			<ul id="topnav">
-			<li class="topnavli textlink"><a href="#">+User Experience of a Heartbreak</a></li>
-		
-			<li class="topnavli">
-			<label for="allpages-toggle">
-				<img class="topnavimg" src="../_imgs/index/grid.png">
-			</label>
-			</li>
-			<input type="checkbox" id="allpages-toggle"/>
-			<div id="allpages">
-				<div class="clearfix" id="allpages_icons_wrap">
-					<a class="page_icons_a" href="facebook/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/fb.png">
-						<p class="page_icons_cap">Facebook</p>
+			<ul>
+				<li><a href="../index.html">User Experience of a Heartbreak</a></li>
+				<li>
+					<label for="toggle">
+					<div class="menu clearfix">
+						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
+						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
+						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
 					</div>
-					</a>
-
-					<a class="page_icons_a" href="google/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/google.png">
-						<p class="page_icons_cap">Google</p>
-					</div>
-					</a>
-
-					<a class="page_icons_a" href="instagram/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/ig.png">
-						<p class="page_icons_cap">Instagram</p>
-					</div>
-					</a>
-
-					<a class="page_icons_a" href="ios/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/ios.png">
-						<p class="page_icons_cap">iOS</p>
-					</div>
-					</a>
-
-					<a class="page_icons_a" href="linkedin/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/li.png">
-						<p class="page_icons_cap">LinkedIn</p>
-					</div>
-					</a>
-
-					<a class="page_icons_a" href="twitter/index.html">
-					<div class="page_icons_wrap">
-						<img src="../_imgs/index/nav/tw.png">
-						<p class="page_icons_cap">Twitter</p>
-					</div>
-					</a>
-				</div>
-				<a href="all.html">
-					<div class="more">More</div>
-				</a>
-			</div>	
-			<li class="topnavli"><a href="#"><img class="topnavimg" src="../_imgs/index/ux3.png" width="33px"></a></li>
+					</label>
+					<input type="checkbox" id="toggle">
+					<nav id="allpages">
+						<div class="clearfix" id="icons_wrap">
+							<a class="icons" href="facebook/index.html">
+								<figure>
+									<img src="../imgs/index/fb.png">
+									<figcaption>Facebook</figcaption>
+								</figure>
+							</a>
+							<a class="icons" href="google/index.html">
+								<figure>
+									<img src="../imgs/index/google.png">
+									<figcaption>Google</figcaption>
+								</figure>
+							</a>
+							<a class="icons" href="instagram/index.html">
+								<figure>
+									<img src="../imgs/index/ig.png">
+									<figcaption>Instagram</figcaption>
+								</figure>
+							</a>
+							<a class="icons" href="ios/index.html">
+								<figure>
+									<img src="../imgs/index/ios.png">
+									<figcaption>iOS</figcaption>
+								</figure>
+							</a>
+							<a class="icons" href="linkedin/index.html">
+								<figure>
+									<img src="../imgs/index/li.png">
+									<figcaption>Linkedin</figcaption>
+								</figure>
+							</a>
+							<a class="icons" href="twitter/index.html">
+								<figure>
+									<img src="../imgs/index/tw.png">
+									<figcaption>Twitter</figcaption>
+								</figure>
+							</a>
+						</div>
+						<a id="more" href="../all/index.html">More</a>
+					</nav>	
+				</li>
+				<li><div class="menu"><img src="../imgs/index/bell.png"></div></li>
+				<li><div id="avatar"></div></li>
 			</ul>
-		</nav>
-	</header>
+		</header>
 		<section id="untaggingme">
-			<figure><img src="../_imgs/ig/tagged.gif" alt="untagging me on instagram" title="why are you erasing me"></figure>
+			<figure><img src="../imgs/ig/tagged.gif" alt="untagging me on instagram" title="why are you erasing me"></figure>
 		</section>
 
 		<section id="unfollowingme">
-			<figure><img src="../_imgs/ig/unfollow.gif" alt="unfollowing me on instagram" title="you can't stand the sight of me"></figure>
+			<figure><img src="../imgs/ig/unfollow.gif" alt="unfollowing me on instagram" title="you can't stand the sight of me"></figure>
 		</section>
 
 		<section id="unlikingmypictures">
-			<figure><img src="../_imgs/ig/like.gif" alt="unliking my pictures on instagram" title="you used to like every picture"></figure>
+			<figure><img src="../imgs/ig/like.gif" alt="unliking my pictures on instagram" title="you used to like every picture"></figure>
 		</section>
 	</body>
 </html>
