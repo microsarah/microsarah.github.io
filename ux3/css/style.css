@@ -96,6 +96,7 @@ input[type="text"]{
     -moz-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
+    z-index: 4;
 }
 
 input[type="text"]:hover{
@@ -366,12 +367,12 @@ footer a:hover{
 
 /* query results */
 #livesearch{
-	background:#fff;
-	position: relative;
-    top: 47px;
-    left: 1px;
-	z-index: 3;
-	width:100%;
+	background: #fff;
+    position: relative;
+    top: 35px;
+    left: -1.25%;
+    z-index: 3;
+    width: 102.51%;
 	font-size:1em;
 	font-weight:600;
 	line-height:0.8em;

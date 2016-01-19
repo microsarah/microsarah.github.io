@@ -19,12 +19,12 @@ if (strlen($q)>0) {
         if ($hint=="") {
           $hint="<a href='" . 
           $z->item(0)->childNodes->item(0)->nodeValue . 
-          "' target='_blank'>" . 
+          "'>" . 
           $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
         } else {
-          $hint=$hint . "<br /><a href='" . 
+          $hint=$hint . "<a href='" . 
           $z->item(0)->childNodes->item(0)->nodeValue . 
-          "' target='_blank'>" . 
+          "'>" . 
           $y->item(0)->childNodes->item(0)->nodeValue . "</a>";
         }
       }
@@ -35,7 +35,7 @@ if (strlen($q)>0) {
 // Set output to "no suggestion" if no hint was found
 // or to the correct values
 if ($hint=="") {
-  $response="no suggestion";
+  $response="<a href='all/index.html'>did you mean 'i am heartbroken'?</a>";
 } else {
   $response=$hint;
 }
