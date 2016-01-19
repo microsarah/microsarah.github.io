@@ -17,52 +17,41 @@
 			<ul>
 				<li><a href="index.html">User Experience of a Heartbreak</a></li>
 				<li>
-					<label for="toggle">
 
-					<div class="menu clearfix">
-						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
-						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
-						<div class="grid"></div><div class="grid"></div><div class="grid"></div>
-					</div>
+					<label for="toggle">
+						<div class="menu clearfix">
+							<div class="grid"></div><div class="grid"></div><div class="grid"></div>
+							<div class="grid"></div><div class="grid"></div><div class="grid"></div>
+							<div class="grid"></div><div class="grid"></div><div class="grid"></div>
+						</div>
 					</label>
 					<input type="checkbox" id="toggle">
-					<nav id="allpages">
+					<nav>
+					<div class="arrow-box"></div>
 						<div class="clearfix" id="icons_wrap">
 							<a class="icons" href="facebook/index.html">
-								<figure>
-									<img src="imgs/index/fb.png">
-									<figcaption>Facebook</figcaption>
-								</figure>
+								<img src="imgs/index/fb.png">
+								<p>Facebook</p>
 							</a>
 							<a class="icons" href="google/index.html">
-								<figure>
-									<img src="imgs/index/google.png">
-									<figcaption>Google</figcaption>
-								</figure>
+								<img src="imgs/index/google.png">
+								<p>Google</p>
 							</a>
 							<a class="icons" href="instagram/index.html">
-								<figure>
-									<img src="imgs/index/ig.png">
-									<figcaption>Instagram</figcaption>
-								</figure>
+								<img src="imgs/index/ig.png">
+								<p>Instagram</p>
 							</a>
 							<a class="icons" href="ios/index.html">
-								<figure>
-									<img src="imgs/index/ios.png">
-									<figcaption>iOS</figcaption>
-								</figure>
+								<img src="imgs/index/ios.png">
+								<p>iOS</p>
 							</a>
 							<a class="icons" href="linkedin/index.html">
-								<figure>
-									<img src="imgs/index/li.png">
-									<figcaption>Linkedin</figcaption>
-								</figure>
+								<img src="imgs/index/li.png">
+								<p>Linkedin</p>
 							</a>
 							<a class="icons" href="twitter/index.html">
-								<figure>
-									<img src="imgs/index/tw.png">
-									<figcaption>Twitter</figcaption>
-								</figure>
+								<img src="imgs/index/tw.png">
+								<p>Twitter</p>
 							</a>
 						</div>
 						<a id="more" href="all/index.html">More</a>
@@ -104,33 +93,27 @@
 	</script>
 
 	<!-- livesearch -->
-	<script type="text/javascript">
+	<script>
 		function showResult(str) {
-				if (str.length==0) { 
-			document.getElementById("livesearch").innerHTML="";
-			document.getElementById("livesearch").style.border="0px";
-			return;
-				}
-			
-				// code for IE7+, Firefox, Chrome, Opera, Safari
-				if (window.XMLHttpRequest) {
-				xmlhttp=new XMLHttpRequest();
-			
-				// code for IE6, IE5
-				} else {  
-				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}	
-				
-				xmlhttp.onreadystatechange=function() {
-					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-	  					document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
-	  					console.log("new html: " + document.getElementById("livesearch").innerHTML);
-	  					document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-					}
-				}
-				xmlhttp.open("GET","php/livesearch.php?q="+str,true);
-				// console.log(document.getElementsByTagName('title'));
-				xmlhttp.send();
-			}
+		  if (str.length==0) { 
+		    document.getElementById("livesearch").innerHTML="";
+		    document.getElementById("livesearch").style.border="0px";
+		    return;
+		  }
+		  if (window.XMLHttpRequest) {
+		    // code for IE7+, Firefox, Chrome, Opera, Safari
+		    xmlhttp=new XMLHttpRequest();
+		  } else {  // code for IE6, IE5
+		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		  xmlhttp.onreadystatechange=function() {
+		    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+		      document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+		      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+		    }
+		  }
+		  xmlhttp.open("GET","php/livesearch.php?q="+str,true);
+		  xmlhttp.send();
+		}
 	</script>
 </html>
