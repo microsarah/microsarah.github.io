@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Karla:400,700);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 
-
 body{
 	font-family: 'Karla', sans-serif;
 	font-size:12px;
@@ -56,7 +55,7 @@ h2{
     font-size: 2.6em;
     /*line-height: 1.618em;*/
     letter-spacing: .05em;
-    margin: 0 0 0em;
+    /*margin: 0 0 0em;*/
     font-weight: 700;
 }
 
@@ -93,6 +92,10 @@ h2 + h3{
 	margin:0 0 1em;
 }
 
+a{
+	text-decoration: none;
+}
+
 hr{
 	border:none;
 	height:.25em;
@@ -102,11 +105,9 @@ hr{
 	display: none;
 }
 
-.project-wrap{
-	
+main{
 	width:80%;
-
-/*	position:relative;*/
+	max-width: 1300px;
 	overflow:auto;
 	margin:100px auto 0;
 }
@@ -119,7 +120,7 @@ hr{
 
 .col{
 	width:24.33%;
-	min-height: 255px;
+	height: 280px;
 	/*border:1px solid #000;*/
 	position: relative;
 	padding:0 5% 30px 0;
@@ -131,7 +132,7 @@ hr{
 .col h2{
 	font-size:2em;
 	line-height: auto;
-	margin-bottom:.5em;
+	margin-bottom:.25em;
 }
 
 
