@@ -205,7 +205,11 @@ a:hover > .col img{
 }
 
 a:link{
+<<<<<<< HEAD
 	color:inherit;
+=======
+	color:#3E3E3E;
+>>>>>>> master
 }
 
 a:visited{
