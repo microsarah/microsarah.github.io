@@ -1,28 +1,29 @@
 /**
  * @license
  * MyFonts Webfont Build ID 3218652, 2016-05-14T09:56:58-0400
- * 
+ *
  * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
+ * Agreement(s) entered into by the website owner. All other parties are
  * explicitly restricted from using the Licensed Webfonts(s).
- * 
+ *
  * You may obtain a valid license at the URLs below.
- * 
+ *
  * Webfont: Larsseit-Light by Type Dynamic
  * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/light/
- * 
+ *
  * Webfont: Larsseit-Medium by Type Dynamic
  * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/medium/
- * 
- * 
+ *
+ *
  * License: http://www.myfonts.com/viewlicense?type=web&buildid=3218652
  * Licensed pageviews: 10,000
  * Webfonts copyright: Copyright (c) 2013 by Type Dynamic. All rights reserved.
- * 
+ *
  * © 2016 MyFonts Inc
 */
 
-
+/*@import 'https://fonts.googleapis.com/css?family=Mirza';*/
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
 @import url("//hello.myfonts.net/count/311cdc");
 @font-face {
 	font-family: 'Larsseit-Light';
@@ -33,7 +34,7 @@
 		 url('webfonts/311CDC_0_0.woff2') format('woff2'),
 		 url('webfonts/311CDC_0_0.woff') format('woff'),
 		 url('webfonts/311CDC_0_0.ttf') format('truetype');
-}  
+}
 
 @font-face {
 	font-family: 'Larsseit-Medium';
@@ -45,7 +46,7 @@
 		 url('webfonts/311CDC_1_0.woff') format('woff'),
 		 url('webfonts/311CDC_1_0.ttf') format('truetype');
 }
- 
+
 
 *{
 	margin:0;
@@ -54,9 +55,8 @@
 }
 
 body{
-	
-	font-family: 'Larsseit-Light', Arial, sans-serif;
 
+	font-family: 'Inconsolata', monospace;
 	color:#0206ba;
 	font-size: 16px;
 }
@@ -69,7 +69,8 @@ aside{
 }
 
 h1{
-	font-family: 'Larsseit-Medium', Arial, sans-serif;
+	font-family: 'Larsseit-Medium', sans-serif;
+	font-size:5em;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -85,22 +86,28 @@ h4{
 
 p{
 	line-height: 1.68em;
-	margin:0 0 1em; 
+	margin:0 0 1em;
+	width:100%;
+	max-width: 29em;
 }
 
 a{
-	font-family: 'Larsseit-Medium', Arial, sans-serif;
 	text-decoration: none;
 	color:#0206ba;
 	-webkit-transition: all ease-in-out .25s;
 	-moz-transition: all ease-in-out .25s;
 	-o-transition: all ease-in-out .25s;
 	transition: all ease-in-out .25s;
+	border-bottom:1px dotted #f93048;
 }
 
 ul{
 	list-style: none;
 	padding:0;
+}
+
+li{
+	margin:0 0 .4em;
 }
 
 figcaption{
@@ -129,14 +136,15 @@ footer{
 
 footer nav{
 	padding:.5em;
+	text-align: center;
 }
 
 footer nav a{
-	
 	font-size: .8125em;
 	color: #0206ba;
-	margin:.5em;
-	padding:.25em .5em;
+	margin:.5em 1em;
+	padding:.25em
+
 }
 
 /* ---------------------------------------- all pages*/
@@ -168,7 +176,8 @@ footer nav a{
 	font-family: 'Larsseit-Light', Arial, sans-serif;
 	color: #f93048;
 	font-size: 2em;
-	padding:.25em;
+	padding: .4em .25em .25em;
+	border-bottom: none;
 }
 
 #logo a:hover{
@@ -229,31 +238,34 @@ footer nav a{
 	position: relative;
 	height:2400px;
 	background:#F9DEDA;
-	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%); 
+	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 ); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
 }
 
 #home h1{
-	font-size:3.5em;
-	width: 14.2em;
+	font-family: 'Larsseit-Medium', sans-serif;
+	font-size:4.5em;
+	line-height:.8em;
+	color:#0206ba;
+	width: 13em;
 	position: fixed;
-	top:4em;
+	top:3em;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 100;
-	color: #fff;
 }
 
 #home figure{
 	width:500px;
 	position: absolute;
 	z-index: 0;
-	-webkit-transition: z-index ease-in-out .2s;
-	-moz-transition: z-index ease-in-out .2s;
-	-o-transition: z-index ease-in-out .2s;
-	transition: z-index ease-in-out .2s;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+
 }
 
 #home figure:hover{
@@ -279,23 +291,6 @@ footer nav a{
 	padding:2em;
 	height:100%;
 }
-
-/* ------------------- index thumbs */
-
-/*	
-
-	ux3
-	clouds
-	listening
-	lj
-	mmt
-	invibed
-	herehere
-	nighttweets
-	mixed
-	yolo
-
-*/
 
 #heartbreak{
 	top:0;
@@ -323,30 +318,36 @@ footer nav a{
 }
 
 #invibed{
-	top:1020px;
-	left:3%;
+	top:1000px;
+	left:7%;
 }
 
 #herehere{
-	top:1500px;
-	left:33%;
+	top:1450px;
+	right:22%;
 }
 
 #nighttweets{
-	top:1800px;
-	left:0;
+	top:1400px;
+	left:15%;
 	width:31%;
+
+}
+
+#nighttweets figcaption,
+#ljjord figcaption{
+	float: none;
 }
 
 #signals{
-	top:1800px;
-	left:33%;
+	top:1830px;
+	left:10%;
 	width:31%;
 }
 
 #yolo{
-	top:1800px;
-	left:66%;
+	top:1830px;
+	right:10%;
 	width:31%;
 }
 
@@ -358,39 +359,43 @@ footer nav a{
 	-moz-transition: background ease-in-out .25s;
 	-o-transition: background ease-in-out .25s;
 	transition: background ease-in-out .25s;
-	background:#FEF9F9;
-	background: -moz-linear-gradient(top,  #FEF9F9 0%, #fff 100%); 
-	background: -webkit-linear-gradient(top,  #FEF9F9 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #FEF9F9 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEF9F9', endColorstr='#fff',GradientType=0 ); 
+	background:#fff;
+}
+
+.project-page header{
+	margin:3em 3em 1em;
 }
 
 .project-page h2{
-	font-family: 'Larsseit-Medium', Arial, sans-serif;
+	font-family: 'Larsseit-Medium', sans-serif;
+	margin-bottom:.375em;
 }
 
+.project-info{
+	width:80%;
+	margin:auto;
+}
 
-/*.project-page main{
-	width:75%;
+.project-info div{
 	float: left;
-	padding-right:3em;
-}*/
-
-/*.project-page h1{
-	font-size: 3em;
-	text-align: center;
-}*/
-
+	padding:1em;
+	margin:0 2em;
+}
 
 .project-desc{
 	width:33.33%;
 }
 
 .project-nav{
-	max-width: 1300px;
+	width:50%;
 	margin:auto;
 	text-align: center;
 	padding:1em;
+}
+
+.project-nav h1{
+	font-family: 'Larsseit-Medium', Arial, sans-serif;
+	font-size: 1.5em;
 }
 
 .project-nav div{
@@ -402,6 +407,7 @@ footer nav a{
 	-moz-transition: all ease-in-out .25s;
 	-o-transition: all ease-in-out .25s;
 	transition: all ease-in-out .25s;
+	min-height: 250px;
 }
 
 .project-nav div:hover{
@@ -413,11 +419,6 @@ footer nav a{
 	border-right: 1px dotted #0206ba;
 }
 
-
-/*.project-desc .col-2{
-	max-width: 30em;
-}*/
-
 .project-page #logo{
 	margin:auto;
 }
@@ -426,34 +427,68 @@ footer nav a{
 	color: #FEF9F9;
 }
 
-.project-desc,
-.project-role,
-.project-rec{
+.col-2,
+.col-3,
+.col-4{
 	float: left;
+	padding:1em;
 }
 
 .col-2{
 	width:50%;
-	float: left;
-	padding:1em;
 }
 
 .col-3{
 	width:33.33%;
-	float: left;
-	padding:1em;
 }
 
 .col-4{
 	width: 25%;
-	float: left;
-	padding:1em;
 }
 
+@media screen and (max-width:1190px){
+	.col-4{
+		width:50%;
+	}
+	.project-nav{
+		width: 100%;
+	}
+}
 
+@media screen and (max-width:1050px){
+	#home figure{
+		position: static;
+		width:31.33%;
+		float:left;
+		margin:1%;
+		height:300px;
+	}
 
+	#home{
+		height: auto;
+	}
 
+	#yolo{
 
+	}
+}
 
+@media screen and (max-width:900px){
+	.col-2,
+	.col-3
+	.col-4{
+		width:100%;
+	}
 
+	.col-1{
+		padding:1em;
+	}
 
+	#home figure{
+		position: static;
+		width:48%;
+		float:left;
+		margin:1%;
+		height:350px;
+	}
+}
