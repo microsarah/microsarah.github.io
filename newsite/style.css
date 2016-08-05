@@ -1,0 +1,494 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3218652, 2016-05-14T09:56:58-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Larsseit-Light by Type Dynamic
+ * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/light/
+ *
+ * Webfont: Larsseit-Medium by Type Dynamic
+ * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/medium/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3218652
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2013 by Type Dynamic. All rights reserved.
+ *
+ * © 2016 MyFonts Inc
+*/
+
+/*@import 'https://fonts.googleapis.com/css?family=Mirza';*/
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+@import url("//hello.myfonts.net/count/311cdc");
+@font-face {
+	font-family: 'Larsseit-Light';
+	font-weight: normal;
+	font-style: normal;
+	src: url('webfonts/311CDC_0_0.eot');
+	src: url('webfonts/311CDC_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('webfonts/311CDC_0_0.woff2') format('woff2'),
+		 url('webfonts/311CDC_0_0.woff') format('woff'),
+		 url('webfonts/311CDC_0_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Larsseit-Medium';
+	font-weight: bold;
+	font-style: normal;
+	src: url('webfonts/311CDC_1_0.eot');
+	src: url('webfonts/311CDC_1_0.eot?#iefix') format('embedded-opentype'),
+		 url('webfonts/311CDC_1_0.woff2') format('woff2'),
+		 url('webfonts/311CDC_1_0.woff') format('woff'),
+		 url('webfonts/311CDC_1_0.ttf') format('truetype');
+}
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+
+	font-family: 'Inconsolata', monospace;
+	color:#0206ba;
+	font-size: 16px;
+}
+
+
+
+aside{
+	width:25%;
+	float: left;
+}
+
+h1{
+	font-family: 'Larsseit-Medium', sans-serif;
+	font-size:5em;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h2{
+
+}
+
+h4{
+	font-family: 'Larsseit-Light', Arial, sans-serif;
+	margin:0 0 2em;
+}
+
+p{
+	line-height: 1.68em;
+	margin:0 0 1em;
+	width:100%;
+	max-width: 29em;
+}
+
+a{
+	text-decoration: none;
+	color:#0206ba;
+	-webkit-transition: all ease-in-out .25s;
+	-moz-transition: all ease-in-out .25s;
+	-o-transition: all ease-in-out .25s;
+	transition: all ease-in-out .25s;
+	border-bottom:1px dotted #f93048;
+}
+
+ul{
+	list-style: none;
+	padding:0;
+}
+
+li{
+	margin:0 0 .4em;
+}
+
+figcaption{
+	font-size: .8em;
+	letter-spacing: .1em;
+	margin: .5em 0;
+	float: right;
+}
+
+figcaption > span{
+	font-weight:700;
+	padding-right:.5em;
+}
+
+img{
+	width: 100%;
+}
+
+footer{
+	width:100%;
+	background-color: #fff;
+	padding:3em;
+/*	position: absolute;
+	bottom: 0;*/
+}
+
+footer nav{
+	padding:.5em;
+	text-align: center;
+}
+
+footer nav a{
+	font-size: .8125em;
+	color: #0206ba;
+	margin:.5em 1em;
+	padding:.25em
+
+}
+
+/* ---------------------------------------- all pages*/
+
+::selection{
+	background-color: #0206ba;
+}
+
+.clearfix:after{
+	content: ' ';
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+	visibility: hidden;
+}
+
+.wrap{
+	max-width: 1600px;
+	margin:auto;
+}
+
+#logo{
+	padding:2em;
+	width: 7em;
+}
+
+#logo a{
+	font-family: 'Larsseit-Light', Arial, sans-serif;
+	color: #f93048;
+	font-size: 2em;
+	padding: .4em .25em .25em;
+	border-bottom: none;
+}
+
+#logo a:hover{
+	background:#f93048;
+	color: #F9DEDA;
+}
+
+
+/* ---------------------------------------- index page*/
+
+.thumb{
+	width:120px;
+	height:150px;
+	position:relative;
+	overflow:hidden;
+}
+
+.thumb:after{
+	content:" ";
+	position:absolute;
+	top:0;
+	left:95px;
+	width:0;
+	height:0;
+	border-right:25px solid white;
+	border-bottom:25px solid transparent;
+	z-index:100;
+}
+
+.thumb img{
+	width: auto;
+	height:100%;
+	-webkit-transform: translateX(-25%);
+	-moz-transform: translateX(-25%);
+	-o-transform: translateX(-25%);
+	transform: translateX(-25%);
+}
+
+.main-thumb{
+	position: relative;
+}
+
+.overlay{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0206ba;
+	opacity: .35;
+	-webkit-transition: opacity ease-in-out .35s;
+	-moz-transition: opacity ease-in-out .35s;
+	-o-transition: opacity ease-in-out .35s;
+	transition: opacity ease-in-out .35s;
+}
+
+#home{
+	position: relative;
+	height:2400px;
+	background:#F9DEDA;
+	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
+}
+
+#home h1{
+	font-family: 'Larsseit-Medium', sans-serif;
+	font-size:4.5em;
+	line-height:.8em;
+	color:#0206ba;
+	width: 13em;
+	position: fixed;
+	top:3em;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+
+#home figure{
+	width:500px;
+	position: absolute;
+	z-index: 0;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+
+}
+
+#home figure:hover{
+	z-index: 100;
+}
+
+#home figure:hover .overlay{
+	opacity: 0;
+}
+
+#home figure img{
+	width: 100%;
+	display: block;
+}
+
+#home footer{
+	position: absolute;
+	bottom: 0;
+	left:0;
+}
+
+#home .wrap{
+	padding:2em;
+	height:100%;
+}
+
+#heartbreak{
+	top:0;
+	right:0;
+}
+
+#clouds{
+	top:150px;
+	left:0;
+}
+
+#machines{
+	top:430px;
+	right:10%;
+}
+
+#ljjord{
+	top:580px;
+	right:40%;
+}
+
+#mmt{
+	top:960px;
+	right:0;
+}
+
+#invibed{
+	top:1000px;
+	left:7%;
+}
+
+#herehere{
+	top:1450px;
+	right:22%;
+}
+
+#nighttweets{
+	top:1400px;
+	left:15%;
+	width:31%;
+
+}
+
+#nighttweets figcaption,
+#ljjord figcaption{
+	float: none;
+}
+
+#signals{
+	top:1830px;
+	left:10%;
+	width:31%;
+}
+
+#yolo{
+	top:1830px;
+	right:10%;
+	width:31%;
+}
+
+/* ---------------------------------------- project page*/
+
+
+.project-page{
+	-webkit-transition: background ease-in-out .25s;
+	-moz-transition: background ease-in-out .25s;
+	-o-transition: background ease-in-out .25s;
+	transition: background ease-in-out .25s;
+	background:#fff;
+}
+
+.project-page header{
+	margin:3em 3em 1em;
+}
+
+.project-page h2{
+	font-family: 'Larsseit-Medium', sans-serif;
+	margin-bottom:.375em;
+}
+
+.project-info{
+	width:80%;
+	margin:auto;
+}
+
+.project-info div{
+	float: left;
+	padding:1em;
+	margin:0 2em;
+}
+
+.project-desc{
+	width:33.33%;
+}
+
+.project-nav{
+	width:50%;
+	margin:auto;
+	text-align: center;
+	padding:1em;
+}
+
+.project-nav h1{
+	font-family: 'Larsseit-Medium', Arial, sans-serif;
+	font-size: 1.5em;
+}
+
+.project-nav div{
+	background: #fff;
+	width: 50%;
+	float: left;
+	padding: 3em 3em 4em;
+	-webkit-transition: all ease-in-out .25s;
+	-moz-transition: all ease-in-out .25s;
+	-o-transition: all ease-in-out .25s;
+	transition: all ease-in-out .25s;
+	min-height: 250px;
+}
+
+.project-nav div:hover{
+	background:#0206ba;
+	color: #fff;
+}
+
+.project-nav a:first-of-type div{
+	border-right: 1px dotted #0206ba;
+}
+
+.project-page #logo{
+	margin:auto;
+}
+
+.project-page #logo a:hover{
+	color: #FEF9F9;
+}
+
+.col-2,
+.col-3,
+.col-4{
+	float: left;
+	padding:1em;
+}
+
+.col-2{
+	width:50%;
+}
+
+.col-3{
+	width:33.33%;
+}
+
+.col-4{
+	width: 25%;
+}
+
+@media screen and (max-width:1190px){
+	.col-4{
+		width:50%;
+	}
+	.project-nav{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:1050px){
+	#home figure{
+		position: static;
+		width:31.33%;
+		float:left;
+		margin:1%;
+		height:300px;
+	}
+
+	#home{
+		height: auto;
+	}
+
+	#yolo{
+
+	}
+}
+
+@media screen and (max-width:900px){
+	.col-2,
+	.col-3
+	.col-4{
+		width:100%;
+	}
+
+	.col-1{
+		padding:1em;
+	}
+
+	#home figure{
+		position: static;
+		width:48%;
+		float:left;
+		margin:1%;
+		height:350px;
+	}
+}
