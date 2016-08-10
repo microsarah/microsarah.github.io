@@ -2,10 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 
 body{
-	font-family: 'Karla', sans-serif;
+	font-family: 'Inconsolata', sans-serif;
 	font-size:12px;
 	background-color: #fff;
-	color:#3337A2;
+	/*color:#3337A2;*/
+	color: #4f4ff6;
 }
 
 header{
@@ -16,6 +17,10 @@ h1,
 h2,
 h3{
 	font-family: 'Karla', sans-serif;
+}
+
+h3{
+	color:green;
 }
 
 h1 a, 

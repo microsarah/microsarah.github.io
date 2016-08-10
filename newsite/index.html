@@ -4,132 +4,132 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SarahKHallacher</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
 
 	<!-- source: http://codepen.io/nickcil/pen/sfutl/ -->
-
-</head>
-<body id="home">
-	<div class="wrap">
-	<header>
-		<div id="logo"><a href="index.html">sh</a></div>
-		<h1>Sarah K Hallacher /<br>designer, developer & artist</h1>
-	</header>
-
-	<main class="clearfix">
-		<a href="user-experience-of-a-heartbreak.html">
-	 		<figure id="heartbreak">
-	 			<div class="main-thumb">
-		 			<div class="overlay"></div>
-		 			<img src="assets/thumb-heartbreak.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>01</span>User Experience of a Heartbreak</figcaption>
-			</figure>
-		</a>
-
-		<a href="clouds.html">
-	 		<figure id="clouds">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-clouds.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>02</span>CLOUDS</figcaption>
-			</figure>
-		</a>
-
-	 	<a href="listening-machines.html">
-	 		<figure id="machines">
-		 		<div class="main-thumb">
-		 			<div class="overlay"></div>
-		 			<img src="assets/thumb-machines.jpg" alt="#" title="#">
-		 		</div>
-				<figcaption><span>03</span>listening machines</figcaption>
-			</figure>
-		</a>
-
-		<a href="lj-and-jord.html">
-	 		<figure id="ljjord">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-ljjord.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>04</span>LJ and Jord get married dot com</figcaption>
-			</figure>
-		</a>
-
-		<a href="meow-meow-tweet.html">
-	 		<figure id="mmt">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div><img src="assets/thumb-mmt.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>05</span>Meow Meow Tweet</figcaption>
-			</figure>
-		</a>
-
-		<a href="invibed.html">
-	 		<figure id="invibed">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-ljjord.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>06</span>invibed dot com</figcaption>
-			</figure>
-		</a>
-
-		<a href="here-here.html">
-	 		<figure id="herehere">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-herehere.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>07</span>herehere</figcaption>
-			</figure>
-		</a>
-
-		<a href="night-tweets.html">
-	 		<figure id="nighttweets">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-nighttweets.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>08</span>nighttweets</figcaption>
-			</figure>
-		</a>
-
-		<a href="mixed-signals.html">
-	 		<figure id="signals">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-signals.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>09</span>mixed signals</figcaption>
-			</figure>
-		</a>
-
-		<a href="yolo.html">
-	 		<figure id="yolo">
-	 			<div class="main-thumb">
-	 				<div class="overlay"></div>
-	 				<img src="assets/thumb-yolo.jpg" alt="#" title="#">
-	 			</div>
-				<figcaption><span>10</span>YOLO</figcaption>
-			</figure>
-		</a>
-
-	</main>
-	<footer>
-		<nav>
-			<a href="#">about + contact</a>
-			<a href="#">archive</a>
-		</nav>
-	</footer>
-	</div>
-  <script type="text/javascript">
+	  <script type="text/javascript">
   $(window).scroll(function(){
       $("#title").css("opacity", 1 - $(window).scrollTop() / 300);
       $("#title").css("z-index", 1 - $(window).scrollTop() / 300);
   });</script>
+
+</head>
+<body id="home">
+	<div class="container">
+		<header>
+			<h1>Sarah K Hallacher /<br>designer, developer & artist</h1>
+		</header>
+
+		<main class="clearfix">
+			<a href="user-experience-of-a-heartbreak.html">
+		 		<figure class="col-md-4 col-sm-6" id="heartbreak">
+		 			<div class="main-thumb">
+			 			<div class="overlay"></div>
+			 			<img src="assets/thumb-heartbreak.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>01</span>User Experience of a Heartbreak</figcaption>
+				</figure>
+			</a>
+
+			<a href="clouds.html">
+		 		<figure class="col-md-4 col-sm-6" id="clouds">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-clouds.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>02</span>CLOUDS</figcaption>
+				</figure>
+			</a>
+
+		 	<a href="listening-machines.html">
+		 		<figure class="col-md-4 col-sm-6" id="machines">
+			 		<div class="main-thumb">
+			 			<div class="overlay"></div>
+			 			<img src="assets/thumb-machines.jpg" alt="#" title="#">
+			 		</div>
+					<figcaption><span>03</span>listening machines</figcaption>
+				</figure>
+			</a>
+
+			<a href="lj-and-jord.html">
+		 		<figure class="col-md-4 col-sm-6" id="ljjord">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-ljjord.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>04</span>LJ and Jord get married dot com</figcaption>
+				</figure>
+			</a>
+
+			<a href="meow-meow-tweet.html">
+		 		<figure class="col-md-4 col-sm-6" id="mmt">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div><img src="assets/thumb-mmt.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>05</span>Meow Meow Tweet</figcaption>
+				</figure>
+			</a>
+
+			<a href="invibed.html">
+		 		<figure class="col-md-4 col-sm-6" id="invibed">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-ljjord.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>06</span>invibed dot com</figcaption>
+				</figure>
+			</a>
+
+			<a href="here-here.html">
+		 		<figure class="col-md-4 col-sm-6" id="herehere">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-herehere.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>07</span>herehere</figcaption>
+				</figure>
+			</a>
+
+			<a href="night-tweets.html">
+		 		<figure class="col-md-4 col-sm-6" id="nighttweets">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-nighttweets.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>08</span>nighttweets</figcaption>
+				</figure>
+			</a>
+
+			<a href="mixed-signals.html">
+		 		<figure class="col-md-4 col-sm-6" id="signals">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-signals.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>09</span>mixed signals</figcaption>
+				</figure>
+			</a>
+
+			<a href="yolo.html">
+		 		<figure class="col-md-4 col-sm-6" id="yolo">
+		 			<div class="main-thumb">
+		 				<div class="overlay"></div>
+		 				<img src="assets/thumb-yolo.jpg" alt="#" title="#">
+		 			</div>
+					<figcaption><span>10</span>YOLO</figcaption>
+				</figure>
+			</a>
+
+		</main>
+	</div>
+	<footer>
+		<nav>
+			<a href="#">about</a>
+			<a href="#">resume</a>
+			<a href="#">archive</a>
+		</nav>
+	</footer>
 </body>
 </html>
