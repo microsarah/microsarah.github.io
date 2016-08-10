@@ -1,0 +1,336 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3218652, 2016-05-14T09:56:58-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Larsseit-Light by Type Dynamic
+ * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/light/
+ *
+ * Webfont: Larsseit-Medium by Type Dynamic
+ * URL: http://www.myfonts.com/fonts/typedynamic/larsseit/medium/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3218652
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2013 by Type Dynamic. All rights reserved.
+ *
+ * © 2016 MyFonts Inc
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+@font-face {
+	font-family: 'Larsseit-Light';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../webfonts/311CDC_0_0.eot');
+	src: url('../webfonts/311CDC_0_0.eot?#iefix') format('embedded-opentype'),
+		 url('../webfonts/311CDC_0_0.woff2') format('woff2'),
+		 url('../webfonts/311CDC_0_0.woff') format('woff'),
+		 url('../webfonts/311CDC_0_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Larsseit-Medium';
+	font-weight: bold;
+	font-style: normal;
+	src: url('../webfonts/311CDC_1_0.eot');
+	src: url('../webfonts/311CDC_1_0.eot?#iefix') format('embedded-opentype'),
+		 url('../webfonts/311CDC_1_0.woff2') format('woff2'),
+		 url('../webfonts/311CDC_1_0.woff') format('woff'),
+		 url('../webfonts/311CDC_1_0.ttf') format('truetype');
+}
+
+body{
+  font-family: 'Inconsolata', monospace;;
+  font-size: 16px;
+  color:#0206ba;
+}
+
+h1, h2, h3{
+  font-family: Larsseit-Medium, sans-serif;
+}
+
+h1{
+	font-size:5em;
+}
+
+p{
+	line-height: 1.68em;
+	margin:0 0 1em;
+}
+
+ul{
+  padding-left:1.25em;
+  list-style-type: square;
+}
+
+li{
+	margin:0 0 .4em;
+}
+
+a{
+	text-decoration: none;
+	color:#0206ba;
+	-webkit-transition: all ease-in-out .25s;
+	-moz-transition: all ease-in-out .25s;
+	-o-transition: all ease-in-out .25s;
+	transition: all ease-in-out .25s;
+	border-bottom:1px dotted #f93048;
+}
+
+a:hover{
+	text-decoration: none;
+  color: #f93048;
+}
+
+header{
+  overflow: hidden;
+}
+
+main{
+  clear: both;
+}
+
+main img{
+  position: absolute;
+}
+
+main img:nth-of-type(1){
+  top:0;
+  right:0;
+  width:50%;
+}
+
+main img:nth-of-type(2){
+  top:550px;
+  left:0;
+  width:80%;
+}
+
+aside{
+  background: #ffffff;
+  padding:1em;
+  position: absolute;
+  top:300px;
+  right:2%;
+  clear: both;
+}
+
+img{
+  width:100%;
+}
+
+figcaption{
+	font-size: .8em;
+	letter-spacing: .1em;
+	margin: .5em 0;
+	float: right;
+}
+
+figcaption > span{
+	font-weight:700;
+	padding-right:.5em;
+}
+
+::selection{
+	background-color: #0206ba;
+}
+
+.clearfix:after{
+	content: ' ';
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+	visibility: hidden;
+}
+
+.main-thumb{
+	position: relative;
+}
+
+.overlay{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	background-color: #0206ba;
+	opacity: .35;
+	-webkit-transition: opacity ease-in-out .35s;
+	-moz-transition: opacity ease-in-out .35s;
+	-o-transition: opacity ease-in-out .35s;
+	transition: opacity ease-in-out .35s;
+}
+
+#home{
+	position: relative;
+	height:2400px;
+	background:#F9DEDA;
+	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
+}
+
+#home h1{
+	font-size:4em;
+	line-height:1em;
+	color:#fff;
+	width: 14em;
+	letter-spacing: .05em;
+	position: fixed;
+	top:3em;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+
+#home figure{
+	max-width:500px;
+	position: absolute;
+	z-index: 0;
+	-webkit-transition: all ease-in-out .2s;
+	-moz-transition: all ease-in-out .2s;
+	-o-transition: all ease-in-out .2s;
+	transition: all ease-in-out .2s;
+}
+
+#home figure:hover{
+	z-index: 100;
+}
+
+#home figure:hover .overlay{
+	opacity: 0;
+}
+
+#home figure img{
+	width: 100%;
+	display: block;
+}
+
+#home footer{
+	position: absolute;
+	bottom: 0;
+	left:0;
+}
+
+#heartbreak{
+	top:0;
+	right:0;
+}
+
+#clouds{
+	top:150px;
+	left:0;
+}
+
+#machines{
+	top:430px;
+	right:10%;
+}
+
+#ljjord{
+	top:580px;
+	right:40%;
+}
+
+#mmt{
+	top:960px;
+	right:0;
+}
+
+#invibed{
+	top:1000px;
+	left:7%;
+}
+
+#herehere{
+	top:1450px;
+	right:22%;
+}
+
+#nighttweets{
+	top:1400px;
+	left:15%;
+	width:31%;
+
+}
+
+#nighttweets figcaption,
+#ljjord figcaption{
+	float: none;
+}
+
+#signals{
+	top:1830px;
+	left:10%;
+	width:31%;
+}
+
+#yolo{
+	top:1830px;
+	right:10%;
+	width:31%;
+}
+
+@media screen and (max-width:1050px){
+	#home{
+		height: auto;
+	}
+
+	#home main{
+		margin:0 0 2.5em;
+	}
+
+	#home h1{
+		color: #0206ba;
+		font-size: 3em;
+		width: auto;
+		position: static;
+		top:auto;
+		left: auto;
+		transform: none;
+		padding:1em 15px;
+	}
+
+	#home figure{
+		position: relative;
+	}
+
+	#home footer{
+		position: relative;
+		bottom:auto;
+		left:auto;
+	}
+
+	#heartbreak,
+	#clouds,
+	#machines,
+	#ljjord,
+	#mmt,
+	#invibed,
+	#herehere,
+	#nighttweets,
+	#signals,
+	#yolo{
+		top:auto;
+		right:auto;
+		bottom:auto;
+		left:auto;
+		width:100%;
+	}
+}
+
+@media screen and (max-width:765px){
+	#home figure{
+		max-width: 100%;
+		margin:auto;
+	}
+}
