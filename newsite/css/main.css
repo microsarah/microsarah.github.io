@@ -52,7 +52,7 @@ body{
 }
 
 h1, h2, h3{
-  font-family: Larsseit-Medium, sans-serif;
+  font-family: 'Larsseit-Medium', sans-serif;
 }
 
 h1{
@@ -92,12 +92,17 @@ header{
   overflow: hidden;
 }
 
-main{
-  clear: both;
+header nav{
+	display: none;
 }
 
-main img{
-  position: absolute;
+input,
+label{
+	display: none;
+}
+
+main{
+  clear: both;
 }
 
 main img:nth-of-type(1){
@@ -137,6 +142,25 @@ figcaption > span{
 	padding-right:.5em;
 }
 
+footer{
+	width:100%;
+	background-color: #fff;
+	padding:3em;
+}
+
+footer nav{
+	padding:.5em;
+	text-align: center;
+}
+
+footer nav a{
+	font-size: .8125em;
+	color: #0206ba;
+	margin:.5em 1em;
+	padding:.25em
+
+}
+
 ::selection{
 	background-color: #0206ba;
 }
@@ -169,9 +193,15 @@ figcaption > span{
 	transition: opacity ease-in-out .35s;
 }
 
-#home{
+#home-wrap{
 	position: relative;
+	max-width: 1600px;
+	margin:auto;
 	height:2400px;
+}
+
+#home{
+
 	background:#F9DEDA;
 	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
@@ -182,7 +212,7 @@ figcaption > span{
 #home h1{
 	font-size:4em;
 	line-height:1em;
-	color:#fff;
+	color: #fff;
 	width: 14em;
 	letter-spacing: .05em;
 	position: fixed;
@@ -215,7 +245,7 @@ figcaption > span{
 	display: block;
 }
 
-#home footer{
+#home-wrap footer{
 	position: absolute;
 	bottom: 0;
 	left:0;
@@ -259,7 +289,6 @@ figcaption > span{
 #nighttweets{
 	top:1400px;
 	left:15%;
-	width:31%;
 
 }
 
@@ -271,22 +300,24 @@ figcaption > span{
 #signals{
 	top:1830px;
 	left:10%;
-	width:31%;
 }
 
 #yolo{
 	top:1830px;
 	right:10%;
-	width:31%;
 }
 
-@media screen and (max-width:1050px){
-	#home{
+@media screen and (max-width:1199px){
+	figcaption{
+		float: none;
+	}
+
+	#home-wrap{
 		height: auto;
 	}
 
 	#home main{
-		margin:0 0 2.5em;
+		margin:0 0 7em;
 	}
 
 	#home h1{
@@ -301,13 +332,7 @@ figcaption > span{
 	}
 
 	#home figure{
-		position: relative;
-	}
-
-	#home footer{
-		position: relative;
-		bottom:auto;
-		left:auto;
+		position: static;
 	}
 
 	#heartbreak,
@@ -324,13 +349,116 @@ figcaption > span{
 		right:auto;
 		bottom:auto;
 		left:auto;
-		width:100%;
+	}
+
+	#mmt{
+		margin:-2.5em 0 0;
+	}
+
+	#invibed{
+		margin:-1em 0 0;
+	}
+
+	#herehere{
+		margin:1.5em 0 0;
+	}
+
+	#nighttweets{
+		margin:.75em 0 0;
+	}
+
+	#ljjord,
+	#signals,
+	#yolo{
+		margin:1em 0 0;
 	}
 }
 
-@media screen and (max-width:765px){
+@media screen and (max-width:991px){
+		#mmt,
+		#invibed{
+			margin:1em 0;
+		}
+
+		#herehere,
+		#nighttweets,
+		#ljjord,
+		#signals,
+		#yolo{
+			margin:0;
+		}
+}
+
+@media screen and (max-width:768px){
+	header{
+		position: relative;
+	}
+
+	label{
+		color: #f93048;
+		display: block;
+		float: right;
+		padding: 2em 15px 0;
+	}
+
+	input:checked + nav{
+		display: block;
+		position: absolute;
+		right: 15px;
+		top:4.5em;
+		width:100px;
+	}
+
+	header nav a{
+		display: block;
+		text-align: right;
+		padding:0;
+		margin:.5em 0;
+		border-bottom: none;
+	}
+
+	.overlay{
+		opacity: .15;
+		max-width: 100%;
+	}
+
+	#home h1{
+			float: left;
+		  padding: .5em 15px;
+	}
+
+	#home h1 span{
+		display: block;
+	}
+
 	#home figure{
 		max-width: 100%;
-		margin:auto;
+		margin:0 auto 1.5em;
+	}
+}
+
+@media screen and (max-width:480px){
+	label{
+		float: none;
+		text-align: left;
+		padding:15px;
+	}
+
+	input:checked + nav{
+		position: static;
+		right: auto;
+		top:auto;
+		width:100%;
+		margin: 0 0 2em;
+	}
+
+	header nav a{
+		text-align: left;
+		margin: .5em 15px;
+	}
+
+	#home h1{
+			float: none;
+			padding: .5em 15px 0;
 	}
 }
