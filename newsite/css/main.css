@@ -47,7 +47,7 @@
 
 body{
   font-family: 'Inconsolata', monospace;;
-  font-size: 16px;
+  font-size: 15px;
   color:#0206ba;
 }
 
@@ -56,7 +56,13 @@ h1, h2, h3{
 }
 
 h1{
-	font-size:5em;
+	font-size:1.75em;
+	line-height:1.25em;
+}
+
+h2{
+	font-size:1.25em;
+	margin:2em 0 0.5em;
 }
 
 p{
@@ -66,7 +72,8 @@ p{
 
 ul{
   padding-left:1.25em;
-  list-style-type: square;
+  list-style-type: none;
+	padding:0 0 0 2em;
 }
 
 li{
@@ -105,25 +112,26 @@ main{
   clear: both;
 }
 
-main img:nth-of-type(1){
-  top:0;
-  right:0;
-  width:50%;
-}
-
-main img:nth-of-type(2){
-  top:550px;
-  left:0;
-  width:80%;
-}
-
 aside{
-  background: #ffffff;
-  padding:1em;
+	width:320px;
+	background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #eee 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee', endColorstr='#fff',GradientType=0 );
+  padding:2.5em 2em 2em;
   position: absolute;
   top:300px;
-  right:2%;
+  right:12%;
   clear: both;
+	z-index: 2;
+}
+
+aside div:nth-of-type(2){
+	margin:2.5em 0 .5em;
+}
+
+aside h2{
+	margin:0 0 .5em;
 }
 
 img{
@@ -193,6 +201,43 @@ footer nav a{
 	transition: opacity ease-in-out .35s;
 }
 
+.project{
+	position: relative;
+	background:#e8e8e8;
+	/*background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #eee 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee', endColorstr='#fff',GradientType=0 );*/
+}
+
+#desc{
+	margin:4.5em 0 0;
+	padding:1em 2em 2em;
+	background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #eee 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee', endColorstr='#fff',GradientType=0 );
+}
+
+section{
+	clear: both;
+	padding:50em 0 20em;
+}
+
+section img:nth-of-type(1){
+	position: absolute;
+  top:0;
+  right:0;
+  width:50%;
+}
+
+section img:nth-of-type(2){
+	position: absolute;
+  top:550px;
+  left:0;
+  width:80%;
+}
+
 #home-wrap{
 	position: relative;
 	max-width: 1600px;
@@ -201,7 +246,6 @@ footer nav a{
 }
 
 #home{
-
 	background:#F9DEDA;
 	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
@@ -307,7 +351,21 @@ footer nav a{
 	right:10%;
 }
 
+#index{
+	color:#f93048;
+	border-bottom:none;
+	position: absolute;
+	top:1em;
+	left:1em;
+	line-height:1em;
+	text-align: center;
+}
+
 @media screen and (max-width:1199px){
+	section{
+		padding:40em 0 20em;
+	}
+
 	figcaption{
 		float: none;
 	}
@@ -328,7 +386,7 @@ footer nav a{
 		top:auto;
 		left: auto;
 		transform: none;
-		padding:1em 15px;
+		padding:1em 1em;
 	}
 
 	#home figure{
@@ -375,6 +433,43 @@ footer nav a{
 }
 
 @media screen and (max-width:991px){
+		aside{
+			width:100%;
+			position: static;
+			margin:2em 0 0;
+			background: none;
+		}
+
+		aside div:nth-of-type(2){
+			margin:0;
+		}
+
+		section{
+			padding:0 0 7em;
+		}
+
+		section img:nth-of-type(1),
+		section img:nth-of-type(2){
+			position: static;
+			top:auto;
+			right:auto;
+			left:auto;
+			padding: 0 1em;
+			width:100%;
+		}
+
+		section img{
+			margin: 0 0 1.5em;
+		}
+
+		.project header{
+				padding:0 0 0 1em;
+		}
+
+		.project main{
+				padding:0 0 0 55px;
+		}
+
 		#mmt,
 		#invibed{
 			margin:1em 0;
@@ -387,6 +482,32 @@ footer nav a{
 		#yolo{
 			margin:0;
 		}
+
+		#desc{
+			margin:2em 0 0;
+			padding:2em 2em 0;
+			background: none;
+		}
+
+		#project-info{
+			margin:1.5em 1em 1.5em;
+			background:#eee;
+			background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
+			background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
+			background: linear-gradient(to bottom,  #eee 0%, #fff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
+		}
+
+		#index{
+			display: block;
+			width:50px;
+			padding:10px;
+			margin:auto;
+			position: static;
+			top:auto;
+			left:auto;
+			text-align: center;
+		}
 }
 
 @media screen and (max-width:768px){
@@ -398,13 +519,13 @@ footer nav a{
 		color: #f93048;
 		display: block;
 		float: right;
-		padding: 2em 15px 0;
+		padding: 2em 1em 0;
 	}
 
 	input:checked + nav{
 		display: block;
 		position: absolute;
-		right: 15px;
+		right: 1em;
 		top:4.5em;
 		width:100px;
 	}
@@ -417,6 +538,19 @@ footer nav a{
 		border-bottom: none;
 	}
 
+	aside{
+		margin:0;
+		padding:2.5em 1em 2em;
+	}
+
+	aside div:nth-of-type(2){
+		margin:2.5em 0 .5em;
+	}
+
+	section{
+		padding:0 0 5em;
+	}
+
 	.overlay{
 		opacity: .15;
 		max-width: 100%;
@@ -424,7 +558,7 @@ footer nav a{
 
 	#home h1{
 			float: left;
-		  padding: .5em 15px;
+		  padding: .4em;
 	}
 
 	#home h1 span{
@@ -435,13 +569,18 @@ footer nav a{
 		max-width: 100%;
 		margin:0 auto 1.5em;
 	}
+
+	#desc{
+		margin:0;
+		padding:1em 1em;
+	}
 }
 
 @media screen and (max-width:480px){
 	label{
 		float: none;
 		text-align: left;
-		padding:15px;
+		padding:1.25em;
 	}
 
 	input:checked + nav{
@@ -454,11 +593,23 @@ footer nav a{
 
 	header nav a{
 		text-align: left;
-		margin: .5em 15px;
+		margin: .5em 1.25em;
+	}
+
+	ul{
+		padding:0;
+	}
+
+	section{
+		padding:0 0 3em;
+	}
+
+	.project main{
+			padding:1em;
 	}
 
 	#home h1{
 			float: none;
-			padding: .5em 15px 0;
+			padding: .4em .4em 0;
 	}
 }
