@@ -53,6 +53,7 @@ body{
 
 h1, h2, h3{
   font-family: 'Larsseit-Medium', sans-serif;
+	letter-spacing: .05em;
 }
 
 h1{
@@ -71,9 +72,8 @@ p{
 }
 
 ul{
-  padding-left:1.25em;
   list-style-type: none;
-	padding:0 0 0 2em;
+	padding:0 0 0 1.25em;
 }
 
 li{
@@ -100,7 +100,12 @@ header{
 }
 
 header nav{
-	display: none;
+	height: 0px;
+	overflow: hidden;
+	-webkit-transition: height ease-in-out .25s;
+	-moz-transition: height ease-in-out .25s;
+	-o-transition: height ease-in-out .25s;
+	transition: height ease-in-out .25s;
 }
 
 input,
@@ -153,7 +158,7 @@ figcaption > span{
 footer{
 	width:100%;
 	background-color: #fff;
-	padding:3em;
+	padding:3em 0;
 }
 
 footer nav{
@@ -259,7 +264,6 @@ section img:nth-of-type(2){
 	line-height:1em;
 	color: #fff;
 	width: 14em;
-	letter-spacing: .05em;
 	position: fixed;
 	top:3em;
 	left: 50%;
@@ -364,7 +368,7 @@ section img:nth-of-type(2){
 
 @media screen and (max-width:1199px){
 	section{
-		padding:40em 0 20em;
+		padding:42em 0 20em;
 	}
 
 	figcaption{
@@ -438,11 +442,17 @@ section img:nth-of-type(2){
 			width:100%;
 			position: static;
 			margin:2em 0 0;
+			padding:2.5em 0;
 			background: none;
 		}
 
 		aside div:nth-of-type(2){
 			margin:0;
+		}
+
+		ul{
+			padding-left: 1.25em;
+			list-style: square;
 		}
 
 		section{
@@ -463,14 +473,6 @@ section img:nth-of-type(2){
 			margin: 0 0 1.5em;
 		}
 
-		.project header{
-				padding:0 0 0 1em;
-		}
-
-		.project main{
-				padding:0 0 0 55px;
-		}
-
 		#mmt,
 		#invibed{
 			margin:1em 0;
@@ -486,12 +488,13 @@ section img:nth-of-type(2){
 
 		#desc{
 			margin:2em 0 0;
-			padding:2em 2em 0;
+			padding:0 0 0 1em;
 			background: none;
 		}
 
 		#project-info{
 			margin:1.5em 1em 1.5em;
+			padding:2em 3em;
 			background:#eee;
 			background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
 			background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
@@ -516,15 +519,7 @@ section img:nth-of-type(2){
 		position: relative;
 	}
 
-	label{
-		color: #f93048;
-		display: block;
-		float: right;
-		padding: 2em 1em 0;
-	}
-
-	input:checked + nav{
-		display: block;
+	header nav{
 		position: absolute;
 		right: 1em;
 		top:4.5em;
@@ -539,9 +534,20 @@ section img:nth-of-type(2){
 		border-bottom: none;
 	}
 
+	label{
+		color: #f93048;
+		display: block;
+		float: right;
+		padding: 2em 1em 0;
+	}
+
+	input:checked + nav{
+		height: 80px;
+	}
+
 	aside{
 		margin:0;
-		padding:2.5em 1em 2em;
+		padding:2.5em 0em 2em;
 	}
 
 	aside div:nth-of-type(2){
@@ -550,6 +556,11 @@ section img:nth-of-type(2){
 
 	section{
 		padding:0 0 5em;
+	}
+
+	li{
+		float: left;
+		margin-right:2em;
 	}
 
 	.overlay{
@@ -573,23 +584,34 @@ section img:nth-of-type(2){
 
 	#desc{
 		margin:0;
-		padding:1em 1em;
+		padding:1em 1em 0;
+	}
+
+	#project-info{
+		padding:2em 2.5em;
+	}
+}
+
+@media screen and (max-width:634px){
+	li{
+		float: none;
+		margin:0;
 	}
 }
 
 @media screen and (max-width:480px){
-	label{
-		float: none;
-		text-align: left;
-		padding:1.25em;
-	}
-
-	input:checked + nav{
+	header nav{
 		position: static;
 		right: auto;
 		top:auto;
 		width:100%;
 		margin: 0 0 2em;
+	}
+
+	label{
+		float: none;
+		text-align: left;
+		padding:1.25em 1.25em 0;
 	}
 
 	header nav a{
@@ -598,19 +620,25 @@ section img:nth-of-type(2){
 	}
 
 	ul{
-		padding:0;
+		padding-left:1.25em;
 	}
+
+	/*li{
+		float: none;
+		margin:0;
+	}*/
 
 	section{
 		padding:0 0 3em;
 	}
 
-	.project main{
-			padding:1em;
-	}
-
 	#home h1{
 			float: none;
 			padding: .4em .4em 0;
+	}
+
+	#project-info{
+		padding:1em;
+		margin:0;
 	}
 }
