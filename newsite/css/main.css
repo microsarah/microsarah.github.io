@@ -623,11 +623,6 @@ section img:nth-of-type(2){
 		padding-left:1.25em;
 	}
 
-	/*li{
-		float: none;
-		margin:0;
-	}*/
-
 	section{
 		padding:0 0 3em;
 	}
@@ -639,6 +634,5 @@ section img:nth-of-type(2){
 
 	#project-info{
 		padding:1em;
-		margin:0;
 	}
 }
