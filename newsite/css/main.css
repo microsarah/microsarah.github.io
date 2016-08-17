@@ -366,6 +366,31 @@ section img:nth-of-type(2){
 	text-align: center;
 }
 
+#resume{
+	margin:1.5em 1em 1.5em;
+	padding:2em 3em;
+	background:#eee;
+	background: -moz-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #eee 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #eee 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
+}
+
+#resume h1{
+	text-align: center;
+	font-size: 3em;
+}
+
+#resume section{
+	padding:2em 0;
+	border-bottom:2px solid #0206ba;
+}
+
+#resume section:nth-of-type(1){
+	margin:2em 0 0;
+	border-top:2px solid #0206ba;
+}
+
 @media screen and (max-width:1199px){
 	section{
 		padding:42em 0 20em;
