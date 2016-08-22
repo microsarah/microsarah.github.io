@@ -73,6 +73,10 @@ aside{
 	float: left;
 }
 
+aside h2{
+	font-size: 1.25em;
+}
+
 h1{
 	font-family: 'Larsseit-Medium', sans-serif;
 	font-size:5em;
@@ -81,7 +85,12 @@ h1{
 }
 
 h2{
+	font-size: 2em;
+	margin:0;
+}
 
+h3{
+	font-size: .5em;
 }
 
 h4{

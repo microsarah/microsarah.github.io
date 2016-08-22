@@ -62,8 +62,21 @@ h1{
 }
 
 h2{
-	font-size:1.25em;
-	margin:2em 0 0.5em;
+	font-size:2em;
+	margin:0.5em 0 .4em;
+}
+
+h3{
+	font-size: 1em;
+	margin:0;
+}
+
+h3 a{
+	border-bottom:1px dotted #0206ba;
+}
+
+h4{
+	margin:0;
 }
 
 p{
@@ -136,7 +149,8 @@ aside div:nth-of-type(2){
 }
 
 aside h2{
-	margin:0 0 .5em;
+	font-size:1.25em;
+	margin:0 0 0.5em;
 }
 
 img{
@@ -382,13 +396,17 @@ section img:nth-of-type(2){
 }
 
 #resume section{
-	padding:2em 0;
+	padding:3em 0;
 	border-bottom:2px solid #0206ba;
 }
 
 #resume section:nth-of-type(1){
 	margin:2em 0 0;
 	border-top:2px solid #0206ba;
+}
+
+#resume ul{
+	list-style: square;
 }
 
 @media screen and (max-width:1199px){
