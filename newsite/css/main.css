@@ -85,7 +85,6 @@ p{
 }
 
 ul{
-  list-style-type: none;
 	padding:0 0 0 1.25em;
 }
 
@@ -93,7 +92,7 @@ li{
 	margin:0 0 .4em;
 }
 
-a{
+a:link{
 	text-decoration: none;
 	color:#0206ba;
 	-webkit-transition: all ease-in-out .25s;
@@ -103,9 +102,20 @@ a{
 	border-bottom:1px dotted #f93048;
 }
 
+a:visited{
+	text-decoration: none;
+	color:#0206ba;
+	border-bottom:1px dotted #f93048;
+}
+
 a:hover{
 	text-decoration: none;
   color: #f93048;
+}
+
+a:active{
+	text-decoration: none;
+  color:#0206ba;
 }
 
 header{
@@ -138,7 +148,7 @@ aside{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
   padding:2.5em 2em 2em;
   position: absolute;
-  top:300px;
+  top:25em;
   right:12%;
   clear: both;
 	z-index: 2;
@@ -181,11 +191,30 @@ footer nav{
 }
 
 footer nav a{
-	font-size: .8125em;
+	font-size: 1em;
 	color: #0206ba;
 	margin:.5em 1em;
-	padding:.25em
+	padding:.25em;
+}
 
+section{
+	clear: both;
+	padding:50em 0 20em;
+}
+
+section img:nth-of-type(1){
+	position: absolute;
+  top:4em;
+  right:2em;
+  width:50%;
+}
+
+section img:nth-of-type(2){
+	position: absolute;
+  top:550px;
+  left:0;
+  width:80%;
+	max-width: 1020px;
 }
 
 ::selection{
@@ -225,33 +254,15 @@ footer nav a{
 	background:#fff;
 }
 
+
 #desc{
-	margin:4.5em 0 0;
+	z-index: 2;
+	margin:5em 0 0;
 	padding:1em 2em 2em;
 	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
 	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
-}
-
-section{
-	clear: both;
-	padding:50em 0 20em;
-}
-
-section img:nth-of-type(1){
-	position: absolute;
-  top:0;
-  right:0;
-  width:50%;
-}
-
-section img:nth-of-type(2){
-	position: absolute;
-  top:550px;
-  left:0;
-  width:80%;
-	max-width: 1020px;
 }
 
 #home-wrap{
@@ -369,11 +380,12 @@ section img:nth-of-type(2){
 #index{
 	color:#f93048;
 	border-bottom:none;
-	position: absolute;
-	top:1em;
-	left:1em;
 	line-height:1em;
 	text-align: center;
+	display: block;
+	padding:10px;
+	width:50px;
+	margin:auto;
 }
 
 #cv{
@@ -407,7 +419,7 @@ section img:nth-of-type(2){
 
 #skills h2{
 	text-align: center;
-	margin: 0 0 2em;
+	margin: 0 0 1.5em;
 }
 
 #skills h3{
@@ -562,17 +574,6 @@ section img:nth-of-type(2){
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
 		}
 
-		#index{
-			display: block;
-			width:50px;
-			padding:10px;
-			margin:auto;
-			position: static;
-			top:auto;
-			left:auto;
-			text-align: center;
-		}
-
 		#cv{
 			margin: 1.5em 1em;
 			padding: 3em 4em;
@@ -605,7 +606,7 @@ section img:nth-of-type(2){
 		width:100px;
 	}
 
-	header nav a{
+	header nav a:link{
 		display: block;
 		text-align: right;
 		padding:0;
@@ -683,7 +684,6 @@ section img:nth-of-type(2){
 @media screen and (max-width:634px){
 	.project li{
 		float: none;
-		margin:0;
 	}
 }
 
@@ -702,7 +702,7 @@ section img:nth-of-type(2){
 		padding:1.25em 1.25em 0;
 	}
 
-	header nav a{
+	header nav a:link{
 		text-align: left;
 		margin: .5em 1.25em;
 	}
