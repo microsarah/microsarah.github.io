@@ -132,10 +132,10 @@ main{
 
 aside{
 	width:320px;
-	background: -moz-linear-gradient(top,  #cecff0 0%, #fff 100%);
-	background: -webkit-linear-gradient(top,  #cecff0 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #cecff0 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecff0', endColorstr='#fff',GradientType=0 );
+	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
   padding:2.5em 2em 2em;
   position: absolute;
   top:300px;
@@ -228,10 +228,10 @@ footer nav a{
 #desc{
 	margin:4.5em 0 0;
 	padding:1em 2em 2em;
-	background: -moz-linear-gradient(top,  #cecff0 0%, #fff 100%);
-	background: -webkit-linear-gradient(top,  #cecff0 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #cecff0 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f7', endColorstr='#fff',GradientType=0 );
+	background: -moz-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: -webkit-linear-gradient(top,  #F9DEDA 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #F9DEDA 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9DEDA', endColorstr='#fff',GradientType=0 );
 }
 
 section{
@@ -397,8 +397,25 @@ section img:nth-of-type(2){
 	border-top:2px solid #0206ba;
 }
 
+#cv main section:last-of-type{
+	border-bottom:none;
+}
+
 #cv ul{
 	list-style: square;
+}
+
+#skills h2{
+	text-align: center;
+	margin: 0 0 2em;
+}
+
+#skills h3{
+	margin: 0 0 1em 1.25em;
+}
+
+#skills div{
+	padding-left:6em;
 }
 
 @media screen and (max-width:1199px){
@@ -473,6 +490,10 @@ section img:nth-of-type(2){
 	#signals,
 	#yolo{
 		margin:1em 0 0;
+	}
+
+	#skills div{
+		padding-left:2.5em;
 	}
 }
 
@@ -550,6 +571,25 @@ section img:nth-of-type(2){
 			top:auto;
 			left:auto;
 			text-align: center;
+		}
+
+		#cv{
+			margin: 1.5em 1em;
+			padding: 3em 4em;
+		}
+
+		#cv h4{
+			margin: 0 0 1em;
+		}
+
+		#skills div{
+			float: left;
+			padding-left:4%;
+			margin:0 0 3em;
+		}
+
+		#skills h3{
+			margin:0 0 1em;
 		}
 }
 
@@ -629,10 +669,19 @@ section img:nth-of-type(2){
 	#project-info{
 		padding:2em 2.5em;
 	}
+
+	#cv{
+		padding:2em;
+	}
+
+	#skills div{
+		padding:0;
+		float: none;
+	}
 }
 
 @media screen and (max-width:634px){
-	li{
+	.project li{
 		float: none;
 		margin:0;
 	}
@@ -673,5 +722,10 @@ section img:nth-of-type(2){
 
 	#project-info{
 		padding:1em;
+	}
+
+	#cv{
+		border:none;
+		padding:0;
 	}
 }
