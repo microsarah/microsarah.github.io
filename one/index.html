@@ -24,11 +24,8 @@
     <script type="text/javascript" src="js/smoothscroll.js"></script>
   </head>
   <body id="home">
-    <!-- <div id="home-wrap"> -->
       <div class="container">
-        <div id="hero"><img src="assets/test.png"></div>
           <header class="clearfix">
-            <h1 id="title"><span>Sarah K</span> Hallacher /<br>designer, <span>developer &</span> artist</h1>
             <label for="menu">menu</label>
             <input type="checkbox" id="menu">
             <nav>
@@ -37,6 +34,10 @@
         			<a href="a-cv/index.html">cv</a>
         			<a href="http://ablogthat.sarahmak.es/" target="blank">archive</a>
             </nav>
+            <h1 id="title"><span>Sarah K</span> Hallacher /<br>designer, <span>developer &</span> artist</h1>
+            <div id="hero"><img src="assets/test.png"></div>
+
+
           </header>
 
           <main class="clearfix" id="projects">
@@ -199,10 +200,7 @@
                 </div>
               </div>
     			  </a>
-
       		</main>
-      	</div>
-      </div>
     	<footer>
     		<nav>
     			<a href="http://twitter.com/microsarah" target="blank">twitter</a>
@@ -211,7 +209,7 @@
     		</nav>
         <small>&copy; 2016 Sarah K. Hallacher</small>
      	</footer>
-
+    </div>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
@@ -221,6 +219,4 @@
       $("#title").css("opacity", 1 - $(window).scrollTop() / 200);
       $("#title").css("z-index", 1 - $(window).scrollTop() / 70);
   });</script>
-
-
 </html>
