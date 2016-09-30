@@ -409,11 +409,12 @@ section img:nth-of-type(2){
 	list-style: none;
 }
 
-.top{
-	position: absolute;
-	bottom:1em;
-	right:1em;
-	text-decoration: none;
+.top {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	right: 1.5em;
+	bottom: 1.5em;
 }
 
 #title{

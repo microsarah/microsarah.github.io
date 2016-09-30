@@ -215,7 +215,7 @@
           <small>&copy; 2016 Sarah K. Hallacher</small>
        	</footer>
       </div>
-      <a class="top" href="#">&#8593;</a>
+      <a href="#" class="smoothScroll top">&#8593;</a>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
@@ -224,5 +224,12 @@
   $(window).scroll(function(){
       $("#title").css("opacity", 1 - $(window).scrollTop() / 200);
       $("#title").css("z-index", 1 - $(window).scrollTop() / 100);
-  });</script>
+
+      if ( $(window).scrollTop() > 400 ) {
+  		    $('a.top').fadeIn('slow');
+    	} else {
+    		$('a.top').fadeOut('slow');
+    	}
+  });
+  </script>
 </html>
