@@ -2,17 +2,16 @@
 
 ## Project Description
 
-I want to create an interactive data visualization for GA's online courses. We track project completion, course completion, NPS, and student utilization (how often they meet with instructors); as well as milestones marking different changes we've made in the courses. Currently we have 5 courses– so I'd like the ability to look at certain measures all at once, as well as isolate a single course.
+I want to create an interactive version of a film project I made a few years ago. The concept behind the film is that it's someone's birthday everyday– and there are celebrations happening that we're not privy to in our daily lives. I was also fascinated to see how many birthday-related videos are uploaded to youtube. 
+
+Instead of a static video, I'd like to create an app where the user can toggle through videos that are being pulled in realtime from YouTube based on queries I control. I want the app to look like a home movie: with a date counter in the upper righthand corner, title in the upper left.
 
 ## Functional Components
 
-First work with one course's data, then scale.
-
-* Use d3.js to visualize all milestones & data
-* Hover on data for more information
-* Filter data using checkboxes
-* Export visualizations to JPG
-* If possible, regularly pull data from repository
+* Use the YouTube API to pull videos
+* If possible, load multiple videos at once so the playback time is fast
+* Program arrow keys to move backwards/forward through video stream
+* Load title and date of video
 
 ## Helper Functions
 Use this section to document all helper functions. These functions should be versatile enough to be reused in other projects
