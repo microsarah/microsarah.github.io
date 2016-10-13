@@ -1,17 +1,17 @@
 # Project Overview
 
 ## Project Description
-
-I want to create an interactive version of a film project I made a few years ago. The concept behind the film is that it's someone's birthday everyday– and there are celebrations happening that we're not privy to in our daily lives. I was also fascinated to see how many birthday-related videos are uploaded to youtube. 
+I want to create an interactive version of a film project I made a few years ago. The concept behind the film is that it's someone's birthday everyday– and there are celebrations happening that we're not privy to in our daily lives. I was also fascinated to see how many birthday-related videos are uploaded to YouTube.
 
 Instead of a static video, I'd like to create an app where the user can toggle through videos that are being pulled in realtime from YouTube based on queries I control. I want the app to look like a home movie: with a date counter in the upper righthand corner, title in the upper left.
 
 ## Functional Components
-
-* Use the YouTube API to pull videos
-* If possible, load multiple videos at once so the playback time is fast
+* Use the YouTube API to pull videos and add them to the background of the site
+* Use data from the YouTube API to load title and date of video
 * Program arrow keys to move backwards/forward through video stream
-* Load title and date of video
+* If a video has been played, don't play it again (unless there are no other query results)
+* Only include February 29 every 4 full plays
+* If possible, optimize playback time by pre-loading upcoming video
 
 ## Helper Functions
 Use this section to document all helper functions. These functions should be versatile enough to be reused in other projects
