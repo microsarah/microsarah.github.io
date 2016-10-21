@@ -13,16 +13,18 @@ You'll add the ability to complete tasks in your favorite things list. Your prog
 
 function addToList(list, newThing) {
 	// create an li
-  var newThingLi = $('ul').html('<li></li>');
+  var newThingLi = document.createElement('li');
 
   // create text node from input value 
 	var newThingText = $(newThingInput).val();
+
 
   // append the li to include the text
 	$(newThingLi).append(newThingText);
 
   // append the ul to include the li
 	// list.appendChild(newThingLi);
+  $('#fav-list').append(newThingLi);
 }
 
 window.onload = function() {
