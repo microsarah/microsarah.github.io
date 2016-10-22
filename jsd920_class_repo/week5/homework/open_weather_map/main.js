@@ -9,7 +9,7 @@ Open Weather Map Instructions:
 	- Hint: search the docs for "units format"
 - First, print the response to the console, then, using the API's response, print the following data to #nyc-weather:
 	- The current "temp"
-	- The current "hummidity"
+	- The current "humidity"
 	- The current wind "speed"
 
 2)
@@ -32,9 +32,36 @@ Open Weather Map Instructions:
 
 */
 
-
+// only loads if js is in head
 $(document).ready(function () {
-  var apiKey = '19ab861f15cfd2e8216a3be1ed615598';
-  var weatherUrl = '';
+  var apiKey = '7edfeb14e39f91685a7cfa1159637a35';
+  var city = 'new+york';
+  var units = 'metric';
+  var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
+  // console.log(weatherUrl);
+
+ //  	function makeRequest(){
+	// 	$.get(weatherUrl)
+	// 	.done(function(res){ console.log(res)})
+	// 	.fail(function(xhr){ console.log('error has ocurred: ', xhr)})
+	// }
+
+	// makeRequest();
+
+	$.ajax({
+		url:weatherUrl,
+		type:'GET',
+		dataType: 'JSON',
+		success: function(res){ console.log('success!'); populateData(res); },
+		fail: function(xhr){ console.log('error has ocurred: ', xhr)}
+	});
+
+	function populateData(data){
+		console.log(data);
+		var temp = data.main.temp;
+		var humidity = data.main.humidity;
+		var windSpeed = data.wind.speed;
+	}
 });
+
 

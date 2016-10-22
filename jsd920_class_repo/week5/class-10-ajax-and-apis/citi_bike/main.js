@@ -8,28 +8,26 @@ console.log() if successful.
 */
 
 window.onload = function () {
-	document.getElementById('output').onclick = makeRequest();
+	var button = $('#getDataButton').click(function(){
+		makeRequest();
+	});''
 
+	var url = 'https://gbfs.citibikenyc.com/gbfs/en/station_information.json';
+
+	// jQuery version
 	function makeRequest(){
-		var url = 'https://gbfs.citibikenyc.com/gbfs/en/station_information.json';
-
-		// create an instance of XMLHttpRequest
-		var httpRequest = new XMLHttpRequest();
-
-		// set up a custom function to handle the request
-		httpRequest.onreadystatchange = responseMethod();
-
-		// open GET request to the url
-		httpRequest.open('GET', url)
-
-		// check if our state is 'done'
-		if(httpRequest.readyState === XMLHttpRequest.DONE){
-			if(httpRequest.status === 200){
-				var data = JSON.parse(httpRequest.response);
-				console.log(data);
-			}
-			else { console.log ('problem') }
-		}
+		$.get(url)
+		.done(function(res){ console.log(res)})
+		.fail(function(xhr){ console.log('error has ocurred: ', xhr)})
 	}
+
+	// AJAX version
+	$.ajax({
+		url:url,
+		type:'GET',
+		dataType: 'JSON',
+		success: function(res){ console.log(res)},
+		fail: function(xhr){ console.log('error has ocurred: ', xhr)}
+	})
 };
 

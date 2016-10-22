@@ -6,6 +6,9 @@ I want to create an interactive version of a film project I made a few years ago
 Instead of a static video, I'd like to create an app where the user can toggle through videos that are being pulled in realtime from YouTube based on queries I control. I want the app to look like a home movie: with a date counter in the upper righthand corner, title in the upper left.
 
 ## Functional Components
+
+// break down into priorities & time frames
+
 * Use the YouTube API to pull videos and add them to the background of the site
 * Use data from the YouTube API to load title and date of video
 * Program arrow keys to move backwards/forward through video stream
@@ -15,6 +18,9 @@ Instead of a static video, I'd like to create an app where the user can toggle t
 
 ## Helper Functions
 Use this section to document all helper functions. These functions should be versatile enough to be reused in other projects
+
+// make a function that pulls videos from a site
+// make a function that loads videos into the background of site
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project

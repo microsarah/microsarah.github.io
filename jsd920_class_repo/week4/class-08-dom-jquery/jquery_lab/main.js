@@ -12,77 +12,55 @@ You'll add the ability to complete tasks in your favorite things list. Your prog
 
 
 function addToList(list, newThing) {
-	// create an li
-  var newThingLi = document.createElement('li');
+
+  // create an li
+  //var newThingLi = document.createElement('li');
+   var newThingLi = $('<li></li>');
 
   // create text node from input value 
-	var newThingText = $(newThingInput).val();
-
+  // is there a way to do this in jquery?
+  var newThingText = document.createTextNode(newThing);
 
   // append the li to include the text
-	$(newThingLi).append(newThingText);
+  newThingLi.append(newThingText);
 
-  // append the ul to include the li
-	// list.appendChild(newThingLi);
-  $('#fav-list').append(newThingLi);
+  // and the ul to include the li
+  list.append(newThingLi);
 }
+
 
 window.onload = function() {
 
     // get the button
-  	var button = $('new-thing-button');
+    var button = $('#new-thing-button');
 
     // get the list
-  	var thingList = $('fav-list');
+    var thingList = $('#fav-list');
 
-    // get the input
-  	var newThingInput = $('new-thing');
+    button.click(function(event){
 
-
-  	$('button').click = function(event){
-
-
-  		event.preventDefault();
+      event.preventDefault();
 
       // get the value of the input
-  		var newThing = newThingInput.value;
+      var newThing = $('#new-thing').val();
 
       // add to list
-  		addToList(thingList, newThing);
+      addToList(thingList, newThing);
 
-		// var form = document.getElementsByTagName('form');
-		// form.reset();
-  	};
+      var form = $('form')[0];
+      form.reset();
+    });
 };
 
+/*
+
+Bonus:
+
+When they click submit without typing anything, alert the user
+"you must type in a value!"
+  (Hint: the `value` property of the input box, before anyone types in it,
+  is the empty string.)
+
+*/
 
 
-function addToList(list, newThing) {
-	// create an li
-	// var newThingLi = document.createElement('li');
-	var newThingLi = $('li');
-
-	//var newThingText = document.createTextNode(newThing);
-
-	// newThingLi.appendChild(newThingText);
-	newThingLi.append(newThing);
-	
-	//list.appendChild(newThingLi);
-	$(ul).html('<li></li>');
-}
-
-window.onload = function() {
-
-  	var button = $('new-thing-button');
-  	var thingList = $('fav-list');
-  	var newThingInput = $('new-thing');
-
-  	button.onclick = function(event){
-  		event.preventDefault();
-  		var newThing = newThingInput.val();
-  		addToList(thingList, newThing);
-
-		// var form = document.getElementsByTagName('form');
-		// form.reset();
-  	};
-};

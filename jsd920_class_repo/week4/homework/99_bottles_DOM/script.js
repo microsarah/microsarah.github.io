@@ -1,6 +1,7 @@
 // # 99 Bottles of Beer - DOM Version
 
-// Remember the 99 Bottles of Beer assignment? For this assignment, you'll be creating a website that programatically displays the lyrics to that song.
+// Remember the 99 Bottles of Beer assignment? For this assignment, 
+// you'll be creating a website that programatically displays the lyrics to that song.
 
 // 1. You'll need to create both an .html file and a .js file (be sure to link them!)
 // 2. If you plan on using jQuery, properly link to an external CDN
