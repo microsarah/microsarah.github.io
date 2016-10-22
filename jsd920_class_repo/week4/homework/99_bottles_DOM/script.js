@@ -9,27 +9,36 @@
 // 4. Each line of the song should appear inside of a list item (<li>) within that unordered list
 // 5. Your JavaScript file should programatically append each line of the song to the page--no hard-coding lyrics in HTML!
 
-// define the number of bottles
-
-// create a for loop that generates the lyrics
-
-// add the lyric to 
 
 
-
-
-
-
-var numBottles = 99;
-
-for(i = numBottles; i >= 0; i--){
-	if(i > 2){
-		console.log(i + " bottles of beer on the wall, " + i + " bottles of beer! Take one down, pass it around, " + (i - 1) + " bottles of beer on the wall!");
-	} else if(i === 2){
-		console.log(i + " bottles of beer on the wall, " + i + " bottles of beer! Take one down, pass it around, " + (i - 1) + " bottle of beer on the wall!");
-	} else if(i === 1){
-		console.log(i + " bottle of beer on the wall, " + i + " bottle of beer! Take one down, pass it around, no more bottles of beer on the wall!");
-	} else {
-		console.log("No more bottles of beer on the wall, no more bottles of beer! Go to the store and buy some more, " + numBottles + " bottles of beer on the wall!");
-	}
+// create a list item in the <ul>
+function createLi(text){
+	var list = $('#lyrics');
+	var newLi = $('<li></li>');
+	newLi.append(text);
+	list.append(newLi);
 }
+
+
+window.onload = function(){
+	var numBottles = 99;
+	var lyrics;
+
+	for(i = numBottles; i >= 0; i--){
+		if(i > 2){
+			lyrics = (i + " bottles of beer on the wall, " + i + " bottles of beer! Take one down, pass it around, " + (i - 1) + " bottles of beer on the wall!");
+		} else if(i === 2){
+			lyrics = (i + " bottles of beer on the wall, " + i + " bottles of beer! Take one down, pass it around, " + (i - 1) + " bottle of beer on the wall!");
+		} else if(i === 1){
+			lyrics = (i + " bottle of beer on the wall, " + i + " bottle of beer! Take one down, pass it around, no more bottles of beer on the wall!");
+		} else {
+			lyrics = ("No more bottles of beer on the wall, no more bottles of beer! Go to the store and buy some more, " + numBottles + " bottles of beer on the wall!");
+		}
+
+		var li = createLi(lyrics);
+	}
+};
+
+
+
+
