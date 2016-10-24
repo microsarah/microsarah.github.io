@@ -52,16 +52,71 @@ $(document).ready(function () {
 		url:weatherUrl,
 		type:'GET',
 		dataType: 'JSON',
-		success: function(res){ console.log('success!'); populateData(res); },
-		fail: function(xhr){ console.log('error has ocurred: ', xhr)}
+		success: function(res){ console.log('success!'); populateNYCData(res); },
+		fail: function(xhr){ console.log('error has ocurred: ', xhr); }
 	});
 
-	function populateData(data){
+	function populateNYCData(data){
 		console.log(data);
-		var temp = data.main.temp;
-		var humidity = data.main.humidity;
-		var windSpeed = data.wind.speed;
+		var temp = ('Temperature: ' + data.main.temp + '&deg;C');
+		var humidity = ('Humidity: ' + data.main.humidity + '%');
+		var windSpeed = ('Wind Speed: ' + data.wind.speed + 'mph');
+
+		var info = [temp, humidity, windSpeed];
+		var list = $('#nyc-weather');
+		
+		for(var i = 0; i < info.length; i++){
+			var newLi = $('<li></li>');
+			newLi.append(info[i]);
+			list.append(newLi);
+		}
 	}
+
+
+	// when the user clicks the button:
+	var button = $('#submitReq');
+	button.click(function(event){
+
+		event.preventDefault();
+
+		// redefine the city name var
+		city = $('#city').val();
+		console.log(city);
+
+		weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
+		console.log(weatherUrl);
+
+		// make a new ajax request 
+		$.ajax({
+			url:weatherUrl,
+			type:'GET',
+			dataType: 'JSON',
+			success: function(res){ console.log('success!'); populateYourData(res); },
+			fail: function(xhr){ console.log('error has ocurred: ', xhr); }
+		});
+
+		// populate the ul
+		function populateYourData(data){
+			console.log(data);
+			var temp = ('Temperature: ' + data.main.temp + '&deg;C');
+			var humidity = ('Humidity: ' + data.main.humidity + '%');
+			var windSpeed = ('Wind Speed: ' + data.wind.speed + 'mph');
+
+			var info = [temp, humidity, windSpeed];
+			var list = $('#your-weather');
+			
+			for(var i = 0; i < info.length; i++){
+				var newLi = $('<li></li>');
+				newLi.append(info[i]);
+				list.append(newLi);
+			}
+		}
+
+	var form = $('form')[0];
+    form.reset();
+
+	});
+
 });
 
 
