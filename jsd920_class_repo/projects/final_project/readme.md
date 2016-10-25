@@ -5,38 +5,45 @@ I want to create an interactive version of a film project I made a few years ago
 
 Instead of a static video, I'd like to create an app where the user can toggle through videos that are being pulled in realtime from YouTube based on queries I control. I want the app to look like a home movie: with a date counter in the upper righthand corner, title in the upper left.
 
+
 ## Functional Components
+### Required
+1) Use the YouTube API to pull video source URL and title | 2-4 hours
+2) Add video to the background of the site (fullscreen) | 1-2 hours
+3) Display title of video (title will be a date) in mm/dd/yy format | 2-4 hours
+4) Program left and right arrow keys to move backwards/forward through video stream | 1-2 hours
+5) Host the site | 0.5-1 hours
 
-// break down into priorities & time frames
+### Nice to Have
+* If a video has been played, don't play it again (unless there are no other query results) | 2-4 hours
+* Only include February 29 every 4 full 'years' | 1-2 hours
 
-* Use the YouTube API to pull videos and add them to the background of the site
-* Use data from the YouTube API to load title and date of video
-* Program arrow keys to move backwards/forward through video stream
-* If a video has been played, don't play it again (unless there are no other query results)
-* Only include February 29 every 4 full plays
-* If possible, optimize playback time by pre-loading upcoming video
+### Bonus
+* If possible, optimize playback time by pre-loading upcoming video | 6-8 hours
+
 
 ## Helper Functions
 Use this section to document all helper functions. These functions should be versatile enough to be reused in other projects
-
-// make a function that pulls videos from a site
-// make a function that loads videos into the background of site
+* a function that pulls videos from a site
+* a function that loads videos as the background of a container
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project
+* jQuery
 
 ## JSON Data Keys
  Use this section to list specific JSON Data Key mappings.  
 
 ## jQuery Functional Requirements
- Use this section to list some, but not all, of the jQuery methods discovered while working on this project.
+* append()
+* keypress()
+* addClass() / removeClass()
 
 ## Change Log
- Use this section to document what changes were made and when.
+// Use this section to document what changes were made and when.
 
 ## Issues and Resolutions
- Use this section to list of all issues encountered and their resolution
+// Use this section to list of all issues encountered and their resolution
 
-#### SAMPLE.....
+<!-- #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**RESOLUTION**: Missing comma after first object in sources {} object -->

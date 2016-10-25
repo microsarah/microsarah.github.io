@@ -36,7 +36,7 @@ Open Weather Map Instructions:
 $(document).ready(function () {
   var apiKey = '7edfeb14e39f91685a7cfa1159637a35';
   var city = 'new+york';
-  var units = 'metric';
+  var units = 'imperial';
   var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
   // console.log(weatherUrl);
 
@@ -58,9 +58,9 @@ $(document).ready(function () {
 
 	function populateNYCData(data){
 		console.log(data);
-		var temp = ('Temperature: ' + data.main.temp + '&deg;C');
-		var humidity = ('Humidity: ' + data.main.humidity + '%');
-		var windSpeed = ('Wind Speed: ' + data.wind.speed + 'mph');
+			var temp = ('<span>Temperature</span> ' + data.main.temp + '&deg;F');
+			var humidity = ('<span>Humidity</span> ' + data.main.humidity + '%');
+			var windSpeed = ('<span>Wind Speed</span> ' + data.wind.speed + 'mph');
 
 		var info = [temp, humidity, windSpeed];
 		var list = $('#nyc-weather');
@@ -69,6 +69,19 @@ $(document).ready(function () {
 			var newLi = $('<li></li>');
 			newLi.append(info[i]);
 			list.append(newLi);
+		}
+
+		var body = $('body');
+
+		// change background color based on temp
+		if(data.main.temp <= 40){
+			body.addClass('cold');
+		} else if (data.main.temp > 40 && data.main.temp <= 60){
+			body.addClass('mild');
+		} else if (data.main.temp > 60 && data.main.temp <= 75){
+			body.addClass('warm');
+		} else if (data.main.temp > 75){
+			body.addClass('hot');
 		}
 	}
 
@@ -95,21 +108,37 @@ $(document).ready(function () {
 			fail: function(xhr){ console.log('error has ocurred: ', xhr); }
 		});
 
-		// populate the ul
+		
 		function populateYourData(data){
 			console.log(data);
-			var temp = ('Temperature: ' + data.main.temp + '&deg;C');
-			var humidity = ('Humidity: ' + data.main.humidity + '%');
-			var windSpeed = ('Wind Speed: ' + data.wind.speed + 'mph');
+
+			var list = $('#your-weather');
+			var temp = ('<span>Temperature</span> ' + data.main.temp + '&deg;F');
+			var humidity = ('<span>Humidity</span> ' + data.main.humidity + '%');
+			var windSpeed = ('<span>Wind Speed</span> ' + data.wind.speed + 'mph');
 
 			var info = [temp, humidity, windSpeed];
-			var list = $('#your-weather');
+
+			// add in a title for the search results
+			list.before('<h2>Current weather in ' + city +'</h2>')
 			
+			// add the search results to the page
 			for(var i = 0; i < info.length; i++){
 				var newLi = $('<li></li>');
 				newLi.append(info[i]);
 				list.append(newLi);
 			}
+
+			// change background color based on temp
+			// if(data.main.temp <= 40){
+			// 	list.addClass('cold');
+			// } else if (data.main.temp > 40 && data.main.temp <= 60){
+			// 	list.addClass('mild');
+			// } else if (data.main.temp > 60 && data.main.temp <= 75){
+			// 	list.addClass('warm');
+			// } else if (data.main.temp > 75){
+			// 	list.addClass('hot');
+			// }
 		}
 
 	var form = $('form')[0];
