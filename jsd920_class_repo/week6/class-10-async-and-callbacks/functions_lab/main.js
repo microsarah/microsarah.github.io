@@ -28,9 +28,37 @@
  *
  */
 
-function makeCountingFunction() {}
+function makeCountingFunction(predicate) {
+	
+	// return the result of the counter on the array
+	return function(arr){
+		
+		// start the counter @ 0
+		var counter = 0;
+		
+		// run through the array and test each number
+		arr.forEach(function(n){
+			
+			// if isOdd === true, increase the counter
+			if(isOdd(n)) { 
+				counter++;
+			}
+		})
+		
+		// update the counter
+		return counter;
+	}
+}
 
-function isOdd() {}
+
+// test if the number is odd
+function isOdd(num) {
+	
+	// return true/false value based on num
+	return num % 2 !== 0;
+}
+
+
 
 // =============================================================================
 // The code below should work without modification.

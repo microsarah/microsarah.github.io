@@ -21,9 +21,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="top">
       <label for="menu">menu</label>
       <input type="checkbox" id="menu">
       <nav>
@@ -82,7 +84,7 @@
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <h4><a href="http://itp.nyu.edu" target="blank">NYU / ITP</a></h4>
-								<h3>M.P.S.</h3>
+								<h3>MPS, Interaction Design</h3>
 								<h5>Graduated May 2013</h5>
                 <ul>
                   <li>something about scholarship</li>
@@ -91,9 +93,9 @@
                   <li>something about residency</li>
                 </ul>
 							</div>
-              <div class="col-md-6 col-sm-6">
+              <div class="col-md-6 col-sm-6 test">
                 <h4><a href="http://tyler.temple.edu" target="blank">Tyler School of Art</a></h4>
-								<h3>B.A., Studio Art</h3>
+								<h3>BA, Studio Art</h3>
 								<h5>Graduated May 2007</h5>
                 <ul>
                   <li>something about scholarship</li>
@@ -175,7 +177,17 @@
         <small>&copy; 2016 Sarah K. Hallacher</small>
       </footer>
     </div> <!-- /container -->
+    <a href="#top" class="top smoothScroll">&#8593;</a>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      <script type="text/javascript">
+  $(window).scroll(function(){
+      if ( $(window).scrollTop() > 400 ) {
+          $('a.top').fadeIn('slow');
+      } else {
+        $('a.top').fadeOut('slow');
+      }
+  });
+  </script>
   </body>
 </html>
