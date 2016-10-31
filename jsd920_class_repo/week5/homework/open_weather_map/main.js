@@ -35,7 +35,7 @@ Open Weather Map Instructions:
 // only loads if js is in head
 $(document).ready(function () {
   var apiKey = '7edfeb14e39f91685a7cfa1159637a35';
-  var city = 'new+york';
+  var city = 'miami';
   var units = 'imperial';
   var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
   // console.log(weatherUrl);
