@@ -198,15 +198,21 @@ nav ul ul li {
 }
 
 .article .featuredImage {
-  width: 12%;
+  width: 60px;
+  height: 60px;
   float: left;
   margin: 1.5%;
-  max-width: 60px;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 .article .featuredImage img {
-  max-width: 100%;
-  border-radius: 50px;
+  height: 100%;
+  -webkit-transform: translateX(-25%);
+  -moz-transform: translateX(-25%);
+  -ms-transform: translateX(-25%);
+  -o-transform: translateX(-25%);
+  transform: translateX(-25%);
 }
 
 .article .articleContent {
