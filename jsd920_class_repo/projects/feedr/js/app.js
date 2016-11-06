@@ -17,7 +17,7 @@ var selectedSource;
 
 // source successfully accessed
 function onSuccess(res) {
-    // console.log(res);
+    console.log(res);
     populateData(res);
 }
 
@@ -25,8 +25,6 @@ function onSuccess(res) {
 function onFail(err){
 	console.log('Error accessing data: '+ err);
 }
-
-
 
 // get the data - run fail function if done does not run
 var getMashable = $('#mashable').on('click', function() {
@@ -56,13 +54,36 @@ function populateData(data){
 	var dataSource;
 
 	if(selectedSource === 'Mashable'){ dataSource = data.new }
-		for(var i = 0; i < data.new.length; i++){
-			var title = dataSource[i].title;
-			var label = dataSource[i].channel_label;
-			var shares = dataSource[i].shares.total;
-			var image = dataSource[i].image;
-			var link = dataSource[i].link;
+	else if(selectedSource === 'Reddit'){ dataSource = data.data.children}
+	else if(selectedSource === 'Digg'){ dataSource = data.data.feed }
 
+console.log(dataSource.length)
+		for(var i = 0; i < dataSource.length; i++){
+
+			if (selectedSource === 'Mashable'){
+				var title = dataSource[i].title;
+				var link = dataSource[i].link;
+				var label = dataSource[i].channel_label;
+				var shares = dataSource[i].shares.total;
+				var image = dataSource[i].image;
+			}
+
+			else if (selectedSource === 'Reddit'){
+				var title = dataSource[i].data.title;
+				var link = dataSource[i].data.url;
+				var label = dataSource[i].data.subreddit;
+				var shares = dataSource[i].data.score;
+				var image = dataSource[i].data.thumbnail;
+			}
+
+			else if (selectedSource === 'Digg'){
+				var title = dataSource[i].content.title_alt;
+				var link = dataSource[i].content.url;
+				var label = dataSource[i].content.tags[0].display;
+				var shares = dataSource[i].diggs.count;
+				var image = dataSource[i].content.media.images[0].url;
+			}
+			
 		Article = {
 			'title': title,
 			'label': label,
