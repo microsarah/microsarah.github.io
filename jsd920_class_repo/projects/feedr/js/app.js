@@ -13,12 +13,36 @@ var Source = {
 	'Digg': 'https://accesscontrolalloworiginall.herokuapp.com/http://digg.com/api/news/popular.json',
 };
 
-var selectedSource;
+var mashable, digg, reddit;
+
+
+$(document).ready( function(){
+	
+	console.log('dom ready')
+	// get all data on dom ready & save in var
+	mashable = getData('Mashable', Source.Mashable);
+	console.log(mashable);
+	digg = getData('Digg', Source.Digg);
+	reddit = getData('Reddit', Source.Reddit);
+
+	// cache data for limited time (TTL)
+
+
+	// have mashable display by default (store in var)
+} );
+
+
+var getData = function(label, url){
+	$.get(url).done(onSuccess).fail(onFail);
+	$('span').replaceWith(label);
+};
 
 // source successfully accessed
 function onSuccess(res) {
-    console.log(res);
-    populateData(res);
+    //console.log(res);
+    console.log(mashable)
+    // populate Mashable data by default
+    populateData(res);  
 }
 
 // error accessing source
@@ -26,63 +50,65 @@ function onFail(err){
 	console.log('Error accessing data: '+ err);
 }
 
-// get the data - run fail function if done does not run
-var getMashable = $('#mashable').on('click', function() {
-	$.get(Source.Mashable).done(onSuccess).fail(onFail);
-	selectedSource = 'Mashable';
-	$('span').replaceWith(selectedSource);
+var showMashable = $('#mashable').on('click', function() {
+	populateData(mashable);
 });
 
-var getReddit = $('#reddit').on('click', function() {
-	$.get(Source.Reddit).done(onSuccess).fail(onFail);
-	selectedSource = 'Reddit';
-	$('span').replaceWith(selectedSource);
-});
+// var getReddit = $('#reddit').on('click', function() {
+// 	$.get(Source.Reddit).done(onSuccess).fail(onFail);
+// 	selectedSource = 'Reddit';
+// 	$('span').replaceWith(selectedSource);
+// });
 
-var getDigg = $('#digg').on('click', function() {
-	$.get(Source.Digg).done(onSuccess).fail(onFail);
-	selectedSource = 'Digg';
-	$('span').replaceWith(selectedSource);
-});
+// var getDigg = $('#digg').on('click', function() {
+// 	$.get(Source.Digg).done(onSuccess).fail(onFail);
+// 	selectedSource = 'Digg';
+// 	$('span').replaceWith(selectedSource);
+// });
+
+
+
 
 
 // get mashable by default
 //getMashable();
 
 function populateData(data){
+
+	$('.article').remove();
+
 	var articles = [];
 	var dataSource;
 
-	if(selectedSource === 'Mashable'){ dataSource = data.new }
-	else if(selectedSource === 'Reddit'){ dataSource = data.data.children}
-	else if(selectedSource === 'Digg'){ dataSource = data.data.feed }
+	dataSource = data.new; 
+	// else if(selectedSource === 'Reddit'){ dataSource = data.data.children}
+	// else if(selectedSource === 'Digg'){ dataSource = data.data.feed }
 
-console.log(dataSource.length)
 		for(var i = 0; i < dataSource.length; i++){
 
-			if (selectedSource === 'Mashable'){
+			// if (selectedSource === 'Mashable'){
 				var title = dataSource[i].title;
 				var link = dataSource[i].link;
 				var label = dataSource[i].channel_label;
 				var shares = dataSource[i].shares.total;
 				var image = dataSource[i].image;
-			}
+			//}
 
-			else if (selectedSource === 'Reddit'){
-				var title = dataSource[i].data.title;
-				var link = dataSource[i].data.url;
-				var label = dataSource[i].data.subreddit;
-				var shares = dataSource[i].data.score;
-				var image = dataSource[i].data.thumbnail;
-			}
+			// else if (selectedSource === 'Reddit'){
+			// 	var title = dataSource[i].data.title;
+			// 	var link = dataSource[i].data.url;
+			// 	var label = dataSource[i].data.subreddit;
+			// 	var shares = dataSource[i].data.score;
+			// 	var image = dataSource[i].data.thumbnail;
+			// }
 
-			else if (selectedSource === 'Digg'){
-				var title = dataSource[i].content.title_alt;
-				var link = dataSource[i].content.url;
-				var label = dataSource[i].content.tags[0].display;
-				var shares = dataSource[i].diggs.count;
-				var image = dataSource[i].content.media.images[0].url;
-			}
+			// else if (selectedSource === 'Digg'){
+			// 	var title = dataSource[i].content.title_alt;
+			// 	var link = dataSource[i].content.url;
+			// 	var label = dataSource[i].content.tags[0].display;
+			// 	var shares = dataSource[i].diggs.count;
+			// 	var image = dataSource[i].content.media.images[0].url;
+			// }
 			
 		Article = {
 			'title': title,
