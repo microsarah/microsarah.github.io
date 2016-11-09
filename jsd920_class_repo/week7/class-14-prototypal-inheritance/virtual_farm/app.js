@@ -42,4 +42,36 @@ $(document).ready(function () {
 	// push all animal instances here
 	var farmAnimals = [];
 
-})
+	function FarmAnimal (name, image, sound){
+		this.name = name;
+		this.image = image;
+		this.sound = sound;
+	} // FarmAnimals end
+
+
+	FarmAnimal.prototype.talk = function(){
+		alert(this.name + ' says ' + this.sound);
+	};
+
+	// image and sound are hard-coded, name is not
+	function Dog(name, image, sound){
+		//FarmAnimal.call(this, name, 'http://r.ddmcdn.com/s_f/o_1/cx_633/cy_0/cw_1725/ch_1725/w_720/APL/uploads/2014/11/too-cute-doggone-it-video-playlist.jpg', 'woof');
+	}
+
+	// create a new dog called Rod
+	var dog = new Dog('Rod');
+
+	// add the new dog to the array
+	farmAnimals.push(dog);
+
+	// loop thru array and add to Dom
+	farmAnimals.forEach(function(animal){
+		var elem = $('<div>').addClass('animal').css('background-image', 'url(' + animal.image + ')');
+		$('body').append(elem).click(function(el){
+			alert(animal.sound + ', ' + animal.name);
+		});
+	});
+
+
+
+});

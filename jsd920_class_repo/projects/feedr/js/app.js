@@ -40,7 +40,7 @@ var getData = function(label, url){
 // source successfully accessed
 function onSuccess(res) {
     //console.log(res);
-    console.log(mashable)
+    console.log(mashable);
     // populate Mashable data by default
     populateData(res);  
 }
