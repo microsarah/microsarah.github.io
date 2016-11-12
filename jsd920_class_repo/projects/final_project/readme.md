@@ -7,19 +7,29 @@ Instead of a static video, I'd like to create an app where the user can toggle t
 
 
 ## Functional Components
+
 ### Required
-1) Use the YouTube API to pull video source URL and title | 2-4 hours
-2) Add video to the background of the site (fullscreen) | 1-2 hours
-3) Display title of video (title will be a date) in mm/dd/yy format | 2-4 hours
-4) Program left and right arrow keys to move backwards/forward through video stream | 1-2 hours
-5) Host the site | 0.5-1 hours
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Read YouTube API documentation to define needs/approach | H | 2-4hrs | 3hrs | 3hrs |
+| Use the YouTube API to pull video source URLs and titles | H | 2-4hrs | |  |
+| Add fullscreen video to the background of the site | H | 1-2hrs | |  |
+| Display title of video (title will be a date) in mm/dd/yy format | H | 2-4hrs | |  |
+| Program left and right arrow keys to move backwards/forwards through videos | H | 1-2hrs | |  |
+| Host the site | H | 1 hr | |  |
+
 
 ### Nice to Have
-* If a video has been played, don't play it again (unless there are no other query results) | 2-4 hours
-* Only include February 29 every 4 full 'years' | 1-2 hours
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| If a video has been played, don't play it again (unless there are no other query results) | H | 2-4hrs |  |  |
+| Only include February 29 every 4 full 'years' | H | 1-2hrs | |  |
+
 
 ### Bonus
-* If possible, optimize playback time by pre-loading upcoming video | 6-8 hours
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| If possible, optimize playback time by pre-loading upcoming video | H | 6-10hrs |  |  |
 
 
 ## Helper Functions
