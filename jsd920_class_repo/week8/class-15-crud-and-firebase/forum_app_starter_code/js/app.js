@@ -1,12 +1,4 @@
-// CREATE
-// READ
-// UPDATE
-// DELETE
-
-
 $(document).ready( function(){
-
-
 
 	var x = 1;
 	var messageAppReference = firebase.database();
@@ -46,11 +38,13 @@ $(document).ready( function(){
 					updateMessage(id, votes++);
 				});
 
-				// trash.on('click', function(){
-				// 	li.remove();
-				// });
+				downVote.on('click', function(){
+					updateMessage(id, votes--);
+				});
 
-				
+				trash.on('click', function(){
+					$(this).parent().remove();
+				});
 
 				var li = $('<li>').html(messageText + '<div class="pull-right">' + votes + '</div>');
 				li.append(trash);
