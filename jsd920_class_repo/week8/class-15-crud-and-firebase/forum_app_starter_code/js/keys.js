@@ -1,10 +1,8 @@
-// Initialize Firebase
   var config = {
-    apiKey: "AIzaSyC5wrUKlZAkSLyLd2SNBQM2a9uWhC4s_F8",
-    authDomain: "yolo-148902.firebaseapp.com",
-    databaseURL: "https://yolo-148902.firebaseio.com",
-    storageBucket: "yolo-148902.appspot.com",
-    messagingSenderId: "968814674576"
+    apiKey: "AIzaSyBohvyxwX7m1d5ZKnJljrF7fGHjCmXWT7E",
+    authDomain: "jsd-forum-a7b0f.firebaseapp.com",
+    databaseURL: "https://jsd-forum-a7b0f.firebaseio.com",
+    storageBucket: "jsd-forum-a7b0f.appspot.com",
+    messagingSenderId: "924034822872"
   };
-  
   firebase.initializeApp(config);
