@@ -1,107 +1,142 @@
 $(document).ready( function(){
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
-
-	var allData = [];
+	var allVideos = [];
+	var dayCounter = 1;
+	var year = 365;
+	var month;
 
 	var NumDays = {
 		jan : 31,
-		'feb' : 28,
-		'mar' : 31,
-		'apr' : 30,
-		'may' : 31,
-		'jun' : 30,
-		'jul' : 31,
-		'aug' : 31,
-		'sep' : 30,
-		'oct' : 31,
-		'nov' : 30,
-		'dec' : 31,
+		feb : 28,
+		mar : 31,
+		apr : 30,
+		may : 31,
+		jun : 30,
+		jul : 31,
+		aug : 31,
+		sep : 30,
+		oct : 31,
+		nov : 30,
+		dec : 31,
 	};
 
-
+	// set the current month
+	if(dayCounter < NumDays.jan){
+		month = 'january';
+	} else if (dayCounter < NumDays.jan + NumDays.feb){
+		month = 'february';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar){
+		month = 'march';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr){
+		month = 'april';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may){
+		month = 'may';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun){
+		month = 'june';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july){
+		month = 'july';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug){
+		month = 'august';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep){
+		month = 'september';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct){
+		month = 'october';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct + NumDays.nov){
+		month = 'november';
+	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct + NumDays.dec){
+		month = 'december';
+	}
 
 
 	// new workflow:
 
-	// search a day
-	// get the video id
-	// save the video id to an array
-	// render the video using the video id from the array
-	// start timer
-	// after 5 seconds, do the next search
-	// after 10 seconds, repeat this loop
+
+	// ----------------------------------------------- search a day
+	// ----------------------------------------------- get the video id
+	// ----------------------------------------------- save the video id to an array
+	// ----------------------------------------------- render the video using the video id from the array
+	// ----------------------------------------------- start timer
+	// ----------------------------------------------- after 5 seconds, do the next search
+	// ----------------------------------------------- after 10 seconds, repeat this loop
 
 
+
+	// searchAll runs queryData
+	// queryData runs saveData
+	// saveData runs renderData
+
+
+
+
+	searchAll();
+
+	// search for videos on a 10-sec timer
+
+	// ---------------------------------------- this code stops after 2 videos
+	// if (dayCounter <= 365){
+	// 	setTimeout(searchAll, 10000);
+	// }
+
+
+	// ---------------------------------------- this code renders way too fast
+	for (var i = dayCounter; i <= 365; i++){
+		setTimeout(searchAll, 10000);
+	}
 	// idea: could i do 6 days at a time (1 minute of material)
 
 
+	function searchAll(){
+		console.log('day counter start: ' + dayCounter)
 
-	// var allData = [];
-
-	// for(var i =1; i < NumDays.jan; i ++){
-	// 	var data = getData('jan', i);
-	// 	console.log(data)
-	// 	allData.push(data);
-	// }
-
-	// console.log(allData);
-
-	// load search results for jan 1
-	for (var i = 0; i < NumDays.jan; i++){
-
-		getData('jan', i);
+		// ----------------------------------------------- search a day
+		var data = queryData(month, dayCounter);
 	}
 
-	//getData('jan', 1);
-	// console.log(jan1);
-	//saveData(jan1);
 
-	function getData(month,day){
+
+	function queryData(month,day){
 		var url = (baseURL + month + '-' + day +'-' + 'birthday');
 		$.get(url).done(onSuccess).fail(onFail);
 	}
 	
-	// source successfully accessed
+	// if the query is successful, then run saveData() 
 	function onSuccess(res) {
-		//return res;
 		saveData(res);
-	    renderData(res);
-	    console.log(res);
 	}
 
-	// error accessing source
-	function onFail(err){
-		console.log('Error accessing data: '+ err);
-	}
+
 
 	function saveData(data){
-		for(var i = 0; i < data.items.length; i++){
-			allData.push(data.items[i].id.videoId);
-		}
 
-		console.log(allData);
+		// ----------------------------------------------- get the video id
+		// ----------------------------------------------- save the video id to an array
+		allVideos.push(data.items[0].id.videoId);
+
+		console.log(allVideos)
+		renderData(data)
 	}
 
-	function renderData(data){
 
-		// create an id with the video id
-		// create an iframe pointing to the id
-		// play video for ten seconds
-		// replace the iframe with the next video id
-		var id = data.items[0].id.videoId;
-		console.log(id);
-
-
-		// autoplay works when you click the tempURL and open in browser, but causes this error in my app: 
-		// Uncaught ReferenceError: ytcfg is not defined
-		// Unfortunately it's a youtube bug: http://stackoverflow.com/questions/40622204/uncaught-referenceerror-ytcfg-is-not-defined
-
-		//var tempURL = '"https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0"';
-		//console.log(tempURL);
-		//$('.video-container').append('<iframe src=' + tempURL + 'frameborder="0" allowfullscreen></iframe>');
+	function renderData(){
+		// ----------------------------------------------- render the video using the video id from the array
+		var id = allVideos[dayCounter - 1];
 		
+		//console.log(id)
 		$('.video-container').append('<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
 	
+		// ----------------------------------------------- remove previous iframe after initial iframe renders
+		if (dayCounter > 1){
+			console.log('removing iframe')
+			$('iframe:first-of-type').remove();
+		}
+
+		dayCounter++;
+		console.log('day counter end: ' + dayCounter)
+	}
+
+
+	function onFail(err){
+		console.log('Error accessing data: '+ err);
 	}
 
 });

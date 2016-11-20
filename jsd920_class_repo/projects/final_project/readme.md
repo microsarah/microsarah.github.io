@@ -52,7 +52,9 @@ Use this section to document all helper functions. These functions should be ver
 // Use this section to document what changes were made and when.
 
 ## Issues and Resolutions
-// Use this section to list of all issues encountered and their resolution
+**ERROR**: 
+- Uncaught ReferenceError: ytcfg is not defined
+- Unfortunately it's a youtube bug: http://stackoverflow.com/questions/40622204/uncaught-referenceerror-ytcfg-is-not-defined
 
 <!-- #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
