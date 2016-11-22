@@ -1,7 +1,7 @@
 $(document).ready( function(){
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
 	var allVideos = [];
-	var dayCounter = 1;
+	var dayCounter = 1;  // dayCounter is counting up 
 	var year = 365;
 	var month;
 
@@ -72,16 +72,12 @@ $(document).ready( function(){
 
 	// search for videos on a 10-sec timer
 
-	// ---------------------------------------- this code stops after 2 videos
-	// if (dayCounter <= 365){
-	// 	setTimeout(searchAll, 10000);
-	// }
-
 
 	// ---------------------------------------- this code renders way too fast
 	for (var i = dayCounter; i <= 365; i++){
-		setTimeout(searchAll, 10000);
+		setTimeout(searchAll, (10000 * i));
 	}
+	
 	// idea: could i do 6 days at a time (1 minute of material)
 
 
@@ -101,6 +97,7 @@ $(document).ready( function(){
 	
 	// if the query is successful, then run saveData() 
 	function onSuccess(res) {
+		console.log(res)
 		saveData(res);
 	}
 
@@ -110,10 +107,14 @@ $(document).ready( function(){
 
 		// ----------------------------------------------- get the video id
 		// ----------------------------------------------- save the video id to an array
-		allVideos.push(data.items[0].id.videoId);
+		var totalItems = data.items.length;
+		var randomVid = Math.ceil(Math.random() * totalItems);
+		console.log('total items: ' + totalItems);
 
-		console.log(allVideos)
-		renderData(data)
+		allVideos.push(data.items[randomVid].id.videoId);
+
+		console.log(allVideos);
+		renderData(data);
 	}
 
 
@@ -123,15 +124,24 @@ $(document).ready( function(){
 		
 		//console.log(id)
 		$('.video-container').append('<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
-	
+		
+		if(dayCounter < 10){
+			$('.title').append('<h1>' + month + '/0' + dayCounter + '/' + '2016</h1>');
+		} else {
+			$('.title').append('<h1>' + month + '/' + dayCounter + '/' + '2016</h1>');
+		}
+		
+		
+
 		// ----------------------------------------------- remove previous iframe after initial iframe renders
 		if (dayCounter > 1){
-			console.log('removing iframe')
+			console.log('removing iframe');
 			$('iframe:first-of-type').remove();
+			$('h1:first-of-type').remove();
 		}
 
 		dayCounter++;
-		console.log('day counter end: ' + dayCounter)
+		console.log('day counter end: ' + dayCounter);
 	}
 
 

@@ -59,3 +59,5 @@ Use this section to document all helper functions. These functions should be ver
 <!-- #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object -->
+
+**ERROR** the dayCounter var is counting up with each video– need to set it to end at month's NumDays
