@@ -21,7 +21,7 @@ $(document).ready( function(){
 	};
 
 	// set the current month
-	if(dayCounter < NumDays.jan){
+	if(dayCounter <= NumDays.jan){
 		month = 'january';
 	} else if (dayCounter < NumDays.jan + NumDays.feb){
 		month = 'february';
@@ -93,6 +93,7 @@ $(document).ready( function(){
 	function queryData(month,day){
 		var url = (baseURL + month + '-' + day +'-' + 'birthday');
 		$.get(url).done(onSuccess).fail(onFail);
+		console.log(month, day)
 	}
 	
 	// if the query is successful, then run saveData() 
