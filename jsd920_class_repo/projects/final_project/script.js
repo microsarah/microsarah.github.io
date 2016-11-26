@@ -1,9 +1,10 @@
 $(document).ready( function(){
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
 	var allVideos = [];
-	var dayCounter = 1;  // dayCounter is counting up 
+	var totalDays = 1;  // totalDays is counting up with each render
+	var currentDay = 1; // tracking days for months
 	var year = 365;
-	var month;
+	var currentMonth;
 
 	var NumDays = {
 		jan : 31,
@@ -20,36 +21,7 @@ $(document).ready( function(){
 		dec : 31,
 	};
 
-	// set the current month
-	if(dayCounter <= NumDays.jan){
-		month = 'january';
-	} else if (dayCounter < NumDays.jan + NumDays.feb){
-		month = 'february';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar){
-		month = 'march';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr){
-		month = 'april';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may){
-		month = 'may';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun){
-		month = 'june';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july){
-		month = 'july';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug){
-		month = 'august';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep){
-		month = 'september';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct){
-		month = 'october';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct + NumDays.nov){
-		month = 'november';
-	} else if (dayCounter < NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.july + NumDays.aug + NumDays.sep + NumDays.oct + NumDays.dec){
-		month = 'december';
-	}
-
-
 	// new workflow:
-
 
 	// ----------------------------------------------- search a day
 	// ----------------------------------------------- get the video id
@@ -59,22 +31,86 @@ $(document).ready( function(){
 	// ----------------------------------------------- after 5 seconds, do the next search
 	// ----------------------------------------------- after 10 seconds, repeat this loop
 
-
-
 	// searchAll runs queryData
 	// queryData runs saveData
 	// saveData runs renderData
 
+	function setMonth(){
+		if (currentMonth === 'january' && currentDay > NumDays.jan){
+			currentDay = 1;
+			currentMonth = 'february';
+		} else if (currentMonth === 'february' && currentDay > NumDays.feb){
+			currentDay = 1;
+			currentMonth = 'march';
+		} else if (currentMonth === 'march' && currentDay > NumDays.mar){
+			currentDay = 1;
+			currentMonth = 'april';
+		} else if (currentMonth === 'april' && currentDay > NumDays.apr){
+			currentDay = 1;
+			currentMonth = 'may';
+		} else if (currentMonth === 'may' && currentDay > NumDays.may){
+			currentDay = 1;
+			currentMonth = 'june';
+		} else if (currentMonth === 'june' && currentDay > NumDays.jun){
+			currentDay = 1;
+			currentMonth = 'july';
+		} else if (currentMonth === 'july' && currentDay > NumDays.jul){
+			currentDay = 1;
+			currentMonth = 'august';
+		} else if (currentMonth === 'august' && currentDay > NumDays.aug){
+			currentDay = 1;
+			currentMonth = 'september';
+		} else if (currentMonth === 'september' && currentDay > NumDays.sep){
+			currentDay = 1;
+			currentMonth = 'october';
+		} else if (currentMonth === 'october' && currentDay > NumDays.oct){
+			currentDay = 1;
+			currentMonth = 'november';
+		} else if (currentMonth === 'november' && currentDay > NumDays.nov){
+			currentDay = 1;
+			currentMonth = 'december';
+		} else if (currentMonth === 'december' && currentDay > NumDays.dec){
+			currentDay = 1;
+			currentMonth = 'january';
+		}
+
+		if (currentMonth === 'january'){
+			monthNum = 01;
+		} else if (currentMonth === 'february'){
+			monthNum = 02;
+		} else if (currentMonth === 'march'){
+			monthNum = 03;
+		} else if (currentMonth === 'april'){
+			monthNum = 04;
+		} else if (currentMonth === 'may'){
+			monthNum = 05;
+		} else if (currentMonth === 'june'){
+			monthNum = 06;
+		} else if (currentMonth === 'july'){
+			monthNum = 07;
+		} else if (currentMonth === 'august'){
+			monthNum = 08;
+		} else if (currentMonth === 'september'){
+			monthNum = 09;
+		} else if (currentMonth === 'october'){
+			monthNum = 10;
+		} else if (currentMonth === 'november'){
+			monthNum = 11;
+		} else if (currentMonth === 'december'){
+			monthNum = 12;
+		}      
+	}
 
 
-
+	// start it off
+	currentMonth = 'january';
 	searchAll();
 
 	// search for videos on a 10-sec timer
 
 
 	// ---------------------------------------- this code renders way too fast
-	for (var i = dayCounter; i <= 365; i++){
+	for (var i = totalDays; i <= 365; i++){
 		setTimeout(searchAll, (10000 * i));
 	}
 	
@@ -82,18 +118,20 @@ $(document).ready( function(){
 
 
 	function searchAll(){
-		console.log('day counter start: ' + dayCounter)
+		//console.log('total days counter start: ' + totalDays)
+		//console.log('day counter start: ' + currentDay)
 
-		// ----------------------------------------------- search a day
-		var data = queryData(month, dayCounter);
+		// ----------------------------------------------- set the month based on the totalDays counter
+		setMonth();
+		queryData(currentMonth, currentDay);
 	}
-
 
 
 	function queryData(month,day){
 		var url = (baseURL + month + '-' + day +'-' + 'birthday');
+		console.log(url);
 		$.get(url).done(onSuccess).fail(onFail);
-		console.log(month, day)
+		//console.log(month, day)
 	}
 	
 	// if the query is successful, then run saveData() 
@@ -103,51 +141,59 @@ $(document).ready( function(){
 	}
 
 
-
 	function saveData(data){
 
 		// ----------------------------------------------- get the video id
 		// ----------------------------------------------- save the video id to an array
 		var totalItems = data.items.length;
 		var randomVid = Math.ceil(Math.random() * totalItems);
-		console.log('total items: ' + totalItems);
+		//console.log('total items: ' + totalItems);
 
 		allVideos.push(data.items[randomVid].id.videoId);
 
-		console.log(allVideos);
+		//console.log(allVideos);
 		renderData(data);
 	}
 
 
 	function renderData(){
 		// ----------------------------------------------- render the video using the video id from the array
-		var id = allVideos[dayCounter - 1];
+		var id = allVideos[totalDays - 1];
 		
 		//console.log(id)
-		$('.video-container').append('<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
+		$('.video-container').append('<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1;?t=1m1s;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
 		
-		if(dayCounter < 10){
-			$('.title').append('<h1>' + month + '/0' + dayCounter + '/' + '2016</h1>');
+		if(currentDay < 10){
+			$('.title').append('<h1>' + monthNum + '/0' + currentDay + '/' + '2016</h1>');
 		} else {
-			$('.title').append('<h1>' + month + '/' + dayCounter + '/' + '2016</h1>');
+			$('.title').append('<h1>' + monthNum + '/' + currentDay + '/' + '2016</h1>');
 		}
-		
 		
 
 		// ----------------------------------------------- remove previous iframe after initial iframe renders
-		if (dayCounter > 1){
-			console.log('removing iframe');
+		if (totalDays > 1){
+			//console.log('removing iframe');
 			$('iframe:first-of-type').remove();
 			$('h1:first-of-type').remove();
 		}
 
-		dayCounter++;
-		console.log('day counter end: ' + dayCounter);
+		currentDay++;
+		totalDays++;
+		
+		//console.log('total days counter end: ' + totalDays);
 	}
 
 
 	function onFail(err){
-		console.log('Error accessing data: '+ err);
+		//console.log('Error accessing data: '+ err);
 	}
 
 });
+
+
+
+
+// search all for 1 month in 10s increments
+// add an array of objects called january
+//
+
