@@ -34,7 +34,7 @@ $(document).ready( function(){
 
 	// render videos on a 20-sec timer
 	for (var i = 1; i <= year; i++){
-		setTimeout(renderVid, (20000 * i));
+		setTimeout(renderVid, (10000 * i));
 	}
 	
 	// ----------------------------------------------- set the current month, then
@@ -70,6 +70,10 @@ $(document).ready( function(){
 
 	// ----------------------------------------------- render the video using the video id from the array
 	function renderVid(){
+
+			
+
+		// render 2 videos at a time
 		setRenderDate();
 
 		var id = allVideos[renderDay - 1];
@@ -81,37 +85,46 @@ $(document).ready( function(){
 		// ----------------------------------------------- render the date 
 		if(renderDay < 10){
 			// ----------------------------------------------- add a 0 to single-digit dates
-			$('.video-container').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
 		} else {
-			$('.video-container').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+			$('.title').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
 		}
+
+		renderDay++;
+
+		// setTimeout(fade, 1000);
+		// setTimeout(remove, 5000);
+
+		fade().delay(800);
+		remove();
+
 		
 		// after 20 seconds of viewing, fade out the current video, then remove it
 		// ----------------------------------------------- remove previous iframe after initial iframe renders
-		if (totalSearchDays > 1){
-			fade();
-			setTimeout(remove, 2000);
-			//remove();
-		}
+
 		
 		// render current video
 		// prepend next video
 		// after 10s fade current vid
 		// remove after fade
-		renderDay++;
+		
 	}
 
 
 	function fade(){
-		if (totalSearchDays > 1){
-			$('iframe:last-of-type').fadeOut();
-			$('h1:last-of-type').fadeOut();
-		}
+		$('iframe:last-of-type').fadeOut();
+		$('.title').empty();
 	}
 
 	function remove(){
 		$('iframe:last-of-type').remove();
-		$('h1:last-of-type').remove();
+		
 	}
 
 

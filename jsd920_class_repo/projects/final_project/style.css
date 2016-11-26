@@ -2,7 +2,8 @@
 
 @font-face {
     font-family: Camcorder;
-    src: url("fonts/CAMCORDER_REG.otf") format("opentype");
+    font-size: 20px;
+    src: url("fonts/CAMCORDER_OL2.otf") format("opentype");
 }
 
 body{
@@ -19,12 +20,38 @@ iframe {
 }
 
 h1{
-    font-weight: lighter;
-    letter-spacing: .05em; 
+    font-size:1.5em;
+    font-weight: normal;
+    letter-spacing: .2em; 
     position: absolute;
+    right:1em;
+    top:1em;
+}
+
+h1:nth-of-type(1){
+    color:#00ff00;
+    right:1.04em;
+}
+
+h1:nth-of-type(2){
+    color:#ff0000;
+    right:.96em;
+}
+
+h1:nth-of-type(3){
+    color:#0000ff;
+    top:1.04em;
+}
+
+h1:nth-of-type(4){
+    color:white;
+}
+
+.title{
+        position: absolute;
     top: 1em;
     right: 1em;
-    z-index: 4;
+    z-index: 1;
 }
 
 .video-container {
