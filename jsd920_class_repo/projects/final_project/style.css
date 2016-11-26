@@ -21,10 +21,6 @@ iframe {
 h1{
     font-weight: lighter;
     letter-spacing: .05em; 
-}
-
-.title{
-    
     position: absolute;
     top: 1em;
     right: 1em;

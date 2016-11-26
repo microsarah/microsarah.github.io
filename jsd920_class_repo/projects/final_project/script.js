@@ -1,11 +1,13 @@
 $(document).ready( function(){
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
 	var allVideos = [];
-	var totalDays = 1;  // totalDays is counting up with each render
-	var currentDay = 1; // tracking days for months
+	var totalSearchDays = 1;  // totalDays is counting up with each render
+	var searchDay = 1; // tracking days for months
+	var searchMonth = 'january';
+	var renderDay = 1;
+	var renderMonth = 'january';
 	var year = 365;
-	var currentMonth;
-
+	
 	var NumDays = {
 		jan : 31,
 		feb : 28,
@@ -21,25 +23,26 @@ $(document).ready( function(){
 		dec : 31,
 	};
 
-
 	// start it off
-	currentMonth = 'january';
 	searchForVid();
+	renderVid();
 
 	// search for videos on a 10-sec timer
-	for (var i = totalDays; i <= year; i++){
+	for (var i = totalSearchDays; i <= year; i++){
 		setTimeout(searchForVid, (10000 * i));
 	}
 
-
-
-
+	// render videos on a 20-sec timer
+	for (var i = 1; i <= year; i++){
+		setTimeout(renderVid, (20000 * i));
+	}
 	
 	// ----------------------------------------------- set the current month, then
 	// ----------------------------------------------- query data using current month & day
 	function searchForVid(){
-		setMonth();
-		queryData(currentMonth, currentDay);
+		setSearchDate();
+		queryData(searchMonth, searchDay);
+		console.log('searching: ' + searchMonth + ' ' + searchDay);
 	}
 
 	// ----------------------------------------------- call the API 
@@ -59,95 +62,163 @@ $(document).ready( function(){
 		var totalItems = res.items.length;
 		var randomVid = Math.floor(Math.random() * totalItems);
 		allVideos.push(res.items[randomVid].id.videoId);
-		renderData(res);
+
+		searchDay++;
+		totalSearchDays++;
+		// renderVid();
 	}
 
 	// ----------------------------------------------- render the video using the video id from the array
-	function renderData(){
-		var id = allVideos[totalDays - 1];
-		$('.video-container').append('<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1;?t=1m1s;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>');
-		
-		// ----------------------------------------------- add a 0 to single-digit dates
-		if(currentDay < 10){
-			$('.title').append('<h1>' + monthNum + '/0' + currentDay + '/' + '2016</h1>');
-		} else {
-			$('.title').append('<h1>' + monthNum + '/' + currentDay + '/' + '2016</h1>');
-		}
-		
-		// ----------------------------------------------- remove previous iframe after initial iframe renders
-		if (totalDays > 1){
-			$('iframe:first-of-type').remove();
-			$('h1:first-of-type').remove();
-		}
+	function renderVid(){
+		setRenderDate();
 
-		currentDay++;
-		totalDays++;
+		var id = allVideos[renderDay - 1];
+
+		console.log('rendering: ' + renderMonth + ' ' + renderDay);
+		var source = '"https://www.youtube.com/embed/' + id + '?autoplay=1;?t=1m1s;rel=0&amp;showinfo=0"';
+		$('.video-container').prepend('<iframe src=' + source + 'frameborder="0" allowfullscreen></iframe>');
+		
+		// ----------------------------------------------- render the date 
+		if(renderDay < 10){
+			// ----------------------------------------------- add a 0 to single-digit dates
+			$('.video-container').prepend('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+		} else {
+			$('.video-container').prepend('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+		}
+		
+		// after 20 seconds of viewing, fade out the current video, then remove it
+		// ----------------------------------------------- remove previous iframe after initial iframe renders
+		if (totalSearchDays > 1){
+			fade();
+			setTimeout(remove, 2000);
+			//remove();
+		}
+		
+		// render current video
+		// prepend next video
+		// after 10s fade current vid
+		// remove after fade
+		renderDay++;
 	}
 
-	// ----------------------------------------------- set the currentMonth 
-	// ----------------------------------------------- reset the currentDay after the month ends
-	function setMonth(){
-		if (currentMonth === 'january' && currentDay > NumDays.jan){
-			currentDay = 1;
-			currentMonth = 'february';
-		} else if (currentMonth === 'february' && currentDay > NumDays.feb){
-			currentDay = 1;
-			currentMonth = 'march';
-		} else if (currentMonth === 'march' && currentDay > NumDays.mar){
-			currentDay = 1;
-			currentMonth = 'april';
-		} else if (currentMonth === 'april' && currentDay > NumDays.apr){
-			currentDay = 1;
-			currentMonth = 'may';
-		} else if (currentMonth === 'may' && currentDay > NumDays.may){
-			currentDay = 1;
-			currentMonth = 'june';
-		} else if (currentMonth === 'june' && currentDay > NumDays.jun){
-			currentDay = 1;
-			currentMonth = 'july';
-		} else if (currentMonth === 'july' && currentDay > NumDays.jul){
-			currentDay = 1;
-			currentMonth = 'august';
-		} else if (currentMonth === 'august' && currentDay > NumDays.aug){
-			currentDay = 1;
-			currentMonth = 'september';
-		} else if (currentMonth === 'september' && currentDay > NumDays.sep){
-			currentDay = 1;
-			currentMonth = 'october';
-		} else if (currentMonth === 'october' && currentDay > NumDays.oct){
-			currentDay = 1;
-			currentMonth = 'november';
-		} else if (currentMonth === 'november' && currentDay > NumDays.nov){
-			currentDay = 1;
-			currentMonth = 'december';
-		} else if (currentMonth === 'december' && currentDay > NumDays.dec){
-			currentDay = 1;
-			currentMonth = 'january';
+
+	function fade(){
+		if (totalSearchDays > 1){
+			$('iframe:last-of-type').fadeOut();
+			$('h1:last-of-type').fadeOut();
+		}
+	}
+
+	function remove(){
+		$('iframe:last-of-type').remove();
+		$('h1:last-of-type').remove();
+	}
+
+
+	// ----------------------------------------------- set the searchMonth 
+	// ----------------------------------------------- reset the searchDay after the month ends
+	function setSearchDate(){
+		if (searchMonth === 'january' && searchDay > NumDays.jan){
+			searchDay = 1;
+			searchMonth = 'february';
+		} else if (searchMonth === 'february' && searchDay > NumDays.feb){
+			searchDay = 1;
+			searchMonth = 'march';
+		} else if (searchMonth === 'march' && searchDay > NumDays.mar){
+			searchDay = 1;
+			searchMonth = 'april';
+		} else if (searchMonth === 'april' && searchDay > NumDays.apr){
+			searchDay = 1;
+			searchMonth = 'may';
+		} else if (searchMonth === 'may' && searchDay > NumDays.may){
+			searchDay = 1;
+			searchMonth = 'june';
+		} else if (searchMonth === 'june' && searchDay > NumDays.jun){
+			searchDay = 1;
+			searchMonth = 'july';
+		} else if (searchMonth === 'july' && searchDay > NumDays.jul){
+			searchDay = 1;
+			searchMonth = 'august';
+		} else if (searchMonth === 'august' && searchDay > NumDays.aug){
+			searchDay = 1;
+			searchMonth = 'september';
+		} else if (searchMonth === 'september' && searchDay > NumDays.sep){
+			searchDay = 1;
+			searchMonth = 'october';
+		} else if (searchMonth === 'october' && searchDay > NumDays.oct){
+			searchDay = 1;
+			searchMonth = 'november';
+		} else if (searchMonth === 'november' && searchDay > NumDays.nov){
+			searchDay = 1;
+			searchMonth = 'december';
+		} else if (searchMonth === 'december' && searchDay > NumDays.dec){
+			searchDay = 1;
+			searchMonth = 'january';
+		}
+	}
+
+	function setRenderDate(){
+		if (renderMonth === 'january' && renderDay > NumDays.jan){
+			renderDay = 1;
+			renderMonth = 'february';
+		} else if (renderMonth === 'february' && renderDay > NumDays.feb){
+			renderDay = 1;
+			renderMonth = 'march';
+		} else if (renderMonth === 'march' && renderDay > NumDays.mar){
+			renderDay = 1;
+			renderMonth = 'april';
+		} else if (renderMonth === 'april' && renderDay > NumDays.apr){
+			renderDay = 1;
+			renderMonth = 'may';
+		} else if (renderMonth === 'may' && renderDay > NumDays.may){
+			renderDay = 1;
+			renderMonth = 'june';
+		} else if (renderMonth === 'june' && renderDay > NumDays.jun){
+			renderDay = 1;
+			renderMonth = 'july';
+		} else if (renderMonth === 'july' && renderDay > NumDays.jul){
+			renderDay = 1;
+			renderMonth = 'august';
+		} else if (renderMonth === 'august' && renderDay > NumDays.aug){
+			renderDay = 1;
+			renderMonth = 'september';
+		} else if (renderMonth === 'september' && renderDay > NumDays.sep){
+			renderDay = 1;
+			renderMonth = 'october';
+		} else if (renderMonth === 'october' && renderDay > NumDays.oct){
+			renderDay = 1;
+			renderMonth = 'november';
+		} else if (renderMonth === 'november' && renderDay > NumDays.nov){
+			renderDay = 1;
+			renderMonth = 'december';
+		} else if (renderMonth === 'december' && renderDay > NumDays.dec){
+			renderDay = 1;
+			renderMonth = 'january';
 		}
 
-		if (currentMonth === 'january'){
+		if (renderMonth === 'january'){
 			monthNum = '01';
-		} else if (currentMonth === 'february'){
+		} else if (renderMonth === 'february'){
 			monthNum = '02';
-		} else if (currentMonth === 'march'){
+		} else if (renderMonth === 'march'){
 			monthNum = '03';
-		} else if (currentMonth === 'april'){
+		} else if (renderMonth === 'april'){
 			monthNum = '04';
-		} else if (currentMonth === 'may'){
+		} else if (renderMonth === 'may'){
 			monthNum = '05';
-		} else if (currentMonth === 'june'){
+		} else if (renderMonth === 'june'){
 			monthNum = '06';
-		} else if (currentMonth === 'july'){
+		} else if (renderMonth === 'july'){
 			monthNum = '07';
-		} else if (currentMonth === 'august'){
+		} else if (renderMonth === 'august'){
 			monthNum = '08';
-		} else if (currentMonth === 'september'){
+		} else if (renderMonth === 'september'){
 			monthNum = '09';
-		} else if (currentMonth === 'october'){
+		} else if (renderMonth === 'october'){
 			monthNum = '10';
-		} else if (currentMonth === 'november'){
+		} else if (renderMonth === 'november'){
 			monthNum = '11';
-		} else if (currentMonth === 'december'){
+		} else if (renderMonth === 'december'){
 			monthNum = '12';
 		}      
 	}
