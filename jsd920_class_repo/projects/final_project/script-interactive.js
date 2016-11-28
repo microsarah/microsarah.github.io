@@ -2,10 +2,11 @@ $(document).ready( function(){
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
 	var allVideos = [];
 	var totalSearchDays = 1;  // totalDays is counting up with each render
-	var searchDay = 1; // tracking days for months
-	var searchMonth = 'january';
-	var renderDay = 1;
-	var renderMonth = 'january';
+	var searchDay; // tracking days for months
+	var searchMonth;
+	var renderDay;
+	var renderMonth;
+	var monthEntered, dayEntered;
 	var year = 365;
 	var id;
 	
@@ -25,17 +26,52 @@ $(document).ready( function(){
 	};
 
 	// start it off
-	searchForVid();
+	//searchForVid();
+
+	// user enters date
+	
+	$('#submit').click(function(event){
+      	event.preventDefault()
+
+      	monthEntered = $('#enterMonth').val();
+		dayEntered = $('#enterDay').val();
+
+		
+
+
+		// set date & render
+		searchMonth = monthEntered;
+		searchDay = dayEntered;
+		monthNum = monthEntered;
+		renderMonth = monthEntered;
+		renderDay = dayEntered;
+
+		console.log('monthEntered: ' + monthEntered)
+		console.log('dayEntered: ' + dayEntered)
+		console.log('searchMonth: ' + searchMonth)
+		console.log('searchDay: ' + searchDay)
+		console.log('renderMonth: ' + renderMonth)
+		console.log('monthNum: ' + monthNum)
+		console.log('renderDay: ' + renderDay)
+
+
+
+		searchForVid();
+     });
+
+	
+	// if keys pressed, move fwd/bkwd
+	// else, render vids as normal
 	
 	// search for videos on a 10-sec timer
-	for (var i = totalSearchDays; i <= year; i++){
-		setTimeout(searchForVid, (10000 * i));
-	}
+	// for (var i = totalSearchDays; i <= year; i++){
+	// 	setTimeout(searchForVid, (10000 * i));
+	// }
 
 	// render videos on a 20-sec timer
-	for (var i = 1; i <= year; i++){
-		setTimeout(renderVid, (25000 * i));
-	}
+	// for (var i = 1; i <= year; i++){
+	// 	setTimeout(renderVid, (25000 * i));
+	// }
 
 	// ----------------------------------------------- set the current month, then
 	// ----------------------------------------------- query data using current month & day
@@ -50,7 +86,7 @@ $(document).ready( function(){
 	// ----------------------------------------------- if it fails, restart search immediately
 	function queryData(month,day){
 		var url = (baseURL + month + '-' + day +'-' + 'birthday');
-		//console.log(url);
+		console.log(url);
 		$.get(url).done(onSuccess).fail(searchForVid); 
 	}
 	
@@ -91,19 +127,21 @@ $(document).ready( function(){
 
 		console.log(renderDay)
 
-		id = allVideos[renderDay - 1];
-		//console.log(allVideos)
-		//console.log('rendering: ' + renderMonth + ' ' + renderDay);
+		id = allVideos[totalSearchDays - 1];
+		console.log(allVideos)
+				console.log('id: ' + id)
+
+		console.log('rendering: ' + renderMonth + ' ' + renderDay);
 
 
 		var source = '"https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0"';
-		//console.log(source)
+		console.log(source)
 		$('.video-container').append('<iframe src=' + source + 'frameborder="0" allowfullscreen></iframe>');
 
 		// ----------------------------------------------- remove previous date 
 		$('.title').empty();
 		// ----------------------------------------------- render new date 
-		if(renderDay < 10){
+		if (renderDay.length < 2){
 			// ----------------------------------------------- add a 0 to single-digit dates
 			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
 			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
@@ -117,12 +155,39 @@ $(document).ready( function(){
 		}
 
 		renderDay++;
-		console.log(renderDay)
+		//console.log(renderDay)
 	}
 
 	// ----------------------------------------------- set the searchMonth 
 	// ----------------------------------------------- reset the searchDay after the month ends
 	function setSearchDate(){
+
+		if (monthEntered === '01' | monthEntered === '1'){
+			searchMonth = 'january';
+		} else if (monthEntered === '02' | monthEntered === '2'){
+			searchMonth = 'february';
+		} else if (monthEntered === '03' | monthEntered === '3'){
+			searchMonth = 'march';
+		} else if (monthEntered === '04' | monthEntered === '4'){
+			searchMonth = 'april';
+		} else if (monthEntered === '05' | monthEntered === '5'){
+			searchMonth = 'may';
+		} else if (monthEntered === '06' | monthEntered === '6'){
+			searchMonth = 'june';
+		} else if (monthEntered === '07' | monthEntered === '7'){
+			searchMonth = 'july';
+		} else if (monthEntered === '08' | monthEntered === '8'){
+			searchMonth = 'august';
+		} else if (monthEntered === '09' | monthEntered === '9'){
+			searchMonth = 'september';
+		} else if (monthEntered === '10'){
+			searchMonth = 'october';
+		} else if (monthEntered === '11'){
+			searchMonth = 'november';
+		} else if (monthEntered === '12'){
+			searchMonth = 'december';
+		}
+
 		if (searchMonth === 'january' && searchDay > NumDays.jan){
 			searchDay = 1;
 			searchMonth = 'february';
