@@ -1,13 +1,18 @@
 *{margin:0;}
 
 @font-face {
+    font-family: CamcorderOutline;
+    src: url("fonts/CAMCORDER_MS_OL2.otf") format("opentype");
+}
+
+@font-face {
     font-family: Camcorder;
-    font-size: 20px;
-    src: url("fonts/CAMCORDER_OL2.otf") format("opentype");
+    src: url("fonts/CAMCORDER_MS_REG.otf") format("opentype");
 }
 
 body{
-    font-family: Camcorder, monospace;
+    font-family: CamcorderOutline, monospace;
+    font-size: 20px;
     color:white;
     background-color: #000;
 }
@@ -22,14 +27,15 @@ iframe {
 }
 
 button{
+    font-family: Camcorder, monospace;
     border:1px solid #fff;
     background: #000;
     padding:1em;
     color:#fff;
-    font-family: monospace;
     font-size:1em;
     letter-spacing: .2em;
     margin:.5em;
+    text-transform: uppercase;
 }
 
 input{
@@ -50,7 +56,7 @@ button:focus{
 }
 
 form{
-    width:248px;
+    width:380px;
     margin:2em auto;
 }
 
@@ -98,7 +104,10 @@ h1:nth-of-type(4){
     z-index: -100;
 }
 
-#enter{
+#enterBday{
+    font-family: Camcorder, monospace;
+    text-transform: uppercase;
+    color:#fff;
     position: static;
     margin-top:30vh;
     top:0;

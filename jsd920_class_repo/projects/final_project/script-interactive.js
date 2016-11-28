@@ -37,21 +37,21 @@ $(document).ready( function(){
 		dayEntered = $('#enterDay').val();
 
 		// set date & render
-		searchMonth = monthEntered;
+		//searchMonth = monthEntered;
 		searchDay = dayEntered;
 		monthNum = monthEntered;
 		renderDay = dayEntered;
 
 		console.log('monthEntered: ' + monthEntered)
 		console.log('dayEntered: ' + dayEntered)
-		console.log('searchMonth: ' + searchMonth)
+		//console.log('searchMonth: ' + searchMonth)
 		console.log('searchDay: ' + searchDay)
 		console.log('renderMonth: ' + renderMonth)
 		console.log('monthNum: ' + monthNum)
 		console.log('renderDay: ' + renderDay)
 
 
-
+		setSearchMonth();
 		searchForVid();
 		// setTotalDays();
      });
@@ -105,7 +105,7 @@ $(document).ready( function(){
 		// ----------------------------------------------- render the video for the first day only
 		if(totalSearchDays === 1){
 			renderVid();
-			$('form').remove();
+			$('.yourBday').remove();
 		}
 
 		// ----------------------------------------------- increase the day counters
@@ -158,10 +158,8 @@ $(document).ready( function(){
 	}
 
 	// ----------------------------------------------- set the searchMonth 
-	// ----------------------------------------------- reset the searchDay after the month ends
-	function setSearchDate(){
-
-		if (monthEntered === '01' | monthEntered === '1'){
+	function setSearchMonth(){
+			if (monthEntered === '01' | monthEntered === '1'){
 			searchMonth = 'january';
 		} else if (monthEntered === '02' | monthEntered === '2'){
 			searchMonth = 'february';
@@ -186,7 +184,10 @@ $(document).ready( function(){
 		} else if (monthEntered === '12'){
 			searchMonth = 'december';
 		}
+	}
 
+	// ----------------------------------------------- reset the searchDay after the month ends
+	function setSearchDate(){
 		if (searchMonth === 'january' && searchDay > NumDays.jan){
 			searchDay = 1;
 			searchMonth = 'february';
