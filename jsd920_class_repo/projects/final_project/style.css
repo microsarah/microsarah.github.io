@@ -60,7 +60,7 @@ form{
     margin:2em auto;
 }
 
-h1{
+h2{
     font-size:1.5em;
     font-weight: normal;
     letter-spacing: .2em; 
@@ -69,22 +69,22 @@ h1{
     top:.75em;
 }
 
-h1:nth-of-type(1){
+h2:nth-of-type(1){
     color:#00ff00;
     right:1.04em;
 }
 
-h1:nth-of-type(2){
+h2:nth-of-type(2){
     color:#ff0000;
     right:.96em;
 }
 
-h1:nth-of-type(3){
+h2:nth-of-type(3){
     color:#0000ff;
     top:.79em;
 }
 
-h1:nth-of-type(4){
+h2:nth-of-type(4){
     color:white;
 }
 
@@ -128,10 +128,20 @@ h1:nth-of-type(4){
     100% { transform: rotate(360deg); }
 }
 
-.title{
+.date{
     position: absolute;
     top: 1em;
     right: 1em;
+    z-index: 1;
+}
+
+.title{
+    font-size:1.5em;
+    font-weight: normal;
+    letter-spacing: .1em; 
+    position: absolute;
+    left:1.5em;
+    top:1.5em;
     z-index: 1;
 }
 

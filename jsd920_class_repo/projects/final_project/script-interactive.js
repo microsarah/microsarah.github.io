@@ -62,8 +62,8 @@ $(document).ready( function(){
 		monthNum = monthEntered;
 		renderDay = dayEntered;
 
-		// console.log('monthEntered: ' + monthEntered)
-		// console.log('dayEntered: ' + dayEntered)
+		console.log('monthEntered: ' + monthEntered)
+		console.log('dayEntered: ' + dayEntered)
 		// console.log('searchDay: ' + searchDay)
 		// console.log('renderMonth: ' + renderMonth)
 		// console.log('monthNum: ' + monthNum)
@@ -71,8 +71,13 @@ $(document).ready( function(){
 
 		setSearchMonth();
 		searchForVid();
-		// setTotalDays();
      });
+
+	setTimeout(startApp, 25000);
+
+	for (var i = totalSearchDays; i <= year; i++){
+			setTimeout(searchForVid, (10000 * i));
+		}
 
 	
 	// if keys pressed, move fwd/bkwd
@@ -92,14 +97,14 @@ $(document).ready( function(){
 	// else, render vids as normal
 	
 	// search for videos on a 10-sec timer
-	for (var i = totalSearchDays; i <= year; i++){
-		setTimeout(searchForVid, (10000 * i));
+	function startApp(){
+
+	// render videos on a 25-sec timer
+		for (var i = 1; i <= year; i++){
+			setTimeout(renderVid, (25000 * i));
+		}
 	}
 
-	// render videos on a 20-sec timer
-	for (var i = 1; i <= year; i++){
-		setTimeout(renderVid, (25000 * i));
-	}
 
 
 
@@ -118,7 +123,7 @@ $(document).ready( function(){
 	function searchForVid(){
 		setSearchDate();
 		queryData(searchMonth, searchDay);
-		//console.log('searching: ' + searchMonth + ' ' + searchDay);
+		console.log('searching: ' + searchMonth + ' ' + searchDay);
 	}
 
 	// ----------------------------------------------- call the API 
@@ -126,7 +131,8 @@ $(document).ready( function(){
 	// ----------------------------------------------- if it fails, restart search immediately
 	function queryData(month,day){
 		var url = (baseURL + month + '-' + day +'-' + 'birthday');
-		console.log(url);
+
+		console.log('search url: ' + url);
 		$.get(url).done(onSuccess).fail(searchForVid); 
 	}
 	
@@ -164,35 +170,31 @@ $(document).ready( function(){
 			$('iframe:first-of-type').remove();
 		 }
 
-
-		console.log(renderDay)
-		[24, 25, 26]
 		id = allVideos[totalSearchDays - 1];
-
-		
-		console.log(allVideos)
-		console.log('id: ' + id)
+	
+		console.log('video IDs from search results: ' + allVideos)
 		console.log('rendering: ' + renderMonth + ' ' + renderDay);
 
 
 		var source = '"https://www.youtube.com/embed/' + id + '?autoplay=1;rel=0&amp;showinfo=0"';
-		console.log(source)
+		
+		console.log('source url: ' + source)
 		$('.video-container').append('<iframe src=' + source + 'frameborder="0" allowfullscreen></iframe>');
 
 		// ----------------------------------------------- remove previous date 
-		$('.title').empty();
+		$('.date').empty();
 		// ----------------------------------------------- render new date 
-		if (renderDay.length < 2){
+		if (renderDay < 10){
 			// ----------------------------------------------- add a 0 to single-digit dates
-			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/0' + renderDay + '/' + '2016</h1>');
+			$('.date').append('<h2>' + monthNum + '/0' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/0' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/0' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/0' + renderDay + '/' + '2016</h2>');
 		} else {
-			$('.title').append('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
-			$('.title').append('<h1>' + monthNum + '/' + renderDay + '/' + '2016</h1>');
+			$('.date').append('<h2>' + monthNum + '/' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/' + renderDay + '/' + '2016</h2>');
+			$('.date').append('<h2>' + monthNum + '/' + renderDay + '/' + '2016</h2>');
 		}
 
 		totalSearchDays++;
@@ -270,8 +272,8 @@ $(document).ready( function(){
 		}
 	}
 
+	// ----------------------------------------------- define the render info based on the info entered by the user
 	function setRenderDate(){
-		
 		if (monthNum === '01'){
 			renderMonth = 'january';
 		} else if (monthNum === '02'){
@@ -298,6 +300,7 @@ $(document).ready( function(){
 			renderMonth = 'december';
 		}   
 
+		// ----------------------------------------------- reset the renderDay after the month ends
 		if (renderMonth === 'january' && renderDay > NumDays.jan){
 			renderDay = 1;
 			renderMonth = 'february';
@@ -349,36 +352,8 @@ $(document).ready( function(){
 		}
 	}
 
+	// ----------------------------------------------- show the loader 
 	function showLoader(){
 		$('.loader').css('display', 'block');
 	}
-
-
-	// function setTotalDays(){
-	// 	if (monthNum === '01'){
-	// 		totalDays = searchDay;
-	// 	} else if (monthNum === '02'){
-	// 		totalDays = NumDays.jan + searchDay;
-	// 	} else if (monthNum === '03'){
-	// 		totalDays = NumDays.jan + NumDays.feb + searchDay;
-	// 	} else if (monthNum === '04'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + searchDay;
-	// 	} else if (monthNum === '05'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + searchDay;
-	// 	} else if (monthNum === '06'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + searchDay;
-	// 	} else if (monthNum === '07'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + searchDay;
-	// 	} else if (monthNum === '08'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.jul + searchDay;
-	// 	} else if (monthNum === '09'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.jul + NumDays.aug + searchDay;
-	// 	} else if (monthNum === '10'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.jul + NumDays.aug + NumDays.sep + searchDay;
-	// 	} else if (monthNum === '11'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.jul + NumDays.aug + NumDays.sep + NumDays.oct + searchDay;
-	// 	} else if (monthNum === '12'){
-	// 		totalDays = NumDays.jan + NumDays.feb + NumDays.mar + NumDays.apr + NumDays.may + NumDays.jun + NumDays.jul + NumDays.aug + NumDays.sep + NumDays.oct + NumDays.nov + searchDay;
-	// 	}
-	// }
 });
