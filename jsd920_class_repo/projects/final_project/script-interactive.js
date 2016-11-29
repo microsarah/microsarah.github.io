@@ -1,14 +1,27 @@
 $(document).ready( function(){
+
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// ----------------------------------------- vars ---------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+
+
 	var baseURL = 'https://accesscontrolalloworiginall.herokuapp.com/https://sarah-vids.herokuapp.com/';
 	var allVideos = [];
 	var totalSearchDays = 1;  // totalDays is counting up with each render
-	var searchDay; // tracking days for months
-	var searchMonth;
-	var renderDay;
-	var renderMonth;
-	var monthEntered, dayEntered;
 	var year = 365;
-	var id;
+	var dayEntered,
+		id,
+		leftKeyCounter,
+		monthEntered,
+		monthNum, 
+		renderDay,
+		renderMonth,
+		searchDay,
+		searchMonth; // tracking days for months
 	
 	var NumDays = {
 		jan : 31,
@@ -25,11 +38,17 @@ $(document).ready( function(){
 		dec : 31,
 	};
 
-	// start it off
-	//searchForVid();
+
+
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------- the app --------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
 
 	// user enters date
-	
 	$('#submit').click(function(event){
       	event.preventDefault();
 
@@ -39,19 +58,16 @@ $(document).ready( function(){
 		dayEntered = $('#enterDay').val();
 
 		// set date & render
-		//searchMonth = monthEntered;
 		searchDay = dayEntered;
 		monthNum = monthEntered;
 		renderDay = dayEntered;
 
-		console.log('monthEntered: ' + monthEntered)
-		console.log('dayEntered: ' + dayEntered)
-		//console.log('searchMonth: ' + searchMonth)
-		console.log('searchDay: ' + searchDay)
-		console.log('renderMonth: ' + renderMonth)
-		console.log('monthNum: ' + monthNum)
-		console.log('renderDay: ' + renderDay)
-
+		// console.log('monthEntered: ' + monthEntered)
+		// console.log('dayEntered: ' + dayEntered)
+		// console.log('searchDay: ' + searchDay)
+		// console.log('renderMonth: ' + renderMonth)
+		// console.log('monthNum: ' + monthNum)
+		// console.log('renderDay: ' + renderDay)
 
 		setSearchMonth();
 		searchForVid();
@@ -60,6 +76,19 @@ $(document).ready( function(){
 
 	
 	// if keys pressed, move fwd/bkwd
+
+	// document.addEventListener("keydown", function(event) {
+		
+
+	// 	if(event.keyCode === 37){
+	// 		console.log('the ' + event.keyCode + ' key has been pressed');
+	// 		leftKeyCounter++;
+	// 		id = allVideos[totalSearchDays - 1];
+
+	// 	}
+
+	// 	// event.preventDefault();
+	// });
 	// else, render vids as normal
 	
 	// search for videos on a 10-sec timer
@@ -71,6 +100,18 @@ $(document).ready( function(){
 	for (var i = 1; i <= year; i++){
 		setTimeout(renderVid, (25000 * i));
 	}
+
+
+
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// -------------------------------------- functions -------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+	// --------------------------------------------------------------------------------------
+
+
 
 	// ----------------------------------------------- set the current month, then
 	// ----------------------------------------------- query data using current month & day
@@ -125,7 +166,7 @@ $(document).ready( function(){
 
 
 		console.log(renderDay)
-
+		[24, 25, 26]
 		id = allVideos[totalSearchDays - 1];
 
 		
