@@ -31,7 +31,9 @@ $(document).ready( function(){
 	// user enters date
 	
 	$('#submit').click(function(event){
-      	event.preventDefault()
+      	event.preventDefault();
+
+      	showLoader();
 
       	monthEntered = $('#enterMonth').val();
 		dayEntered = $('#enterDay').val();
@@ -304,8 +306,10 @@ $(document).ready( function(){
 			renderMonth = 'january';
 			monthNum = '01';
 		}
+	}
 
-   
+	function showLoader(){
+		$('.loader').css('display', 'block');
 	}
 
 
