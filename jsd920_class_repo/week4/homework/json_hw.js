@@ -9,18 +9,13 @@ var jsonString = { "title": "Uploads from everyone", "link": "https://www.flickr
 called `flickerObj`
 */
 
-var flickerObj = JSON.parse(jsonString);
-
 /*
 2. Iterate (this means 'use a loop') and do a console.log of each of the item titles
 with the date the photo was taken. The first console.log should return the following:
 
 "What a surprise in lyon. 2016-02-23T06:47:30-08:00"
-*/
 
-for(var i =0; i < flickerObj.length; i++){
-	console.log(flickerObj.title[i] + " " + flickerObj.date_taken[i])
-}
+*/
 
 /*
 3. Create a new array called 'links'. Iterate through the items array in flickerObj and store the the links to each item in the 'links' array.

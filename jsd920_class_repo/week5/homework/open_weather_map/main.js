@@ -9,7 +9,7 @@ Open Weather Map Instructions:
 	- Hint: search the docs for "units format"
 - First, print the response to the console, then, using the API's response, print the following data to #nyc-weather:
 	- The current "temp"
-	- The current "humidity"
+	- The current "hummidity"
 	- The current wind "speed"
 
 2)
@@ -32,120 +32,10 @@ Open Weather Map Instructions:
 
 */
 
-// only loads if js is in head
+
 $(document).ready(function () {
-  var apiKey = '7edfeb14e39f91685a7cfa1159637a35';
-  var city = 'miami';
-  var units = 'imperial';
-  var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
-  // console.log(weatherUrl);
-
- //  	function makeRequest(){
-	// 	$.get(weatherUrl)
-	// 	.done(function(res){ console.log(res)})
-	// 	.fail(function(xhr){ console.log('error has ocurred: ', xhr)})
-	// }
-
-	// makeRequest();
-
-	$.ajax({
-		url:weatherUrl,
-		type:'GET',
-		dataType: 'JSON',
-		success: function(res){ console.log('success!'); populateNYCData(res); },
-		fail: function(xhr){ console.log('error has ocurred: ', xhr); }
-	});
-
-	function populateNYCData(data){
-		console.log(data);
-			var temp = ('<span>Temperature</span> ' + data.main.temp + '&deg;F');
-			var humidity = ('<span>Humidity</span> ' + data.main.humidity + '%');
-			var windSpeed = ('<span>Wind Speed</span> ' + data.wind.speed + 'mph');
-
-		var info = [temp, humidity, windSpeed];
-		var list = $('#nyc-weather');
-		
-		for(var i = 0; i < info.length; i++){
-			var newLi = $('<li></li>');
-			newLi.append(info[i]);
-			list.append(newLi);
-		}
-
-		var body = $('body');
-
-		// change background color based on temp
-		if(data.main.temp <= 40){
-			body.addClass('cold');
-		} else if (data.main.temp > 40 && data.main.temp <= 60){
-			body.addClass('mild');
-		} else if (data.main.temp > 60 && data.main.temp <= 75){
-			body.addClass('warm');
-		} else if (data.main.temp > 75){
-			body.addClass('hot');
-		}
-	}
-
-
-	// when the user clicks the button:
-	var button = $('#submitReq');
-	button.click(function(event){
-
-		event.preventDefault();
-
-		// redefine the city name var
-		city = $('#city').val();
-		console.log(city);
-
-		weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=' + units + '&appid=' + apiKey;
-		console.log(weatherUrl);
-
-		// make a new ajax request 
-		$.ajax({
-			url:weatherUrl,
-			type:'GET',
-			dataType: 'JSON',
-			success: function(res){ console.log('success!'); populateYourData(res); },
-			fail: function(xhr){ console.log('error has ocurred: ', xhr); }
-		});
-
-		
-		function populateYourData(data){
-			console.log(data);
-
-			var list = $('#your-weather');
-			var temp = ('<span>Temperature</span> ' + data.main.temp + '&deg;F');
-			var humidity = ('<span>Humidity</span> ' + data.main.humidity + '%');
-			var windSpeed = ('<span>Wind Speed</span> ' + data.wind.speed + 'mph');
-
-			var info = [temp, humidity, windSpeed];
-
-			// add in a title for the search results
-			list.before('<h2>Current weather in ' + city +'</h2>')
-			
-			// add the search results to the page
-			for(var i = 0; i < info.length; i++){
-				var newLi = $('<li></li>');
-				newLi.append(info[i]);
-				list.append(newLi);
-			}
-
-			// change background color based on temp
-			// if(data.main.temp <= 40){
-			// 	list.addClass('cold');
-			// } else if (data.main.temp > 40 && data.main.temp <= 60){
-			// 	list.addClass('mild');
-			// } else if (data.main.temp > 60 && data.main.temp <= 75){
-			// 	list.addClass('warm');
-			// } else if (data.main.temp > 75){
-			// 	list.addClass('hot');
-			// }
-		}
-
-	var form = $('form')[0];
-    form.reset();
-
-	});
-
+  var apiKey = '19ab861f15cfd2e8216a3be1ed615598';
+  var weatherUrl = '';
 });
 
 

@@ -79,8 +79,6 @@ var grungeAlbums = "{
   ]
 }"
 
-var grungeAlbumsJSON = JSON.stringify(grungeAlbums);
-
 // [ Step 4 ]
 // Imagine that we only had JSON to work with, and wanted to convert it to a JS Object.
 // Fortunately, the `JSON` global object converts both ways - to and from JSON.

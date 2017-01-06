@@ -11,44 +11,12 @@ Making a favorites list: DOM manipulation
 */
 
 function addToList(list, newThing) {
-	// create an li
-  var newThingLi = document.createElement('li');
 
-  // create text node from input value 
-	var newThingText = document.createTextNode(newThing);
-
-  // append the li to include the text
-	newThingLi.appendChild(newThingText);
-
-  // and the ul to include the li
-	list.appendChild(newThingLi);
 }
 
 window.onload = function() {
+  // YOUR CODE HERE!
 
-    // get the button
-  	var button = document.getElementById('new-thing-button');
-
-    // get the list
-  	var thingList = document.getElementById('fav-list');
-
-    // get the input
-  	var newThingInput = document.getElementById('new-thing');
-
-  	button.onclick = function(event){
-
-
-  		event.preventDefault();
-
-      // get the value of the input
-  		var newThing = newThingInput.value;
-
-      // add to list
-  		addToList(thingList, newThing);
-
-		// var form = document.getElementsByTagName('form');
-		// form.reset();
-  	};
 };
 
 /*

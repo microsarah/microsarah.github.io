@@ -45,19 +45,14 @@ var presidentObject = {
         'Bush',
         'Obama',
     ]
-};
+}
 
 //step1: grab the handlebars html template
-var source = $('#title-template').html();
-
 
 //step2: compile the template using Handlebars.compile()
-var template = Handlebars.compile(source);
 
 //step3: pass compile the obj
-var titleTemplate = template(presidentObject);
 
 //step4: append the obj(s) to the html element
-$('#handlebars-list').append(titleTemplate);
 
 

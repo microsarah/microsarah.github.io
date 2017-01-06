@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
     </div>
 </nav>
 
-<div class="container" ng-controller="todoController">
+<div class="container">
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -52,9 +52,9 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="todo">Enter ToDo</label>
-                <input type="text" class="form-control" id="todo" placeholder="Some ToDo" ng-model="new_todo">
+                <input type="text" class="form-control" id="todo" placeholder="Some ToDo">
             </div>
-            <button type="submit" class="btn btn-success" ng-click="addTodo()">Add ToDo</button>
+            <button type="submit" class="btn btn-success">Add ToDo</button>
             <hr/>
         </div>
         <div class="col-md-8">
@@ -65,15 +65,11 @@
                 <ul class="list-group">
 
                     <!-- ToDo start -->
-                    <li class="list-group-item" ng-repeat="todo in todoList">
-                        <p class="lead" ng-class="{'text-success': todo.completed}">
-                            {{ todo.title }} -- 
-                            <span ng-show="todo.completed">Completed!</span>
-                            <span ng-hide="todo.completed">Not done!</span>
-                        </p>
+                    <li class="list-group-item">
+                        <p class="lead">Todo Title</p>
 
                         <div class="btn-group btn-group-sm">
-                            <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Complete" ng-click="statusToggle(todo)">
+                            <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Complete">
                                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                             </button>
 
