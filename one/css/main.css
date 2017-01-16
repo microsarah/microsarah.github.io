@@ -123,7 +123,7 @@ nav a:link{
 	text-transform: uppercase;
 	border-bottom: none;
 	padding:.25em 0;
-	margin:5em;
+	margin:3em;
 	letter-spacing: .05em;
 	color:#1d1f7b;
 }
@@ -207,7 +207,7 @@ small{
 
 section{
 	clear: both;
-	padding:40em 0 20em;
+	padding:43em 0 10em;
 }
 
 /* first img on subpage */
@@ -437,7 +437,7 @@ section img:nth-of-type(2){
 
 @media screen and (max-width:1199px){
 	section{
-		padding:25em 0 20em;
+		padding:36em 0 20em;
 	}
 
 	.skills div{
@@ -457,7 +457,7 @@ section img:nth-of-type(2){
 		}
 
 		nav a:link{
-			margin:3.5em;
+			margin:2em;
 		}
 
 		aside{
@@ -595,12 +595,12 @@ section img:nth-of-type(2){
 		padding:0;
 		margin:1.25em 0;
 		border-bottom: none;
-		color:#fff;
+		/*color:#fff;*/
 	}
 
-	nav a:visited{
+/*	nav a:visited{
 		color:#fff;
-	}
+	}*/
 
 	nav a:hover{
 		border:none;
@@ -648,10 +648,10 @@ section img:nth-of-type(2){
 		width:0;
 	}
 
-	.home header{
+/*	.home header{
 		background:#1d1f7b;
 		color:#fff;
-	}
+	}*/
 
 	.project-info{
 		padding:2em 2.5em;
