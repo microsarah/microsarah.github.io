@@ -267,8 +267,18 @@ section img:nth-of-type(2){
 	margin:.5em 0 .25em;
 }
 
-.test{
+.col-md-6.col-sm-6:nth-of-type(2){
 	text-align: right !important;
+}
+
+.col-md-6.col-sm-12:nth-of-type(2){
+	text-align: right !important;
+}
+
+.col-md-6.col-sm-6 ul,
+.col-md-6.col-sm-12 ul {
+	list-style: none;
+	padding: 0;
 }
 
 .cv h4{
@@ -297,6 +307,8 @@ section img:nth-of-type(2){
 .cv main section:last-of-type{
 	border-bottom:none;
 }
+
+
 
 /* project desc / bio */
 .desc{
