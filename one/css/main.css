@@ -404,9 +404,9 @@ section img:nth-of-type(2){
 }
 
 /* selected nav item */
-.selected{
+/*.selected{
 	border-bottom:2px solid #337ab7;
-}
+}*/
 
 .skills{
 	text-align: center;
