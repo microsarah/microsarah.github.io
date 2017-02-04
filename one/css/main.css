@@ -161,7 +161,7 @@ aside{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
   padding:2.5em 2em 3em;
   position: absolute;
-  top:27em;
+  top:35em;
   right:12%;
   clear: both;
 	z-index: 2;
@@ -179,18 +179,6 @@ aside h2{
 
 img{
   width:100%;
-}
-
-figcaption{
-	font-size: .9em;
-	letter-spacing: .1em;
-	margin: .5em 0;
-	float: right;
-}
-
-figcaption > span{
-	font-weight:700;
-	padding-right:.5em;
 }
 
 footer{
@@ -211,7 +199,7 @@ section{
 }
 
 /* first img on subpage */
-section img:nth-of-type(1){
+.project-feature-1{
 	position: absolute;
   top:6em;
   right:2em;
@@ -219,7 +207,7 @@ section img:nth-of-type(1){
 }
 
 /* second img on subpage */
-section img:nth-of-type(2){
+.project-feature-2{
 	position: absolute;
   top:550px;
   left:0;
@@ -484,8 +472,8 @@ section img:nth-of-type(2){
 			padding:0 0 7em;
 		}
 
-		section img:nth-of-type(1),
-		section img:nth-of-type(2){
+		.project-feature-1,
+		.project-feature-2{
 			position: static;
 			top:auto;
 			right:auto;
@@ -494,7 +482,7 @@ section img:nth-of-type(2){
 			width:100%;
 		}
 
-		section img{
+		section figure{
 			margin: 0 0 1.5em;
 		}
 
