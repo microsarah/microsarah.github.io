@@ -161,7 +161,7 @@ aside{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
   padding:2.5em 2em 3em;
   position: absolute;
-  top:35em;
+  top:50em;
   right:12%;
   clear: both;
 	z-index: 2;
@@ -175,6 +175,13 @@ aside div:nth-of-type(2){
 aside h2{
 	font-size:1.25em;
 	margin:0 0 0.5em;
+}
+
+iframe{
+	margin:auto;
+	padding:0 15px;
+	width:100%;
+	height:600px;
 }
 
 img{
@@ -468,6 +475,10 @@ section{
 			background: none;
 		}
 
+		iframe{
+			height:400px;
+		}
+
 		section{
 			padding:0 0 7em;
 		}
@@ -561,6 +572,10 @@ section{
 
 	footer nav a:visited{
 		color: #1d1f7b;
+	}
+
+	iframe{
+			height:200px;
 	}
 
 	input:checked + nav{
