@@ -21,9 +21,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/smoothscroll.js"></script>
   </head>
   <body class="project">
-    <div class="container">
+    <div class="container" id="top">
       <header>
         <label for="menu">menu</label>
         <input type="checkbox" id="menu">
@@ -31,7 +32,7 @@
         <a href="../index.html">index</a>
         <a href="../index.html#projects" class="smoothScroll">projects</a>
         <a href="../an-internet-bio/index.html">about</a>
-        <a href="../a-cv/index.html">cv</a>
+        <a href="#cv"  class="smoothScroll">cv</a>
         <!-- <a href="http://ablogthat.sarahmak.es/" target="blank">archive</a> -->
         </nav>
       </header>
@@ -39,7 +40,7 @@
         <main class="col-md-4 desc">
           <header><h1>Hey, I'm Sarah!</h1></header>
 						<p>I'm a designer, developer and artist working out of my sunny Brooklyn kitchen. Lover of leafy greens, rare steak, strong coffee, a certain <a href="https://en.wikipedia.org/wiki/Wasted...Again" target="blank">Black Flag album</a> on vinyl, and a cold swim after a long hike. If I haven't told you enough facts, there's a pretty embarrassing video of me skydiving just a quick Google away.</p>
-            <p>From here you can check out my <a href="../a-cv/index.html">cv</a> and <a href="../index#projects" class="smoothScroll">projects</a>. You're watching the skydiving video though, aren't you? <span class="nobreak">-_-</span></p>
+            <p>From here you can check out my <a href="#cv" class="smoothScroll">cv</a> and <a href="../index#projects" class="smoothScroll">projects</a>. You're watching the skydiving video though, aren't you? <span class="nobreak">-_-</span></p>
         </main>
         <aside class="clearfix">
           <div class="col-md-12 col-sm-6">
@@ -56,6 +57,94 @@
         <img src="../assets/me.jpg">
         </figure>
       </section>
+
+      <div class="col-lg-12 cv" id="cv">
+        <main>
+           <section class="clearfix">
+            <h2>Recognition</h2>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <h3>Awards + Publications</h3>
+                <ul>
+                  <li>2015 <a href="https://www.instagram.com/p/7B1p0KkH57/?tagged=thebookoflovefb" target="blank">Facebook Analog Research Lab, The Book of Love</a></li>
+                  <li>2014 <a href="http://prix2014.aec.at/prixwinner/13829/" target="blank">Ars Electronica, Honorary Mention</a></li>
+                  <li>2014 <a href="https://design100.com/NYC14/entry_details.asp?ID=12867" target="blank">NY Design Award</a></li>
+                  <li>2014 <a href="https://tribecafilm.com/stories/here-are-your-tff-2014-award-winners" target="blank">Tribeca Film Festival, Storyscapes Award</a></li>
+                  <li>2013 <a href="http://dblp.uni-trier.de/pers/hd/h/Hallacher:Sarah" target="blank">CHI</a></li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <h3>Exhibitions + Screenings</h3>
+                <ul>
+                  <li><a href="http://www.moma.org/calendar/events/1928?locale=en" target="blank">MoMA</a> 2016</li>
+                  <li><a href="http://resonate.io/2015/projects/clouds/" target="blank">Resonate Festival</a> 2015</li>
+                  <li><a href="http://www.sundance.org/blogs/news/2014-festival-new-frontier-projects-announced" target="blank">Sundance</a> 2015</li>
+                  <li>SXSW Interactive 2014</li>
+                  <li><a href="https://xoxofest.com/2014/projects/clouds" target="blank">XOXO Festival</a> 2014</li>
+                  <li><a href="http://dumboartsfestival.com/" target="blank">Dumbo Arts Festival</a> 2013</li>
+                  <li><a href="http://eyeofestival.com/2014/speaker/clouds/" target="blank">Eyeo Festival</a> 2013</li>
+                  <li><a href="http://laughingsquid.com/mocca-fest-2012-an-indie-comic-show-benefit-for-the-museum-of-comic-cartoon-art/" target="blank">MoCCA Festival</a> 2012</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="clearfix">
+            <h2>Education</h2>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <h4><a href="http://itp.nyu.edu" target="blank">NYU / ITP</a></h4>
+								<h3>MPS, Interaction Design</h3>
+								<h5>Graduated May 2013</h5>
+                <ul>
+                  <li>Artist & Research Residency, 2013 - 2014</li>
+                  <li>Faculty's Choice: Top 10 Thesis Projects, 2013</li>
+                  <li>Paulette Goddard Fellowship, 2012 - 2013</li>
+                  <li>Tisch School of the Arts Fellowship, 2011-2013</li>
+                </ul>
+							</div>
+              <div class="col-md-6 col-sm-6">
+                <h4><a href="http://tyler.temple.edu" target="blank">Tyler School of Art</a></h4>
+								<h3>BA, Studio Art</h3>
+								<h5>Graduated May 2007</h5>
+                <ul>
+                  <li>Outstanding Visual Artist Award, 2007</li>
+                  <li>Study Abroad in Rome, Italy, 2006</li>
+                </ul>
+							</div>
+            </div>
+          </section>
+          <section class="skills clearfix">
+            <h2>Skills</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <ul class="clearfix">
+                  <li>Adobe Creative Suite</li>
+                  <li>Sketch</li>
+                  <li>HTML/CSS</li>
+                  <li>JavaScript/jQuery</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="clearfix">
+                  <li>Bootstrap</li>
+                  <li>Wordpress</li>
+                  <li>Squarespace</li>
+                  <li>Node.js</li>
+                  <li>Framer.js</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="clearfix">
+                  <li>Final Cut Pro</li>
+                  <li>Processing</li>
+                  <li>Java</li>
+                  <li>Arduino</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
       <footer>
         <nav>
           <a href="http://twitter.com/microsarah" target="blank">twitter</a>
@@ -65,7 +154,20 @@
         <small>&copy; 2017 Sarah K. Hallacher</small>
       </footer>
     </div> <!-- /container -->
+    <a href="#top" class="top smoothScroll">&#8593;</a>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+    $(window).scroll(function(){
+        $("#title").css("opacity", 1 - $(window).scrollTop() / 200);
+        $("#title").css("z-index", 1 - $(window).scrollTop() / 100);
+
+        if ( $(window).scrollTop() > 400 ) {
+            $('a.top').fadeIn('slow');
+        } else {
+          $('a.top').fadeOut('slow');
+        }
+    });
+    </script>
   </body>
 </html>
