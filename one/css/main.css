@@ -271,7 +271,9 @@ section{
 }
 
 .col-md-6.col-sm-6 ul,
-.col-md-6.col-sm-12 ul {
+.col-md-6.col-sm-12 ul,
+.col-md-4.col-sm-12 ul,
+.col-md-12 ul {
 	list-style: none;
 	padding: 0;
 }
