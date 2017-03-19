@@ -153,12 +153,12 @@ main{
 
 aside{
 	width:320px;
-	background: -webkit-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -moz-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -ms-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -o-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #fff8d9 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
+	background: -webkit-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -moz-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -ms-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -o-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #cddbe6 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#fff',GradientType=0 );
   padding:2.5em 2em 3em;
   position: absolute;
   top:50em;
@@ -188,6 +188,14 @@ img{
   width:100%;
 }
 
+figure{
+	margin:0 0 3em;
+}
+
+figcaption{
+	padding:.5em 0;
+}
+
 footer{
 	width:100%;
 	background-color: #fff;
@@ -200,27 +208,36 @@ small{
 	margin:4em 0 0;
 }
 
-section{
+section + section{
+	margin:0 0 3em;
+}
+
+section:first-of-type{
 	clear: both;
-	padding:43em 0 10em;
+	padding:12em 0 3em;
+}
+
+section:last-of-type{
+	margin:0 0 10em;
 }
 
 /* first img on subpage */
 .project-feature-1{
 	position: absolute;
   top:6em;
-  right:2em;
+  right:4em;
   width:50%;
+	max-width:825px;
 }
 
 /* second img on subpage */
-.project-feature-2{
+/*.project-feature-2{
 	position: absolute;
   top:550px;
   left:0;
   width:80%;
 	max-width: 1020px;
-}
+}*/
 
 ::selection{
 	background-color: #0206ba;
@@ -239,12 +256,12 @@ section{
 .cv{
 	margin:4em 1em 1.5em;
 	padding:4em 7em;
-	background: -webkit-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -moz-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -ms-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -o-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #fff8d9 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
+	background: -webkit-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -moz-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -ms-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -o-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #cddbe6 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#fff',GradientType=0 );
 }
 
 .cv h1{
@@ -312,12 +329,12 @@ section{
 	z-index: 2;
 	margin:8em 0 0;
 	padding:1em 2em 3em;
-	background: -webkit-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -moz-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -ms-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -o-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #fff8d9 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
+	background: -webkit-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -moz-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -ms-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -o-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #cddbe6 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#fff',GradientType=0 );
 }
 
 .hero{
@@ -358,12 +375,12 @@ section{
 }
 
 .projects > div{
-	background: -webkit-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -moz-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -ms-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: -o-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-	background: linear-gradient(to bottom,  #fff8d9 0%, #fff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
+	background: -webkit-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -moz-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -ms-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: -o-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+	background: linear-gradient(to bottom,  #cddbe6 0%, #fff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#fff',GradientType=0 );
 	padding:2em 0;
 	z-index: 1000;
 	transition: all ease-in-out .5s;
@@ -445,8 +462,8 @@ section{
 }
 
 @media screen and (max-width:1199px){
-	section{
-		padding:36em 0 20em;
+	section:first-of-type{
+		padding:0 0 3em;
 	}
 
 	.skills div{
@@ -481,8 +498,8 @@ section{
 			height:400px;
 		}
 
-		section{
-			padding:0 0 7em;
+		section:first-of-type{
+			padding:0 0 3em;
 		}
 
 		.project-feature-1,
@@ -517,12 +534,12 @@ section{
 		.project-info{
 			margin:1.5em 1em 1.5em;
 			padding:2em 3em;
-			background: -webkit-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-			background: -moz-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-			background: -ms-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-			background: -o-linear-gradient(top,  #fff8d9 0%, #fff 100%);
-			background: linear-gradient(to bottom,  #fff8d9 0%, #fff 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff8d9', endColorstr='#fff',GradientType=0 );
+			background: -webkit-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+			background: -moz-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+			background: -ms-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+			background: -o-linear-gradient(top,  #cddbe6 0%, #fff 100%);
+			background: linear-gradient(to bottom,  #cddbe6 0%, #fff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#fff',GradientType=0 );
 		}
 
 		.projects > div{
@@ -627,8 +644,8 @@ section{
 		border:none;
 	}
 
-	section{
-		padding:0 0 5em;
+	section:first-of-type{
+		padding:0 0 3em;
 	}
 
 	small{
@@ -675,7 +692,7 @@ section{
 	}
 
 	.projects h2{
-		background:#fff8d9;
+		background:#337ab7;
 		margin:0;
 		padding: 2em 0 0;
 	}
@@ -721,7 +738,7 @@ section{
 }
 
 @media screen and (max-width:489px){
-	section{
+	section:first-of-type{
 		padding:0 0 3em;
 	}
 

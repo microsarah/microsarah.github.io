@@ -21,9 +21,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
   </head>
   <body class="project">
-    <div class="container">
+    <div class="container" id="top">
       <label for="menu">menu</label>
       <input type="checkbox" id="menu">
       <nav>
@@ -37,7 +38,7 @@
         <main class="col-md-4 desc">
           <header>
             <h1>CLOUDS</h1>
-            <h2>interaction + visual design</h2>
+            <h2>interaction design, visual design</h2>
           </header>
             <p>I had the great honor to work in collaboration with a number of designers + developers on this truly unique interactive documentary. Creators James George and Jonathan Minard describe the film as "a portrait of this community of digital pioneers, explored through the lens of code. The project asks questions about the future of creativity at a time when algorithms play an important role in shaping culture." </p>
   					<a href="http://www.cloudsdocumentary.com/" target="blank">cloudsdocumentary.com</a>
@@ -61,29 +62,93 @@
             </div>
           </aside>
         </div>
-
-      <section>
         <figure class="project-feature-1">
           <img src="../assets/clouds/intro.png">
         </figure>
-        <figure class="project-feature-2">
+      <section class="clearfix">
+        <h3>intro screens</h3>
+        <figure class="col-md-12">
           <img src="../assets/clouds/intro-question.png">
+          <figcaption>Consider a question to begin a journey</figcaption>
+        </figure>
+        <figure class="col-md-12">
+          <img src="../assets/clouds/intro-question-1.png">
+          <figcaption>Select a question</figcaption>
         </figure>
         <figure class="col-md-12">
           <img src="../assets/clouds/explore.png">
+          <figcaption>Travel through a web of connected discussions</figcaption>
         </figure>
+      </section>
+      <section class="clearfix">
+        <h3>main screens</h3>
         <figure class="col-md-12">
           <img src="../assets/clouds/visual.png">
+          <figcaption>Interactive visual</figcaption>
         </figure>
-         <figure class="col-md-12">
+        <figure class="col-md-12">
+         <img src="../assets/clouds/video.png">
+         <figcaption>Interactive video of interviewee</figcaption>
+       </figure>
+        <figure class="col-md-12">
+         <img src="../assets/clouds/new-question.png">
+         <figcaption>Considering a new journey</figcaption>
+       </figure>
+      </section>
+      <section class="clearfix">
+          <h3>menu screens</h3>
+        <figure class="col-md-12">
           <img src="../assets/clouds/bio.png">
+          <figcaption>Interviewee bio</figcaption>
+      </figure>
+      <figure class="col-md-12">
+        <img src="../assets/clouds/research-people.png">
+        <figcaption>Research by person</figcaption>
+      </figure>
+      <figure class="col-md-12">
+        <img src="../assets/clouds/research-tag.png">
+        <figcaption>Research by topic</figcaption>
+      </figure>
+      <figure class="col-md-12">
+        <img src="../assets/clouds/about-settings.png">
+        <figcaption>About page with Settings</figcaption>
+      </figure>
+    </section>
+    <section class="clearfix">
+        <h3>logic + research</h3>
+        <figure class="col-md-12">
+          <img src="../assets/clouds/clouds_filmflow.png">
+          <figcaption>Early exploration of intro flow, v1</figcaption>
+        </figure>
+        <figure class="col-md-12">
+          <img src="../assets/clouds/clouds_transitions.png">
+          <figcaption>Transition exploration</figcaption>
+        </figure>
+        <figure class="col-md-12">
+          <img src="../assets/clouds/clouds_userflow_v2-act.png">
+          <figcaption>Early exploration of act</figcaption>
         </figure>
         <figure class="col-md-12">
           <img src="../assets/clouds/clouds-sitemap.jpg">
+          <figcaption>Section of final user flow</figcaption>
         </figure>
       </section>
     </div> <!-- /container -->
+    <a href="#top" class="top smoothScroll">&#8593;</a>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+  <!-- source: http://codepen.io/nickcil/pen/sfutl/ -->
+  <script type="text/javascript">
+  $(window).scroll(function(){
+      $("#title").css("opacity", 1 - $(window).scrollTop() / 200);
+      $("#title").css("z-index", 1 - $(window).scrollTop() / 100);
+
+      if ( $(window).scrollTop() > 400 ) {
+          $('a.top').fadeIn('slow');
+      } else {
+        $('a.top').fadeOut('slow');
+      }
+  });
+  </script>
 </html>
